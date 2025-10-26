@@ -52,9 +52,9 @@ const Wallet = () => {
 
                   <div className="flex-1 space-y-2">
                     <p className="text-sm text-muted-foreground">To Pool</p>
-                    <div className="flex items-center gap-2 px-4 py-3 border-2 border-success rounded-full bg-card">
-                      <span className="text-sm font-medium truncate">Residential Prime</span>
-                      <div className="w-6 h-6 rounded-full bg-success flex items-center justify-center flex-shrink-0">
+                    <div className="flex items-center gap-2 px-4 py-3 border-2 border-[hsl(16,100%,58%)] rounded-full bg-card">
+                      <span className="text-sm font-medium truncate">BORE.FI general pool</span>
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] flex items-center justify-center flex-shrink-0">
                         <WalletIcon className="h-3 w-3 text-white" />
                       </div>
                     </div>
@@ -110,9 +110,9 @@ const Wallet = () => {
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex-1 space-y-2">
                     <p className="text-sm text-muted-foreground">From Pool</p>
-                    <div className="flex items-center gap-2 px-4 py-3 border-2 border-success rounded-full bg-card">
-                      <span className="text-sm font-medium truncate">Residential Prime</span>
-                      <div className="w-6 h-6 rounded-full bg-success flex items-center justify-center flex-shrink-0">
+                    <div className="flex items-center gap-2 px-4 py-3 border-2 border-[hsl(16,100%,58%)] rounded-full bg-card">
+                      <span className="text-sm font-medium truncate">BORE.FI general pool</span>
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] flex items-center justify-center flex-shrink-0">
                         <WalletIcon className="h-3 w-3 text-white" />
                       </div>
                     </div>
