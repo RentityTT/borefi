@@ -302,8 +302,8 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Los Angeles, CA",
     businessType: "Commercial Construction",
-    investmentAmount: "$12,500,000",
-    ltv: "65%",
+    investmentAmount: "$2,500,000",
+    ebitda: "$3.2M",
     apy: "12.5%",
     term: "Monthly distributions",
     businessValue: "$45,000,000",
@@ -316,8 +316,8 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Seattle, WA",
     businessType: "Restaurant Chain",
-    investmentAmount: "$8,750,000",
-    ltv: "55%",
+    investmentAmount: "$1,750,000",
+    ebitda: "$2.1M",
     apy: "11.8%",
     term: "Monthly distributions",
     businessValue: "$28,000,000",
@@ -330,8 +330,8 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Miami, FL",
     businessType: "Property Management",
-    investmentAmount: "$15,000,000",
-    ltv: "70%",
+    investmentAmount: "$3,000,000",
+    ebitda: "$4.5M",
     apy: "13.2%",
     term: "Monthly distributions",
     businessValue: "$52,000,000",
@@ -344,8 +344,8 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Austin, TX",
     businessType: "Laundromat Chain",
-    investmentAmount: "$20,000,000",
-    ltv: "75%",
+    investmentAmount: "$2,200,000",
+    ebitda: "$3.8M",
     apy: "14.5%",
     term: "Monthly distributions",
     businessValue: "$68,000,000",
@@ -358,8 +358,8 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Boston, MA",
     businessType: "Mechanical Contractor",
-    investmentAmount: "$9,500,000",
-    ltv: "60%",
+    investmentAmount: "$1,900,000",
+    ebitda: "$2.8M",
     apy: "12.8%",
     term: "Monthly distributions",
     businessValue: "$38,000,000",
@@ -372,8 +372,8 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Denver, CO",
     businessType: "Electrical Contractor",
-    investmentAmount: "$11,200,000",
-    ltv: "58%",
+    investmentAmount: "$1,500,000",
+    ebitda: "$2.2M",
     apy: "11.5%",
     term: "Monthly distributions",
     businessValue: "$32,000,000",
@@ -489,8 +489,8 @@ const DeFi = () => {
                       <p className="font-semibold text-sm text-success">{business.apy}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground mb-1">LTV</p>
-                      <p className="font-semibold text-sm">{business.ltv}</p>
+                      <p className="text-xs text-muted-foreground mb-1">EBITDA</p>
+                      <p className="font-semibold text-sm">{business.ebitda}</p>
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">Term</p>
@@ -983,7 +983,7 @@ const DeFi = () => {
                   <TableHead>Location</TableHead>
                   <TableHead>Property Type</TableHead>
                   <TableHead className="text-right">Loan Amount</TableHead>
-                  <TableHead className="text-right">LTV</TableHead>
+                  <TableHead className="text-right">EBITDA</TableHead>
                   <TableHead className="text-right">APY</TableHead>
                   <TableHead className="text-right">Term</TableHead>
                   <TableHead>Status</TableHead>
@@ -1004,7 +1004,7 @@ const DeFi = () => {
                     <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
                     <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
                     <TableCell className="text-right font-mono text-sm">{business.investmentAmount}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{business.ltv}</TableCell>
+                    <TableCell className="text-right font-mono text-sm">{business.ebitda}</TableCell>
                     <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
                     <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
                     <TableCell>
@@ -1423,7 +1423,7 @@ const DeFi = () => {
                       <TableHead>Location</TableHead>
                       <TableHead>Property Type</TableHead>
                       <TableHead className="text-right">Loan Amount</TableHead>
-                      <TableHead className="text-right">LTV</TableHead>
+                      <TableHead className="text-right">EBITDA</TableHead>
                       <TableHead className="text-right">Borrow Rate</TableHead>
                       <TableHead className="text-right">Term</TableHead>
                       <TableHead>Status</TableHead>
@@ -1444,7 +1444,7 @@ const DeFi = () => {
                         <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
                         <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
                         <TableCell className="text-right font-mono text-sm">{business.investmentAmount}</TableCell>
-                        <TableCell className="text-right font-mono text-sm">{business.ltv}</TableCell>
+                        <TableCell className="text-right font-mono text-sm">{business.ebitda}</TableCell>
                         <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
                         <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
                         <TableCell>
