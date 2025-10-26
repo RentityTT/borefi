@@ -1332,7 +1332,7 @@ const DeFi = () => {
               <TableRow className="border-t-2 font-bold bg-muted/50">
                 <TableCell className="text-lg">TOTAL</TableCell>
                 <TableCell></TableCell>
-                <TableCell className="text-right text-lg">$510,500</TableCell>
+                <TableCell className="text-right text-lg">${earnPositions.reduce((sum, pos) => sum + pos.amountNumeric, 0).toLocaleString()}</TableCell>
                 <TableCell></TableCell>
                 <TableCell></TableCell>
                 <TableCell></TableCell>
