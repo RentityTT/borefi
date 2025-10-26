@@ -44,7 +44,7 @@ const Sidebar = ({
           <img src={userAvatar} alt="User Avatar" className="w-10 h-10 rounded-lg animate-fade-in hover-scale" />
           <div>
             <h2 className="font-semibold text-foreground">@JB9324</h2>
-            <p className="text-sm text-muted-foreground">Properties</p>
+            <p className="text-sm text-muted-foreground">BORE.FI</p>
           </div>
         </div>
       </div>

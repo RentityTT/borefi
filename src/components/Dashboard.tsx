@@ -57,7 +57,7 @@ const Dashboard = () => {
     }
   };
   const earnPositions = [{
-    pool: "Residential Prime Bond",
+    pool: "Construction Industry Bond",
     type: "Supply",
     productType: "Bond",
     amount: "$175,500",
@@ -69,7 +69,7 @@ const Dashboard = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "RPB-2024-04-001",
+      positionId: "CIB-2024-04-001",
       depositDate: "Apr 1, 2024",
       daysActive: 275,
       principalAmount: "$175,500",
@@ -81,7 +81,7 @@ const Dashboard = () => {
       distributionAmount: "$1,164"
     }
   }, {
-    pool: "Hong Kong Market-Based Loan",
+    pool: "Restaurant Franchise Loan",
     type: "Supply",
     productType: "Loan",
     amount: "$150,000",
@@ -93,7 +93,7 @@ const Dashboard = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "HKL-2024-06-001",
+      positionId: "RFL-2024-06-001",
       depositDate: "Jun 15, 2024",
       daysActive: 200,
       principalAmount: "$150,000",
@@ -105,7 +105,7 @@ const Dashboard = () => {
       distributionAmount: "$1,400"
     }
   }, {
-    pool: "Multi-Family Housing Loan",
+    pool: "Logistics Expansion Loan",
     type: "Supply",
     productType: "Loan",
     amount: "$85,000",
@@ -117,7 +117,7 @@ const Dashboard = () => {
     status: "Active",
     network: "Ethereum",
     details: {
-      positionId: "MFHL-2024-08-001",
+      positionId: "LEL-2024-08-001",
       depositDate: "Aug 1, 2024",
       daysActive: 153,
       principalAmount: "$85,000",

@@ -105,7 +105,7 @@ const Earn = () => {
               </div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground mb-1">$RENT Tokens</div>
+              <div className="text-sm text-muted-foreground mb-1">$BORE Tokens</div>
               <div className="text-3xl font-bold">{rentTokenBalance.toLocaleString()}</div>
               <div className="text-sm text-muted-foreground mt-1">
                 ≈ ${(rentTokenBalance * rentTokenPrice).toLocaleString()} USDC
@@ -165,7 +165,7 @@ const Earn = () => {
       <div className="space-y-4">
         <div className="pb-2">
           <h2 className="text-2xl font-bold">Deposit Funds</h2>
-          <p className="text-sm text-muted-foreground">Choose your investment type and earn competitive returns in Rentity's general pools.</p>
+          <p className="text-sm text-muted-foreground">Choose your investment type and earn competitive returns in BORE.FI's general pools.</p>
         </div>
 
         <Card className="p-6">
@@ -179,7 +179,7 @@ const Earn = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <button onClick={() => setActiveType("bond")} className={`p-6 rounded-lg border-2 transition-all ${activeType === "bond" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}>
                     <div className="text-left space-y-2">
-                      <div className="font-semibold text-lg">Rent Bond</div>
+                      <div className="font-semibold text-lg">Business Bond</div>
                       <div className="text-sm text-muted-foreground">Fixed term, stable returns</div>
                       <Badge variant="outline" className="text-success border-success">7.82% APY</Badge>
                     </div>
@@ -240,7 +240,7 @@ const Earn = () => {
                 <div className="bg-muted/50 rounded-lg p-4">
                   <div className="flex items-center gap-2">
                     <Info className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-sm">Earn {rentTokenBonus.toFixed(0)} bonus $RENT tokens</span>
+                    <span className="text-sm">Earn {rentTokenBonus.toFixed(0)} bonus $BORE tokens</span>
                   </div>
                 </div>
               </CardContent>
@@ -259,7 +259,7 @@ const Earn = () => {
                     <span className="text-xl font-bold">${estimatedYield.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Bonus $RENT Tokens</span>
+                    <span className="text-muted-foreground">Bonus $BORE Tokens</span>
                     <span className="text-xl font-bold text-primary">{rentTokenBonus.toFixed(0)}</span>
                   </div>
                 </div>
@@ -276,16 +276,16 @@ const Earn = () => {
       <div className="space-y-4">
         <div className="pb-2">
           <h2 className="text-2xl font-bold">Staking</h2>
-          <p className="text-sm text-muted-foreground">Purchase and stake $RENT tokens to boost your APY</p>
+          <p className="text-sm text-muted-foreground">Purchase and stake $BORE tokens to boost your APY</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-        {/* Purchase $RENT */}
+        {/* Purchase $BORE */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Coins className="w-5 h-5" />
-              Purchase $RENT
+              Purchase $BORE
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -294,25 +294,25 @@ const Earn = () => {
               <Input type="number" value={purchaseAmount} onChange={e => setPurchaseAmount(e.target.value)} placeholder="0.00" className="text-xl h-12 font-mono mt-2" />
               <div className="flex items-center justify-between mt-2">
                 <span className="text-sm text-muted-foreground">
-                  Current Price: ${rentTokenPrice} per $RENT
+                  Current Price: ${rentTokenPrice} per $BORE
                 </span>
                 <span className="text-sm font-medium">
-                  ≈ {(Number(purchaseAmount) / rentTokenPrice).toFixed(0)} $RENT
+                  ≈ {(Number(purchaseAmount) / rentTokenPrice).toFixed(0)} $BORE
                 </span>
               </div>
             </div>
             <Button className="w-full" variant="outline">
-              Purchase $RENT Tokens
+              Purchase $BORE Tokens
             </Button>
           </CardContent>
         </Card>
 
-        {/* Stake $RENT */}
+        {/* Stake $BORE */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="w-5 h-5" />
-              Stake $RENT
+              Stake $BORE
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -321,7 +321,7 @@ const Earn = () => {
               <Input type="number" value={stakeAmount} onChange={e => setStakeAmount(e.target.value)} placeholder="0" className="text-xl h-12 font-mono mt-2" />
               <div className="flex items-center justify-between mt-2">
                 <span className="text-sm text-muted-foreground">
-                  Available: {rentTokenBalance.toLocaleString()} $RENT
+                  Available: {rentTokenBalance.toLocaleString()} $BORE
                 </span>
                 <Button variant="outline" size="sm" onClick={() => setStakeAmount(rentTokenBalance.toString())}>
                   Max
@@ -336,11 +336,11 @@ const Earn = () => {
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
-                10,000 $RENT tokens = +0.1% APY bonus
+                10,000 $BORE tokens = +0.1% APY bonus
               </p>
             </div>
             <Button className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 rounded-full">
-              Stake $RENT Tokens
+              Stake $BORE Tokens
             </Button>
           </CardContent>
           </Card>

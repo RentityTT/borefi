@@ -26,16 +26,16 @@ const DeFi = () => {
   const navigate = useNavigate();
   const [activeMode, setActiveMode] = useState<"bonds" | "loans">("bonds");
   const [selectedPool, setSelectedPool] = useState<any>(null);
-  // User's properties with location and sector information
-  const userProperties = [{
-    name: "Juniper Tower",
+  // User's businesses with location and sector information
+  const userBusinesses = [{
+    name: "Juniper Logistics",
     location: "Vancouver",
-    sector: "Multi-Family Housing"
+    sector: "Logistics & Transportation"
   }];
 
-  // Extract unique locations and sectors from user properties
-  const userLocations = [...new Set(userProperties.map(p => p.location))];
-  const userSectors = [...new Set(userProperties.map(p => p.sector))];
+  // Extract unique locations and sectors from user businesses
+  const userLocations = [...new Set(userBusinesses.map(b => b.location))];
+  const userSectors = [...new Set(userBusinesses.map(b => b.sector))];
 
   // Historical data for the chart (showing growth over time)
   const chartData = [{
@@ -88,72 +88,72 @@ const DeFi = () => {
     loans: 3192045789
   }];
   const bondPools = [{
-    name: "Residential Prime Bond",
+    name: "Construction Industry Bond",
     deposits: "$845,678,901",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "7.82%",
     borrowAPY: "5.45%",
     network: "Solana",
     utilization: "65%"
   }, {
-    name: "Commercial Property Bond",
+    name: "Restaurant Group Bond",
     deposits: "$592,345,123",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
     supplyAPY: "8.12%",
     borrowAPY: "6.05%",
     network: "Solana",
     utilization: "58%"
   }, {
-    name: "Mixed-Use Development Bond",
+    name: "Property Management Bond",
     deposits: "$478,234,567",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT", "DAI"],
     supplyAPY: "7.45%",
     borrowAPY: "5.15%",
     network: "Solana",
     utilization: "52%"
   }, {
-    name: "Multi-Family Housing Bond",
+    name: "Mechanical Contractors Bond",
     deposits: "$367,890,234",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "7.95%",
     borrowAPY: "5.75%",
     network: "Ethereum",
     utilization: "68%"
   }, {
-    name: "Student Housing Bond",
+    name: "Laundromat Chain Bond",
     deposits: "$345,123,678",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "8.35%",
     borrowAPY: "6.25%",
     network: "Solana",
     utilization: "62%"
   }, {
-    name: "Luxury Residential Bond",
+    name: "Electrical Services Bond",
     deposits: "$289,456,890",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
     supplyAPY: "7.65%",
     borrowAPY: "5.35%",
     network: "Solana",
     utilization: "55%"
   }, {
-    name: "Retail Property Bond",
+    name: "Logistics Fleet Bond",
     deposits: "$212,567,234",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "7.28%",
     borrowAPY: "4.95%",
     network: "Arbitrum",
     utilization: "48%"
   }, {
-    name: "Office Space Bond",
+    name: "HVAC Services Bond",
     deposits: "$167,890,123",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "7.15%",
     borrowAPY: "4.85%",
@@ -161,72 +161,72 @@ const DeFi = () => {
     utilization: "45%"
   }];
   const loanPools = [{
-    name: "Residential Prime Loan",
+    name: "Construction Expansion Loan",
     deposits: "$1,245,678,901",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "9.82%",
     borrowAPY: "7.45%",
     network: "Solana",
     utilization: "85%"
   }, {
-    name: "Commercial Property Loan",
+    name: "Restaurant Franchise Loan",
     deposits: "$892,345,123",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
     supplyAPY: "10.12%",
     borrowAPY: "8.05%",
     network: "Solana",
     utilization: "78%"
   }, {
-    name: "Mixed-Use Development Loan",
+    name: "Property Management Growth Loan",
     deposits: "$678,234,567",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT", "DAI"],
     supplyAPY: "9.45%",
     borrowAPY: "7.15%",
     network: "Solana",
     utilization: "72%"
   }, {
-    name: "Multi-Family Housing Loan",
+    name: "Mechanical Services Loan",
     deposits: "$567,890,234",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "9.95%",
     borrowAPY: "7.75%",
     network: "Ethereum",
     utilization: "88%"
   }, {
-    name: "Student Housing Loan",
+    name: "Laundromat Network Loan",
     deposits: "$445,123,678",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "10.35%",
     borrowAPY: "8.25%",
     network: "Solana",
     utilization: "82%"
   }, {
-    name: "Luxury Residential Loan",
+    name: "Electrical Contractor Loan",
     deposits: "$389,456,890",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
     supplyAPY: "9.65%",
     borrowAPY: "7.35%",
     network: "Solana",
     utilization: "75%"
   }, {
-    name: "Retail Property Loan",
+    name: "Logistics Expansion Loan",
     deposits: "$312,567,234",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "9.28%",
     borrowAPY: "6.95%",
     network: "Arbitrum",
     utilization: "68%"
   }, {
-    name: "Office Space Loan",
+    name: "HVAC Fleet Loan",
     deposits: "$267,890,123",
-    curator: "Rentity Protocol",
+    curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "9.15%",
     borrowAPY: "6.85%",
@@ -235,7 +235,7 @@ const DeFi = () => {
   }];
   const pools = activeMode === "bonds" ? bondPools : loanPools;
   const earnPositions = [{
-    pool: "Residential Prime Bond",
+    pool: "Construction Industry Bond",
     type: "Supply",
     productType: "Bond",
     amount: "$175,500",
@@ -247,7 +247,7 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "RPB-2024-04-001",
+      positionId: "CIB-2024-04-001",
       depositDate: "Apr 1, 2024",
       daysActive: 275,
       principalAmount: "$175,500",
@@ -259,7 +259,7 @@ const DeFi = () => {
       distributionAmount: "$1,164"
     }
   }, {
-    pool: "Hong Kong Market-Based Loan",
+    pool: "Restaurant Franchise Loan",
     type: "Supply",
     productType: "Loan",
     amount: "$150,000",
@@ -271,7 +271,7 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "HKL-2024-06-001",
+      positionId: "RFL-2024-06-001",
       depositDate: "Jun 15, 2024",
       daysActive: 200,
       principalAmount: "$150,000",
@@ -283,7 +283,7 @@ const DeFi = () => {
       distributionAmount: "$1,400"
     }
   }, {
-    pool: "Multi-Family Housing Loan",
+    pool: "Logistics Expansion Loan",
     type: "Supply",
     productType: "Loan",
     amount: "$85,000",
@@ -295,7 +295,7 @@ const DeFi = () => {
     status: "Active",
     network: "Ethereum",
     details: {
-      positionId: "MFHL-2024-08-001",
+      positionId: "LEL-2024-08-001",
       depositDate: "Aug 1, 2024",
       daysActive: 153,
       principalAmount: "$85,000",
@@ -308,7 +308,7 @@ const DeFi = () => {
     }
   }];
   const borrowPositions = [{
-    property: "Juniper Tower",
+    property: "Juniper Logistics",
     type: "Borrow",
     amount: "$100,000",
     apr: "7.8%",
@@ -317,10 +317,10 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      loanId: "JT-2024-08-001",
-      securityType: "Position on Title + Corporate Guarantee",
-      propertyAddress: "4567 Juniper Street, Vancouver, BC",
-      corporateGuarantor: "Greystone Properties Holdings Limited",
+      loanId: "JL-2024-08-001",
+      securityType: "Business Assets + Corporate Guarantee",
+      businessAddress: "4567 Juniper Street, Vancouver, BC",
+      corporateGuarantor: "Juniper Logistics Holdings Limited",
       principalRemaining: "$89,250",
       interestPaid: "$6,850",
       nextPaymentDate: "Jan 1, 2025",
@@ -328,7 +328,7 @@ const DeFi = () => {
       totalRepayments: "$13,150",
       maturityDate: "Aug 1, 2026",
       loanToValue: "45%",
-      propertyValue: "$2,250,000"
+      businessValue: "$2,250,000"
     }
   }];
   const markets = [{
@@ -386,90 +386,90 @@ const DeFi = () => {
     marketCap: "$1.0B",
     growth: "+7.9%"
   }];
-  const individualProperties = [{
-    name: "Century City Tower",
-    loanType: activeMode === "bonds" ? "Rent-Backed Bond" : "Mezzanine Loan",
+  const individualBusinesses = [{
+    name: "Century Construction Co.",
+    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Expansion Loan",
     location: "Los Angeles, CA",
-    propertyType: "Commercial Office",
+    businessType: "Commercial Construction",
     loanAmount: "$12,500,000",
     ltv: "65%",
     apy: activeMode === "bonds" ? "12.5%" : "15.2%",
     term: activeMode === "bonds" ? "Monthly repayment" : "3 years",
-    propertyValue: "$45,000,000",
+    businessValue: "$45,000,000",
     status: "Active",
-    occupancy: "92%",
+    revenue: "$8.2M annually",
     image: activeMode === "bonds" ? centuryCityBondImg : centuryCityTowerImg,
-    description: activeMode === "bonds" ? "Invest in rent-backed bonds. Capital funds tenant rent advances, repaid monthly from rent collections" : "Premium commercial office tower in the heart of Century City's business district"
+    description: activeMode === "bonds" ? "Invest in construction company bonds backed by project cashflows and monthly contract payments" : "Established commercial construction firm with government and corporate contracts"
   }, {
-    name: "Skyline Apartments",
-    loanType: activeMode === "bonds" ? "Rent-Backed Bond" : "Senior Debt",
+    name: "Metro Restaurant Group",
+    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Franchise Loan",
     location: "Seattle, WA",
-    propertyType: "Multi-Family",
+    businessType: "Restaurant Chain",
     loanAmount: "$8,750,000",
     ltv: "55%",
     apy: activeMode === "bonds" ? "11.8%" : "13.5%",
     term: activeMode === "bonds" ? "Monthly repayment" : "5 years",
-    propertyValue: "$28,000,000",
+    businessValue: "$28,000,000",
     status: "Active",
-    occupancy: "96%",
+    revenue: "$6.5M annually",
     image: activeMode === "bonds" ? skylineBondImg : skylineApartmentsImg,
-    description: activeMode === "bonds" ? "Fund rent advances for tenants, receive monthly repayments from collected rent with stable returns" : "Modern multi-family residential complex with high occupancy rates"
+    description: activeMode === "bonds" ? "Fund restaurant operations with monthly returns from steady revenue streams across multiple locations" : "Multi-location restaurant group with proven track record and loyal customer base"
   }, {
-    name: "Marina Bay Complex",
-    loanType: activeMode === "bonds" ? "Rent-Backed Bond" : "Bridge Loan",
+    name: "Coastal Property Management",
+    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Growth Loan",
     location: "Miami, FL",
-    propertyType: "Mixed-Use",
+    businessType: "Property Management",
     loanAmount: "$15,000,000",
     ltv: "70%",
     apy: activeMode === "bonds" ? "13.2%" : "16.8%",
     term: activeMode === "bonds" ? "Monthly repayment" : "2 years",
-    propertyValue: "$52,000,000",
+    businessValue: "$52,000,000",
     status: "Funding",
-    occupancy: "88%",
+    revenue: "$12.8M annually",
     image: activeMode === "bonds" ? marinaBayBondImg : marinaBayComplexImg,
-    description: activeMode === "bonds" ? "Provide capital for rent-back bonds, earn returns from monthly tenant rent payments" : "Waterfront mixed-use development combining retail and residential spaces"
+    description: activeMode === "bonds" ? "Provide capital for property management firm with returns from consistent management fee income" : "Large-scale property management company managing 2,000+ units across South Florida"
   }, {
-    name: "Tech Park Plaza",
-    loanType: activeMode === "bonds" ? "Rent-Backed Bond" : "Construction Loan",
+    name: "SpinCycle Laundromats",
+    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Network Expansion Loan",
     location: "Austin, TX",
-    propertyType: "Commercial Office",
+    businessType: "Laundromat Chain",
     loanAmount: "$20,000,000",
     ltv: "75%",
     apy: activeMode === "bonds" ? "14.5%" : "18.2%",
     term: activeMode === "bonds" ? "Monthly repayment" : "18 months",
-    propertyValue: "$68,000,000",
+    businessValue: "$68,000,000",
     status: "Funding",
-    occupancy: "N/A",
+    revenue: "N/A",
     image: activeMode === "bonds" ? techParkBondImg : techParkPlazaImg,
-    description: activeMode === "bonds" ? "Back tenant rent advances with monthly returns secured by ongoing rent collections" : "New construction project in Austin's growing tech corridor"
+    description: activeMode === "bonds" ? "Back laundromat operations with monthly returns from steady, predictable customer usage" : "Growing laundromat network with modern equipment and subscription model"
   }, {
-    name: "Harbor View Residence",
-    loanType: activeMode === "bonds" ? "Rent-Backed Bond" : "Mezzanine Loan",
+    name: "Precision Mechanical Services",
+    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Equipment Loan",
     location: "Boston, MA",
-    propertyType: "Luxury Residential",
+    businessType: "Mechanical Contractor",
     loanAmount: "$9,500,000",
     ltv: "60%",
     apy: activeMode === "bonds" ? "12.8%" : "15.8%",
     term: activeMode === "bonds" ? "Monthly repayment" : "4 years",
-    propertyValue: "$38,000,000",
+    businessValue: "$38,000,000",
     status: "Active",
-    occupancy: "94%",
+    revenue: "$7.4M annually",
     image: activeMode === "bonds" ? harborViewBondImg : harborViewResidenceImg,
-    description: activeMode === "bonds" ? "Finance rent-backed bonds with monthly repayment from luxury tenant rent streams" : "Exclusive waterfront luxury residences with panoramic harbor views"
+    description: activeMode === "bonds" ? "Finance mechanical services with monthly repayment from long-term commercial contracts" : "HVAC and mechanical contractor serving commercial and industrial clients"
   }, {
-    name: "Greenfield Shopping Center",
-    loanType: activeMode === "bonds" ? "Rent-Backed Bond" : "Senior Debt",
+    name: "PowerLine Electrical",
+    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Fleet Expansion Loan",
     location: "Denver, CO",
-    propertyType: "Retail",
+    businessType: "Electrical Contractor",
     loanAmount: "$11,200,000",
     ltv: "58%",
     apy: activeMode === "bonds" ? "11.5%" : "13.2%",
     term: activeMode === "bonds" ? "Monthly repayment" : "7 years",
-    propertyValue: "$32,000,000",
+    businessValue: "$32,000,000",
     status: "Active",
-    occupancy: "90%",
+    revenue: "$5.8M annually",
     image: activeMode === "bonds" ? greenfieldBondImg : greenfieldShoppingImg,
-    description: activeMode === "bonds" ? "Support rent advance bonds, receive consistent monthly returns from retail tenant payments" : "Well-established retail center in prime Denver location"
+    description: activeMode === "bonds" ? "Support electrical contractor bonds, receive consistent monthly returns from project payments" : "Licensed electrical contractor specializing in commercial and residential projects"
   }];
   const formatCurrency = (value: number) => {
     if (value >= 1000000000) {
@@ -481,8 +481,8 @@ const DeFi = () => {
     <div className="space-y-6">
       {/* Header and Description */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Real Estate DeFi</h1>
-        <p className="text-muted-foreground">Choose to fund and earn from specific pools based on market, category, or individual property. All pools have been curated and completed due dilligence by Rentity.</p>
+        <h1 className="text-3xl font-bold">Business Investment DeFi</h1>
+        <p className="text-muted-foreground">Invest in tokenized boring cashflowing businesses. Choose to fund and earn from specific pools based on industry sector or individual business. All businesses have been curated and completed due dilligence by BORE.FI.</p>
         <div className="mt-4 space-y-3 text-muted-foreground">
           
           
@@ -538,42 +538,42 @@ const DeFi = () => {
         </div>
       </div>
 
-      {/* Available Properties for Investment */}
+      {/* Available Businesses for Investment */}
       <Card>
         <CardHeader>
-          <CardTitle>{activeMode === "bonds" ? "Rent-Backed Bonds" : "Properties"}</CardTitle>
+          <CardTitle>{activeMode === "bonds" ? "Cashflow-Backed Bonds" : "Businesses"}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {individualProperties.map((property, index) => <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group" onClick={() => setSelectedPool({
-                  ...property,
-                  type: 'individual-property'
+            {individualBusinesses.map((business, index) => <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group" onClick={() => setSelectedPool({
+                  ...business,
+                  type: 'individual-business'
                 })}>
                 <div className="relative h-48 overflow-hidden">
-                  <img src={property.image} alt={property.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <img src={business.image} alt={business.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute top-3 right-3">
-                    <Badge variant={property.status === "Active" ? "default" : "outline"} className={property.status === "Active" ? "bg-success/90 text-white" : "bg-muted/90 text-muted-foreground"}>
-                      {property.status}
+                    <Badge variant={business.status === "Active" ? "default" : "outline"} className={business.status === "Active" ? "bg-success/90 text-white" : "bg-muted/90 text-muted-foreground"}>
+                      {business.status}
                     </Badge>
                   </div>
                 </div>
                 <CardContent className="p-4 space-y-3">
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">{property.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">{property.description}</p>
+                    <h3 className="font-semibold text-lg mb-1">{business.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-2">{business.description}</p>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span>{property.location}</span>
+                      <span>{business.location}</span>
                       <span>•</span>
-                      <span>{property.propertyType}</span>
+                      <span>{business.businessType}</span>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-2">
                     <Badge variant="secondary" className="text-xs">
-                      {property.loanType}
+                      {business.loanType}
                     </Badge>
-                    {property.occupancy !== "N/A" && <span className="text-xs text-muted-foreground">
-                        {property.occupancy} occupied
+                    {business.revenue !== "N/A" && <span className="text-xs text-muted-foreground">
+                        {business.revenue}
                       </span>}
                   </div>
 
@@ -581,20 +581,20 @@ const DeFi = () => {
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <p className="text-xs text-muted-foreground mb-1">Loan Amount</p>
-                      <p className="font-semibold text-sm">{property.loanAmount}</p>
+                      <p className="text-xs text-muted-foreground mb-1">Investment Amount</p>
+                      <p className="font-semibold text-sm">{business.loanAmount}</p>
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">APY</p>
-                      <p className="font-semibold text-sm text-success">{property.apy}</p>
+                      <p className="font-semibold text-sm text-success">{business.apy}</p>
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">LTV</p>
-                      <p className="font-semibold text-sm">{property.ltv}</p>
+                      <p className="font-semibold text-sm">{business.ltv}</p>
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">Term</p>
-                      <p className="font-semibold text-sm">{property.term}</p>
+                      <p className="font-semibold text-sm">{business.term}</p>
                     </div>
                   </div>
 
@@ -602,8 +602,8 @@ const DeFi = () => {
                     className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90" 
                     onClick={e => {
                       e.stopPropagation();
-                      navigate(`/invest/${property.name.toLowerCase().replace(/\s+/g, '-')}`, {
-                        state: { property }
+                      navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
+                        state: { business }
                       });
                     }}
                   >
@@ -1094,25 +1094,25 @@ const DeFi = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {individualProperties.map((property, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
-                        ...property,
-                        type: 'individual-property'
+                {individualBusinesses.map((business, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
+                        ...business,
+                        type: 'individual-business'
                       })}>
-                    <TableCell className="font-medium">{property.name}</TableCell>
+                    <TableCell className="font-medium">{business.name}</TableCell>
                     <TableCell>
-                      <Badge variant={property.loanType === "Mezzanine Loan" ? "secondary" : "outline"} className="text-xs">
-                        {property.loanType}
+                      <Badge variant={business.loanType === "Expansion Loan" ? "secondary" : "outline"} className="text-xs">
+                        {business.loanType}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{property.location}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{property.propertyType}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{property.loanAmount}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{property.ltv}</TableCell>
-                    <TableCell className="text-right font-mono text-sm text-success">{property.apy}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{property.term}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
+                    <TableCell className="text-right font-mono text-sm">{business.loanAmount}</TableCell>
+                    <TableCell className="text-right font-mono text-sm">{business.ltv}</TableCell>
+                    <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
+                    <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
                     <TableCell>
-                      <Badge variant={property.status === "Active" ? "default" : "outline"} className={property.status === "Active" ? "bg-success/20 text-success" : "bg-muted text-muted-foreground"}>
-                        {property.status}
+                      <Badge variant={business.status === "Active" ? "default" : "outline"} className={business.status === "Active" ? "bg-success/20 text-success" : "bg-muted text-muted-foreground"}>
+                        {business.status}
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right">
@@ -1301,12 +1301,12 @@ const DeFi = () => {
                                 </div>
                                 <div className="grid grid-cols-2 gap-4 pt-2">
                                   <div>
-                                    <p className="text-sm text-muted-foreground mb-1">Property Address</p>
-                                    <p className="text-sm font-medium">{position.details.propertyAddress}</p>
+                                    <p className="text-sm text-muted-foreground mb-1">Business Address</p>
+                                    <p className="text-sm font-medium">{position.details.businessAddress}</p>
                                   </div>
                                   <div>
-                                    <p className="text-sm text-muted-foreground mb-1">Property Value</p>
-                                    <p className="text-lg font-bold">{position.details.propertyValue}</p>
+                                    <p className="text-sm text-muted-foreground mb-1">Business Value</p>
+                                    <p className="text-lg font-bold">{position.details.businessValue}</p>
                                   </div>
                                   <div className="col-span-2">
                                     <p className="text-sm text-muted-foreground mb-1">Corporate Guarantor</p>
@@ -1534,25 +1534,25 @@ const DeFi = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {individualProperties.filter(property => userLocations.includes(property.location.split(',')[0])).map((property, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
-                            ...property,
-                            type: 'individual-property'
+                    {individualBusinesses.filter(business => userLocations.includes(business.location.split(',')[0])).map((business, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
+                            ...business,
+                            type: 'individual-business'
                           })}>
-                        <TableCell className="font-medium">{property.name}</TableCell>
+                        <TableCell className="font-medium">{business.name}</TableCell>
                         <TableCell>
-                          <Badge variant={property.loanType === "Mezzanine Loan" ? "secondary" : "outline"} className="text-xs">
-                            {property.loanType}
+                          <Badge variant={business.loanType === "Expansion Loan" ? "secondary" : "outline"} className="text-xs">
+                            {business.loanType}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-sm text-muted-foreground">{property.location}</TableCell>
-                        <TableCell className="text-sm text-muted-foreground">{property.propertyType}</TableCell>
-                        <TableCell className="text-right font-mono text-sm">{property.loanAmount}</TableCell>
-                        <TableCell className="text-right font-mono text-sm">{property.ltv}</TableCell>
-                        <TableCell className="text-right font-mono text-sm text-success">{property.apy}</TableCell>
-                        <TableCell className="text-right font-mono text-sm">{property.term}</TableCell>
+                        <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
+                        <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
+                        <TableCell className="text-right font-mono text-sm">{business.loanAmount}</TableCell>
+                        <TableCell className="text-right font-mono text-sm">{business.ltv}</TableCell>
+                        <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
+                        <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
                         <TableCell>
-                          <Badge variant={property.status === "Active" ? "default" : "outline"} className={property.status === "Active" ? "bg-success/20 text-success" : "bg-muted text-muted-foreground"}>
-                            {property.status}
+                          <Badge variant={business.status === "Active" ? "default" : "outline"} className={business.status === "Active" ? "bg-success/20 text-success" : "bg-muted text-muted-foreground"}>
+                            {business.status}
                           </Badge>
                         </TableCell>
                         <TableCell className="text-right">
