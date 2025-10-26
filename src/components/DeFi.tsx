@@ -1413,7 +1413,7 @@ const DeFi = () => {
                     </div>
                   </TableCell>
                   <TableCell className="text-right">
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge variant="secondary" className="text-[10px] whitespace-nowrap">
                       Preferred Equity
                     </Badge>
                   </TableCell>
