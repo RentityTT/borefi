@@ -157,13 +157,15 @@ const Dashboard = () => {
                               <div>
                                 <p className="text-sm text-muted-foreground mb-1">Total Liquidity Provided</p>
                                 <p className="text-2xl font-bold flex items-center gap-2">
-                                  $410,500
+                                  ${earnPositions.reduce((sum, pos) => sum + pos.amountNumeric, 0).toLocaleString()}
                                   <TrendingUp className="w-4 h-4 text-green-500" />
                                 </p>
                               </div>
                               <div>
                                 <p className="text-sm text-muted-foreground mb-1">Average APY</p>
-                                <p className="text-2xl font-bold text-green-500">9.02%</p>
+                                <p className="text-2xl font-bold text-green-500">
+                                  {(earnPositions.reduce((sum, pos) => sum + pos.apyNumeric, 0) / earnPositions.length).toFixed(2)}%
+                                </p>
                               </div>
                             </div>
 
@@ -393,7 +395,9 @@ const Dashboard = () => {
                                 <TableRow className="border-t-2 font-bold bg-muted/50">
                                   <TableCell className="text-lg">TOTAL</TableCell>
                                   <TableCell></TableCell>
-                                  <TableCell className="text-right text-lg">$410,500</TableCell>
+                                  <TableCell className="text-right text-lg">
+                                    ${earnPositions.reduce((sum, pos) => sum + pos.amountNumeric, 0).toLocaleString()}
+                                  </TableCell>
                                   <TableCell></TableCell>
                                   <TableCell></TableCell>
                                   <TableCell></TableCell>
