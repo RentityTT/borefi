@@ -11,12 +11,11 @@ import usdcLogo from "@/assets/usdc-logo.png";
 const Earn = () => {
   const [depositAmount, setDepositAmount] = useState("");
   const [lockupMonths, setLockupMonths] = useState(3);
-  const [activeType, setActiveType] = useState<"bond" | "loan">("bond");
   const [stakeAmount, setStakeAmount] = useState("");
   const [purchaseAmount, setPurchaseAmount] = useState("");
   const walletBalance = 50000;
   const rentTokenBalance = 125000;
-  const baseAPY = activeType === "bond" ? 7.82 : 11.2;
+  const baseAPY = 9.5; // General pool average APY
   const estimatedYield = Number(depositAmount) * (baseAPY / 100);
   const rentTokenBonus = Number(depositAmount) / 10000 * lockupMonths * 100;
   const apyBoost = Number(stakeAmount) / 10000 * 0.1;
@@ -165,32 +164,47 @@ const Earn = () => {
       <div className="space-y-4">
         <div className="pb-2">
           <h2 className="text-2xl font-bold">Deposit Funds</h2>
-          <p className="text-sm text-muted-foreground">Choose your investment type and earn competitive returns in BORE.FI's general pools.</p>
+          <p className="text-sm text-muted-foreground">Deposit funds into BORE.FI's general investment pool to earn from SME loans, business acquisitions, and equity investments.</p>
         </div>
 
         <Card className="p-6">
           <div className="space-y-6">
-            {/* Product Type Selection */}
+            {/* General Pool Information */}
             <Card>
               <CardHeader>
-                <CardTitle>Select Product Type</CardTitle>
+                <CardTitle>BORE.FI General Investment Pool</CardTitle>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Your funds will be deployed across our diversified portfolio of boring cashflowing businesses including SME loans, business acquisitions, and direct equity investments. All opportunities are vetted by BORE.FI's investment committee.
+                </p>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4">
-                  <button onClick={() => setActiveType("bond")} className={`p-6 rounded-lg border-2 transition-all ${activeType === "bond" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}>
-                    <div className="text-left space-y-2">
-                      <div className="font-semibold text-lg">Business Bond</div>
-                      <div className="text-sm text-muted-foreground">Fixed term, stable returns</div>
-                      <Badge variant="outline" className="text-success border-success">7.82% APY</Badge>
-                    </div>
-                  </button>
-                  <button onClick={() => setActiveType("loan")} className={`p-6 rounded-lg border-2 transition-all ${activeType === "loan" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}>
-                    <div className="text-left space-y-2">
-                      <div className="font-semibold text-lg">Loan</div>
-                      <div className="text-sm text-muted-foreground">Flexible, higher returns</div>
-                      <Badge variant="outline" className="text-success border-success">11.2% APY</Badge>
-                    </div>
-                  </button>
+                <div className="grid grid-cols-3 gap-4 bg-muted/30 rounded-lg p-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-success">9.5%</div>
+                    <div className="text-xs text-muted-foreground mt-1">Average APY</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">$3.2B</div>
+                    <div className="text-xs text-muted-foreground mt-1">Total Pool Size</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">68%</div>
+                    <div className="text-xs text-muted-foreground mt-1">Current Utilization</div>
+                  </div>
+                </div>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-start gap-2 text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
+                    <span className="text-muted-foreground">Funds used for SME loans, business acquisitions, and equity investments</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
+                    <span className="text-muted-foreground">All investments undergo thorough due diligence by BORE.FI Protocol</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
+                    <span className="text-muted-foreground">Monthly distributions paid directly to your wallet</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>
