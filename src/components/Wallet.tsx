@@ -8,7 +8,7 @@ import usdcLogo from "@/assets/usdc-logo.png";
 const Wallet = () => {
   const [depositAmount, setDepositAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
-  
+
   // Calculate earn amount based on deposit (1:1 ratio)
   const earnAmount = depositAmount ? parseFloat(depositAmount.replace(/,/g, '')).toLocaleString() : "0";
   return <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
@@ -53,7 +53,7 @@ const Wallet = () => {
                   <div className="flex-1 space-y-2">
                     <p className="text-sm text-muted-foreground">To Pool</p>
                     <div className="flex items-center gap-2 px-4 py-3 border-2 border-[hsl(16,100%,58%)] rounded-full bg-card">
-                      <span className="text-sm font-medium truncate">BORE.FI general pool</span>
+                      <span className="text-sm font-medium truncate">BORE.FI General Pool</span>
                       <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] flex items-center justify-center flex-shrink-0">
                         <WalletIcon className="h-3 w-3 text-white" />
                       </div>
@@ -71,20 +71,14 @@ const Wallet = () => {
                           <img src={usdcLogo} alt="USDC" className="w-5 h-5" />
                         </div>
                         <span className="text-3xl font-bold">$</span>
-                        <input
-                          type="text"
-                          placeholder="0"
-                          value={depositAmount}
-                          onChange={(e) => {
-                            const value = e.target.value.replace(/[^0-9]/g, '');
-                            if (value) {
-                              setDepositAmount(parseFloat(value).toLocaleString());
-                            } else {
-                              setDepositAmount('');
-                            }
-                          }}
-                          className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full"
-                        />
+                        <input type="text" placeholder="0" value={depositAmount} onChange={e => {
+                        const value = e.target.value.replace(/[^0-9]/g, '');
+                        if (value) {
+                          setDepositAmount(parseFloat(value).toLocaleString());
+                        } else {
+                          setDepositAmount('');
+                        }
+                      }} className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full" />
                       </div>
                       <p className="text-xs text-muted-foreground pl-10">USDC</p>
                     </div>
@@ -141,20 +135,14 @@ const Wallet = () => {
                           <img src={usdcLogo} alt="USDC" className="w-5 h-5" />
                         </div>
                         <span className="text-3xl font-bold">$</span>
-                        <input
-                          type="text"
-                          placeholder="0"
-                          value={withdrawAmount}
-                          onChange={(e) => {
-                            const value = e.target.value.replace(/[^0-9]/g, '');
-                            if (value) {
-                              setWithdrawAmount(parseFloat(value).toLocaleString());
-                            } else {
-                              setWithdrawAmount('');
-                            }
-                          }}
-                          className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full"
-                        />
+                        <input type="text" placeholder="0" value={withdrawAmount} onChange={e => {
+                        const value = e.target.value.replace(/[^0-9]/g, '');
+                        if (value) {
+                          setWithdrawAmount(parseFloat(value).toLocaleString());
+                        } else {
+                          setWithdrawAmount('');
+                        }
+                      }} className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full" />
                       </div>
                       <p className="text-xs text-muted-foreground pl-10">USDC</p>
                     </div>
@@ -168,10 +156,7 @@ const Wallet = () => {
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-muted-foreground">After Withdrawal</span>
                       <span className="text-sm font-medium">
-                        ${withdrawAmount ? 
-                          (100000 - parseFloat(withdrawAmount.replace(/,/g, ''))).toLocaleString() : 
-                          '100,000'
-                        } USDC
+                        ${withdrawAmount ? (100000 - parseFloat(withdrawAmount.replace(/,/g, ''))).toLocaleString() : '100,000'} USDC
                       </span>
                     </div>
                   </div>
