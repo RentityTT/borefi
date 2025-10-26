@@ -762,20 +762,20 @@ const DeFi = () => {
         <div className="grid grid-cols-3 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <p className="text-sm">Total Investments</p>
+              <p className="text-sm">Total Deposits</p>
               <Info className="h-4 w-4" />
             </div>
-            <p className="text-4xl font-bold mb-1">$3.29B</p>
-            <p className="text-sm">3.29B USDC</p>
+            <p className="text-4xl font-bold mb-1">$5.25B</p>
+            <p className="text-sm">5.25B USDC</p>
           </div>
           
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <p className="text-sm">Active Businesses</p>
+              <p className="text-sm">Active Investments</p>
               <Info className="h-4 w-4" />
             </div>
-            <p className="text-4xl font-bold mb-1">$1.85B</p>
-            <p className="text-sm">1.85B USDC</p>
+            <p className="text-4xl font-bold mb-1">$3.19B</p>
+            <p className="text-sm">3.19B USDC</p>
           </div>
           
           <div>
@@ -783,7 +783,7 @@ const DeFi = () => {
               <p className="text-sm">Estimated Yield</p>
               <Info className="h-4 w-4" />
             </div>
-            <p className="text-4xl font-bold">7.5%</p>
+            <p className="text-4xl font-bold">12.0%</p>
             <p className="text-sm">Annual APY</p>
           </div>
         </div>
