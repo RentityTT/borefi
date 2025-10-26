@@ -1348,174 +1348,58 @@ const DeFi = () => {
         </CardContent>
       </Card>
 
-      {/* Tabs and Table Section */}
+      {/* Curated Industry Pools */}
       <Card>
         <CardHeader>
-          <CardTitle>Pools</CardTitle>
+          <CardTitle>Curated Industry Pools</CardTitle>
+          <p className="text-sm text-muted-foreground mt-1">Diversified pools across various business sectors</p>
         </CardHeader>
         <CardContent>
-        <Tabs defaultValue="category" className="w-full">
-          <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent">
-            <TabsTrigger value="category" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
-              Category
-            </TabsTrigger>
-            <TabsTrigger value="more" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
-              Buildings
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="markets" className="pt-6">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Location</TableHead>
-                  <TableHead>Country</TableHead>
-                  <TableHead className="text-right">Total Value</TableHead>
-                  <TableHead className="text-right">Properties</TableHead>
-                  <TableHead className="text-right">APY</TableHead>
-                  <TableHead className="text-right">Occupancy</TableHead>
-                  <TableHead className="text-right">Market Cap</TableHead>
-                  <TableHead className="text-right">Growth</TableHead>
-                  <TableHead className="text-right">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {markets.map((market, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
-                        ...market,
-                        type: 'market'
-                      })}>
-                    <TableCell className="font-medium">{market.location}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground">
-                      {market.country}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {market.totalValue}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {market.properties}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm text-success">
-                      {market.avgReturn}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {market.occupancyRate}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {market.marketCap}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm text-success">
-                      {market.growth}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <Button size="sm" className="bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
-                            e.stopPropagation();
-                          }}>
-                        Fund Pool
-                      </Button>
-                    </TableCell>
-                  </TableRow>)}
-              </TableBody>
-            </Table>
-          </TabsContent>
-
-          <TabsContent value="category" className="pt-6">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Location</TableHead>
-                  <TableHead className="text-right">Total Value</TableHead>
-                  <TableHead className="text-right">Properties</TableHead>
-                  <TableHead className="text-right">Avg Return</TableHead>
-                  <TableHead className="text-right">Occupancy</TableHead>
-                  <TableHead className="text-right">Market Cap</TableHead>
-                  <TableHead className="text-right">Growth</TableHead>
-                  <TableHead className="text-right">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {investmentPools.map((pool, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
-                        ...pool,
-                        type: 'pool'
-                      })}>
-                    <TableCell className="font-medium">{pool.name}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {pool.deposits}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {[234, 189, 156, 142, 128, 98, 87, 76][index] || 50}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm text-success">
-                      {pool.supplyAPY}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {pool.utilization}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm">
-                      {pool.deposits}
-                    </TableCell>
-                    <TableCell className="text-right font-mono text-sm text-success">
-                      {pool.supplyAPY}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <Button size="sm" className="bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
-                            e.stopPropagation();
-                          }}>
-                        Fund Pool
-                      </Button>
-                    </TableCell>
-                  </TableRow>)}
-              </TableBody>
-            </Table>
-          </TabsContent>
-
-          <TabsContent value="more" className="pt-6">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Property</TableHead>
-                  <TableHead>Loan Type</TableHead>
-                  <TableHead>Location</TableHead>
-                  <TableHead>Property Type</TableHead>
-                  <TableHead className="text-right">Loan Amount</TableHead>
-                  <TableHead className="text-right">EBITDA</TableHead>
-                  <TableHead className="text-right">APY</TableHead>
-                  <TableHead className="text-right">Term</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="text-right">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {individualBusinesses.map((business, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
-                        ...business,
-                        type: 'individual-business'
-                      })}>
-                    <TableCell className="font-medium">{business.name}</TableCell>
-                    <TableCell>
-                      <Badge variant="secondary" className="text-xs">
-                        {business.investmentType}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{business.investmentAmount}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{business.ebitda}</TableCell>
-                    <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
-                    <TableCell>
-                      <Badge variant={business.status === "Active" ? "default" : "outline"} className={business.status === "Active" ? "bg-success/20 text-success" : "bg-muted text-muted-foreground"}>
-                        {business.status}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <Button size="sm" className="bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => e.stopPropagation()}>
-                        Fund Loan
-                      </Button>
-                    </TableCell>
-                  </TableRow>)}
-              </TableBody>
-            </Table>
-          </TabsContent>
-        </Tabs>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Industry</TableHead>
+                <TableHead className="text-right">Total Value</TableHead>
+                <TableHead className="text-right">Businesses</TableHead>
+                <TableHead className="text-right">APY</TableHead>
+                <TableHead className="text-right">Utilization</TableHead>
+                <TableHead className="text-right">Network</TableHead>
+                <TableHead className="text-right">Action</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {investmentPools.map((pool, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
+                      ...pool,
+                      type: 'pool'
+                    })}>
+                  <TableCell className="font-medium">{pool.name}</TableCell>
+                  <TableCell className="text-right font-mono text-sm">
+                    {pool.deposits}
+                  </TableCell>
+                  <TableCell className="text-right font-mono text-sm">
+                    {[234, 189, 156, 142, 128, 98, 87, 76][index] || 50}
+                  </TableCell>
+                  <TableCell className="text-right font-mono text-sm text-success">
+                    {pool.supplyAPY}
+                  </TableCell>
+                  <TableCell className="text-right font-mono text-sm">
+                    {pool.utilization}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Badge variant="outline" className="text-xs">
+                      {pool.network}
+                    </Badge>
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Button size="sm" className="bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
+                          e.stopPropagation();
+                        }}>
+                      Fund Pool
+                    </Button>
+                  </TableCell>
+                </TableRow>)}
+            </TableBody>
+          </Table>
         </CardContent>
       </Card>
         </TabsContent>
