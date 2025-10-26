@@ -57,9 +57,9 @@ const Dashboard = () => {
     }
   };
   const earnPositions = [{
-    pool: "Construction Industry Bond",
+    pool: "Construction Industry Pool",
     type: "Supply",
-    productType: "Bond",
+    productType: "Pool Investment",
     amount: "$175,500",
     amountNumeric: 175500,
     apy: "7.82%",
@@ -81,52 +81,52 @@ const Dashboard = () => {
       distributionAmount: "$1,164"
     }
   }, {
-    pool: "Restaurant Franchise Loan",
+    pool: "Metro Restaurant Group",
     type: "Supply",
-    productType: "Loan",
+    productType: "Preferred Equity",
     amount: "$150,000",
     amountNumeric: 150000,
-    apy: "11.2%",
-    apyNumeric: 11.2,
+    apy: "11.8%",
+    apyNumeric: 11.8,
     duration: "Flexible",
     startDate: "Jun 15, 2024",
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "RFL-2024-06-001",
+      positionId: "MRG-2024-06-001",
       depositDate: "Jun 15, 2024",
       daysActive: 200,
       principalAmount: "$150,000",
       currentValue: "$157,562",
       yieldEarned: "$7,562",
-      projectedAnnualYield: "$16,800",
+      projectedAnnualYield: "$17,700",
       poolUtilization: "92%",
       nextDistribution: "Jan 15, 2025",
-      distributionAmount: "$1,400"
+      distributionAmount: "$1,475"
     }
   }, {
-    pool: "Logistics Expansion Loan",
+    pool: "Property Management Pool",
     type: "Supply",
-    productType: "Loan",
+    productType: "Pool Investment",
     amount: "$85,000",
     amountNumeric: 85000,
-    apy: "9.95%",
-    apyNumeric: 9.95,
+    apy: "7.45%",
+    apyNumeric: 7.45,
     duration: "Flexible",
     startDate: "Aug 1, 2024",
     status: "Active",
-    network: "Ethereum",
+    network: "Solana",
     details: {
-      positionId: "LEL-2024-08-001",
+      positionId: "PMP-2024-08-001",
       depositDate: "Aug 1, 2024",
       daysActive: 153,
       principalAmount: "$85,000",
       currentValue: "$87,474",
       yieldEarned: "$2,474",
-      projectedAnnualYield: "$8,458",
-      poolUtilization: "88%",
+      projectedAnnualYield: "$6,333",
+      poolUtilization: "52%",
       nextDistribution: "Jan 15, 2025",
-      distributionAmount: "$704"
+      distributionAmount: "$528"
     }
   }];
   return <div className="flex h-screen bg-background scale-90 origin-top-left">
@@ -163,7 +163,7 @@ const Dashboard = () => {
                               </div>
                               <div>
                                 <p className="text-sm text-muted-foreground mb-1">Average APY</p>
-                                <p className="text-2xl font-bold text-green-500">9.66%</p>
+                                <p className="text-2xl font-bold text-green-500">9.02%</p>
                               </div>
                             </div>
 
@@ -186,7 +186,7 @@ const Dashboard = () => {
                                       <TableRow className="hover:bg-muted/50 cursor-pointer">
                                         <TableCell className="font-medium">{position.pool}</TableCell>
                                         <TableCell>
-                                          <Badge variant={position.productType === "Bond" ? "outline" : "secondary"} className={position.productType === "Bond" ? "text-xs" : "bg-primary/20 text-primary text-xs"}>
+                                          <Badge variant="secondary" className="bg-primary/20 text-primary text-[10px] whitespace-nowrap">
                                             {position.productType}
                                           </Badge>
                                         </TableCell>
