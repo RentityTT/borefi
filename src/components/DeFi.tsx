@@ -17,6 +17,8 @@ import laundromatBusinessImg from "@/assets/laundromat-business.jpg";
 import mechanicalBusinessImg from "@/assets/mechanical-business.jpg";
 import electricalBusinessImg from "@/assets/electrical-business.jpg";
 import cleaningBusinessImg from "@/assets/cleaning-business.jpg";
+import storageBusinessImg from "@/assets/storage-business.jpg";
+import carwashBusinessImg from "@/assets/carwash-business.jpg";
 const DeFi = () => {
   const navigate = useNavigate();
   const [selectedPool, setSelectedPool] = useState<any>(null);
@@ -604,6 +606,94 @@ const DeFi = () => {
     documents: [
       { name: "Service Overview", type: "PDF" },
       { name: "Client Contracts", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
+  }, {
+    name: "SecureSpace Storage",
+    investmentType: "Business Equity",
+    location: "Phoenix, AZ",
+    businessType: "Self-Storage Facility",
+    tags: ["B2C", "REAL ESTATE", "PASSIVE INCOME"],
+    investmentAmount: "$2,800,000",
+    raised: "$2,240,000",
+    raisedPercent: 80,
+    investors: 356,
+    daysLeft: 22,
+    ebitda: "$2.3M",
+    apy: "15.2%",
+    term: "Monthly distributions",
+    businessValue: "$9,200,000",
+    status: "Funding",
+    revenue: "$5.8M annually",
+    image: storageBusinessImg,
+    description: "Climate-controlled self-storage facilities with 850+ units across Phoenix metro area featuring 24/7 security and automated management systems",
+    minInvestment: "$5,000",
+    maxInvestment: "$250,000",
+    deadline: "January 20, 2026",
+    securityType: "Tokenized Preferred Equity",
+    valuationCap: "$9.2M",
+    highlights: [
+      "3 facilities totaling 850 units with 94% occupancy rate sustained over past 2 years",
+      "Climate-controlled premium units command 35% higher rates than standard storage",
+      "Automated gate access and payment system reducing staffing costs by $180K annually",
+      "Located in high-growth Phoenix suburbs with low competition and strong demographics",
+      "Expansion plan approved for 2 additional facilities in adjacent markets with pre-approved financing"
+    ],
+    problem: {
+      title: "Storage demand is surging but supply can't keep pace with growth",
+      stats: [
+        { label: "$48B Storage Industry", description: "growing at 7% annually as urbanization increases storage needs" },
+        { label: "92% National Occupancy", description: "indicating severe undersupply in key markets like Phoenix" },
+        { label: "Land Scarcity", description: "limited availability of zoned land for new facilities driving premium valuations" }
+      ]
+    },
+    documents: [
+      { name: "Facility Overview", type: "PDF" },
+      { name: "Occupancy Reports", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
+  }, {
+    name: "Sparkle Express Car Wash",
+    investmentType: "Business Equity",
+    location: "Dallas, TX",
+    businessType: "Automated Car Wash",
+    tags: ["B2C", "AUTOMOTIVE", "SUBSCRIPTION MODEL"],
+    investmentAmount: "$2,100,000",
+    raised: "$1,470,000",
+    raisedPercent: 70,
+    investors: 267,
+    daysLeft: 47,
+    ebitda: "$1.6M",
+    apy: "14.8%",
+    term: "Monthly distributions",
+    businessValue: "$6,400,000",
+    status: "Funding",
+    revenue: "$4.9M annually",
+    image: carwashBusinessImg,
+    description: "Express tunnel car wash chain with 4 locations offering unlimited monthly memberships and eco-friendly washing technology",
+    minInvestment: "$2,500",
+    maxInvestment: "$175,000",
+    deadline: "March 10, 2026",
+    securityType: "Convertible Equity Token",
+    valuationCap: "$6.4M",
+    highlights: [
+      "4 high-traffic locations processing 180,000+ washes annually with 3-minute tunnel time",
+      "Unlimited membership model with 6,500+ subscribers providing 78% recurring revenue",
+      "Water reclamation system reducing water costs 65% while meeting environmental standards",
+      "Strategic locations near major highways with average 45,000 daily vehicle traffic count",
+      "Mobile app with 12,000+ users enabling subscription management and contactless payment"
+    ],
+    problem: {
+      title: "Car wash industry consolidating around subscription model leaders",
+      stats: [
+        { label: "$15B Car Wash Market", description: "growing as consumers prefer subscription convenience over traditional pay-per-wash" },
+        { label: "3.2x Higher LTV", description: "subscription members generate compared to pay-per-wash customers" },
+        { label: "Prime Locations", description: "identified for 3 additional sites with combined traffic of 120K vehicles daily" }
+      ]
+    },
+    documents: [
+      { name: "Business Model", type: "PDF" },
+      { name: "Membership Analytics", type: "PDF" },
       { name: "SAFE Agreement", type: "PDF" }
     ]
   }];
