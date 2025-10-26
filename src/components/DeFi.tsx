@@ -24,7 +24,6 @@ import greenfieldShoppingImg from "@/assets/greenfield-shopping.jpg";
 import greenfieldBondImg from "@/assets/greenfield-bond.jpg";
 const DeFi = () => {
   const navigate = useNavigate();
-  const [activeMode, setActiveMode] = useState<"bonds" | "loans">("bonds");
   const [selectedPool, setSelectedPool] = useState<any>(null);
   // User's businesses with location and sector information
   const userBusinesses = [{
@@ -87,157 +86,75 @@ const DeFi = () => {
     deposits: 5247830456,
     loans: 3192045789
   }];
-  const bondPools = [{
-    name: "Construction Industry Bond",
+  const investmentPools = [{
+    name: "Construction Industry",
     deposits: "$845,678,901",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "7.82%",
-    borrowAPY: "5.45%",
     network: "Solana",
     utilization: "65%"
   }, {
-    name: "Restaurant Group Bond",
+    name: "Restaurant Group",
     deposits: "$592,345,123",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
     supplyAPY: "8.12%",
-    borrowAPY: "6.05%",
     network: "Solana",
     utilization: "58%"
   }, {
-    name: "Property Management Bond",
+    name: "Property Management",
     deposits: "$478,234,567",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT", "DAI"],
     supplyAPY: "7.45%",
-    borrowAPY: "5.15%",
     network: "Solana",
     utilization: "52%"
   }, {
-    name: "Mechanical Contractors Bond",
+    name: "Mechanical Contractors",
     deposits: "$367,890,234",
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "7.95%",
-    borrowAPY: "5.75%",
     network: "Ethereum",
     utilization: "68%"
   }, {
-    name: "Laundromat Chain Bond",
+    name: "Laundromat Chain",
     deposits: "$345,123,678",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "8.35%",
-    borrowAPY: "6.25%",
     network: "Solana",
     utilization: "62%"
   }, {
-    name: "Electrical Services Bond",
+    name: "Electrical Services",
     deposits: "$289,456,890",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
     supplyAPY: "7.65%",
-    borrowAPY: "5.35%",
     network: "Solana",
     utilization: "55%"
   }, {
-    name: "Logistics Fleet Bond",
+    name: "Logistics Fleet",
     deposits: "$212,567,234",
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "7.28%",
-    borrowAPY: "4.95%",
     network: "Arbitrum",
     utilization: "48%"
   }, {
-    name: "HVAC Services Bond",
+    name: "HVAC Services",
     deposits: "$167,890,123",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
     supplyAPY: "7.15%",
-    borrowAPY: "4.85%",
     network: "Solana",
     utilization: "45%"
   }];
-  const loanPools = [{
-    name: "Construction Expansion Loan",
-    deposits: "$1,245,678,901",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC", "USDT"],
-    supplyAPY: "9.82%",
-    borrowAPY: "7.45%",
-    network: "Solana",
-    utilization: "85%"
-  }, {
-    name: "Restaurant Franchise Loan",
-    deposits: "$892,345,123",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC", "DAI"],
-    supplyAPY: "10.12%",
-    borrowAPY: "8.05%",
-    network: "Solana",
-    utilization: "78%"
-  }, {
-    name: "Property Management Growth Loan",
-    deposits: "$678,234,567",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC", "USDT", "DAI"],
-    supplyAPY: "9.45%",
-    borrowAPY: "7.15%",
-    network: "Solana",
-    utilization: "72%"
-  }, {
-    name: "Mechanical Services Loan",
-    deposits: "$567,890,234",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC"],
-    supplyAPY: "9.95%",
-    borrowAPY: "7.75%",
-    network: "Ethereum",
-    utilization: "88%"
-  }, {
-    name: "Laundromat Network Loan",
-    deposits: "$445,123,678",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC", "USDT"],
-    supplyAPY: "10.35%",
-    borrowAPY: "8.25%",
-    network: "Solana",
-    utilization: "82%"
-  }, {
-    name: "Electrical Contractor Loan",
-    deposits: "$389,456,890",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC", "DAI"],
-    supplyAPY: "9.65%",
-    borrowAPY: "7.35%",
-    network: "Solana",
-    utilization: "75%"
-  }, {
-    name: "Logistics Expansion Loan",
-    deposits: "$312,567,234",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC"],
-    supplyAPY: "9.28%",
-    borrowAPY: "6.95%",
-    network: "Arbitrum",
-    utilization: "68%"
-  }, {
-    name: "HVAC Fleet Loan",
-    deposits: "$267,890,123",
-    curator: "BORE.FI Protocol",
-    collateral: ["USDC", "USDT"],
-    supplyAPY: "9.15%",
-    borrowAPY: "6.85%",
-    network: "Solana",
-    utilization: "65%"
-  }];
-  const pools = activeMode === "bonds" ? bondPools : loanPools;
   const earnPositions = [{
-    pool: "Construction Industry Bond",
+    pool: "Construction Industry",
     type: "Supply",
-    productType: "Bond",
+    productType: "Investment",
     amount: "$175,500",
     amountNumeric: 175500,
     apy: "7.82%",
@@ -259,9 +176,9 @@ const DeFi = () => {
       distributionAmount: "$1,164"
     }
   }, {
-    pool: "Restaurant Franchise Loan",
+    pool: "Restaurant Franchise",
     type: "Supply",
-    productType: "Loan",
+    productType: "Investment",
     amount: "$150,000",
     amountNumeric: 150000,
     apy: "11.2%",
@@ -283,9 +200,9 @@ const DeFi = () => {
       distributionAmount: "$1,400"
     }
   }, {
-    pool: "Logistics Expansion Loan",
+    pool: "Logistics Expansion",
     type: "Supply",
-    productType: "Loan",
+    productType: "Investment",
     amount: "$85,000",
     amountNumeric: 85000,
     apy: "9.95%",
@@ -388,88 +305,88 @@ const DeFi = () => {
   }];
   const individualBusinesses = [{
     name: "Century Construction Co.",
-    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Expansion Loan",
+    investmentType: "Business Equity",
     location: "Los Angeles, CA",
     businessType: "Commercial Construction",
-    loanAmount: "$12,500,000",
+    investmentAmount: "$12,500,000",
     ltv: "65%",
-    apy: activeMode === "bonds" ? "12.5%" : "15.2%",
-    term: activeMode === "bonds" ? "Monthly repayment" : "3 years",
+    apy: "12.5%",
+    term: "Monthly distributions",
     businessValue: "$45,000,000",
     status: "Active",
     revenue: "$8.2M annually",
-    image: activeMode === "bonds" ? centuryCityBondImg : centuryCityTowerImg,
-    description: activeMode === "bonds" ? "Invest in construction company bonds backed by project cashflows and monthly contract payments" : "Established commercial construction firm with government and corporate contracts"
+    image: centuryCityTowerImg,
+    description: "Invest in established construction company backed by project cashflows and monthly contract payments from government and corporate clients"
   }, {
     name: "Metro Restaurant Group",
-    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Franchise Loan",
+    investmentType: "Business Equity",
     location: "Seattle, WA",
     businessType: "Restaurant Chain",
-    loanAmount: "$8,750,000",
+    investmentAmount: "$8,750,000",
     ltv: "55%",
-    apy: activeMode === "bonds" ? "11.8%" : "13.5%",
-    term: activeMode === "bonds" ? "Monthly repayment" : "5 years",
+    apy: "11.8%",
+    term: "Monthly distributions",
     businessValue: "$28,000,000",
     status: "Active",
     revenue: "$6.5M annually",
-    image: activeMode === "bonds" ? skylineBondImg : skylineApartmentsImg,
-    description: activeMode === "bonds" ? "Fund restaurant operations with monthly returns from steady revenue streams across multiple locations" : "Multi-location restaurant group with proven track record and loyal customer base"
+    image: skylineApartmentsImg,
+    description: "Multi-location restaurant group with proven track record and steady revenue streams across all locations"
   }, {
     name: "Coastal Property Management",
-    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Growth Loan",
+    investmentType: "Business Equity",
     location: "Miami, FL",
     businessType: "Property Management",
-    loanAmount: "$15,000,000",
+    investmentAmount: "$15,000,000",
     ltv: "70%",
-    apy: activeMode === "bonds" ? "13.2%" : "16.8%",
-    term: activeMode === "bonds" ? "Monthly repayment" : "2 years",
+    apy: "13.2%",
+    term: "Monthly distributions",
     businessValue: "$52,000,000",
     status: "Funding",
     revenue: "$12.8M annually",
-    image: activeMode === "bonds" ? marinaBayBondImg : marinaBayComplexImg,
-    description: activeMode === "bonds" ? "Provide capital for property management firm with returns from consistent management fee income" : "Large-scale property management company managing 2,000+ units across South Florida"
+    image: marinaBayComplexImg,
+    description: "Large-scale property management company with consistent management fee income from 2,000+ units"
   }, {
     name: "SpinCycle Laundromats",
-    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Network Expansion Loan",
+    investmentType: "Business Equity",
     location: "Austin, TX",
     businessType: "Laundromat Chain",
-    loanAmount: "$20,000,000",
+    investmentAmount: "$20,000,000",
     ltv: "75%",
-    apy: activeMode === "bonds" ? "14.5%" : "18.2%",
-    term: activeMode === "bonds" ? "Monthly repayment" : "18 months",
+    apy: "14.5%",
+    term: "Monthly distributions",
     businessValue: "$68,000,000",
     status: "Funding",
     revenue: "N/A",
-    image: activeMode === "bonds" ? techParkBondImg : techParkPlazaImg,
-    description: activeMode === "bonds" ? "Back laundromat operations with monthly returns from steady, predictable customer usage" : "Growing laundromat network with modern equipment and subscription model"
+    image: techParkPlazaImg,
+    description: "Growing laundromat network with modern equipment and subscription model providing steady, predictable cashflows"
   }, {
     name: "Precision Mechanical Services",
-    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Equipment Loan",
+    investmentType: "Business Equity",
     location: "Boston, MA",
     businessType: "Mechanical Contractor",
-    loanAmount: "$9,500,000",
+    investmentAmount: "$9,500,000",
     ltv: "60%",
-    apy: activeMode === "bonds" ? "12.8%" : "15.8%",
-    term: activeMode === "bonds" ? "Monthly repayment" : "4 years",
+    apy: "12.8%",
+    term: "Monthly distributions",
     businessValue: "$38,000,000",
     status: "Active",
     revenue: "$7.4M annually",
-    image: activeMode === "bonds" ? harborViewBondImg : harborViewResidenceImg,
-    description: activeMode === "bonds" ? "Finance mechanical services with monthly repayment from long-term commercial contracts" : "HVAC and mechanical contractor serving commercial and industrial clients"
+    image: harborViewResidenceImg,
+    description: "HVAC and mechanical contractor with long-term commercial contracts serving industrial clients"
   }, {
     name: "PowerLine Electrical",
-    loanType: activeMode === "bonds" ? "Cashflow-Backed Bond" : "Fleet Expansion Loan",
+    investmentType: "Business Equity",
     location: "Denver, CO",
     businessType: "Electrical Contractor",
-    loanAmount: "$11,200,000",
+    investmentAmount: "$11,200,000",
     ltv: "58%",
-    apy: activeMode === "bonds" ? "11.5%" : "13.2%",
-    term: activeMode === "bonds" ? "Monthly repayment" : "7 years",
+    apy: "11.5%",
+    term: "Monthly distributions",
     businessValue: "$32,000,000",
     status: "Active",
     revenue: "$5.8M annually",
-    image: activeMode === "bonds" ? greenfieldBondImg : greenfieldShoppingImg,
-    description: activeMode === "bonds" ? "Support electrical contractor bonds, receive consistent monthly returns from project payments" : "Licensed electrical contractor specializing in commercial and residential projects"
+    image: greenfieldShoppingImg,
+    description: "Licensed electrical contractor with consistent monthly returns from commercial and residential projects"
   }];
   const formatCurrency = (value: number) => {
     if (value >= 1000000000) {
@@ -489,17 +406,6 @@ const DeFi = () => {
         </div>
       </div>
 
-      {/* Bonds/Loans Toggle */}
-      <div className="flex items-center py-4">
-        <div className="flex items-center gap-2 bg-card border border-border rounded-full px-2 py-2">
-          <button className={cn("px-6 py-2 rounded-full font-medium transition-all text-sm", activeMode === "bonds" ? "bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white" : "text-foreground hover:text-foreground/80")} onClick={() => setActiveMode("bonds")}>
-            Bonds
-          </button>
-          <button className={cn("px-6 py-2 rounded-full font-medium transition-all text-sm", activeMode === "loans" ? "bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white" : "text-foreground hover:text-foreground/80")} onClick={() => setActiveMode("loans")}>
-            Loans
-          </button>
-        </div>
-      </div>
 
       <Tabs defaultValue="earn" className="w-full">
         
@@ -511,20 +417,20 @@ const DeFi = () => {
         <div className="grid grid-cols-3 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <p className="text-sm">Total Deposits</p>
+              <p className="text-sm">Total Investments</p>
               <Info className="h-4 w-4" />
             </div>
-            <p className="text-4xl font-bold mb-1">{activeMode === "bonds" ? "$3.29B" : "$5.25B"}</p>
-            <p className="text-sm">{activeMode === "bonds" ? "3.29B USDC" : "5.25B USDC"}</p>
+            <p className="text-4xl font-bold mb-1">$3.29B</p>
+            <p className="text-sm">3.29B USDC</p>
           </div>
           
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <p className="text-sm">Active {activeMode === "bonds" ? "Bonds" : "Loans"}</p>
+              <p className="text-sm">Active Businesses</p>
               <Info className="h-4 w-4" />
             </div>
-            <p className="text-4xl font-bold mb-1">{activeMode === "bonds" ? "$1.85B" : "$3.19B"}</p>
-            <p className="text-sm">{activeMode === "bonds" ? "1.85B USDC" : "3.19B USDC"}</p>
+            <p className="text-4xl font-bold mb-1">$1.85B</p>
+            <p className="text-sm">1.85B USDC</p>
           </div>
           
           <div>
@@ -532,7 +438,7 @@ const DeFi = () => {
               <p className="text-sm">Estimated Yield</p>
               <Info className="h-4 w-4" />
             </div>
-            <p className="text-4xl font-bold">{activeMode === "bonds" ? "7.5%" : "10.5%"}</p>
+            <p className="text-4xl font-bold">7.5%</p>
             <p className="text-sm">Annual APY</p>
           </div>
         </div>
@@ -541,7 +447,7 @@ const DeFi = () => {
       {/* Available Businesses for Investment */}
       <Card>
         <CardHeader>
-          <CardTitle>{activeMode === "bonds" ? "Cashflow-Backed Bonds" : "Businesses"}</CardTitle>
+          <CardTitle>Investment Opportunities</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -570,7 +476,7 @@ const DeFi = () => {
                   
                   <div className="flex items-center gap-2">
                     <Badge variant="secondary" className="text-xs">
-                      {business.loanType}
+                      {business.investmentType}
                     </Badge>
                     {business.revenue !== "N/A" && <span className="text-xs text-muted-foreground">
                         {business.revenue}
@@ -582,7 +488,7 @@ const DeFi = () => {
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">Investment Amount</p>
-                      <p className="font-semibold text-sm">{business.loanAmount}</p>
+                      <p className="font-semibold text-sm">{business.investmentAmount}</p>
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">APY</p>
@@ -640,7 +546,7 @@ const DeFi = () => {
                     <TableRow className="hover:bg-muted/50 cursor-pointer">
                       <TableCell className="font-medium">{position.pool}</TableCell>
                       <TableCell>
-                        <Badge variant={position.productType === "Bond" ? "outline" : "secondary"} className={position.productType === "Bond" ? "text-xs" : "bg-primary/20 text-primary text-xs"}>
+                        <Badge variant="secondary" className="bg-primary/20 text-primary text-xs">
                           {position.productType}
                         </Badge>
                       </TableCell>
@@ -678,7 +584,7 @@ const DeFi = () => {
                       <div className="bg-primary-gradient text-primary-foreground p-6 rounded-lg">
                         <h3 className="text-2xl font-bold mb-2">{position.pool}</h3>
                         <Badge variant="outline" className="bg-white/20 text-white border-white/30">
-                          {position.productType} Position
+                          {position.productType}
                         </Badge>
                         <p className="text-sm mt-2 opacity-90">Position ID: {position.details.positionId}</p>
                       </div>
@@ -960,11 +866,8 @@ const DeFi = () => {
           <CardTitle>Pools</CardTitle>
         </CardHeader>
         <CardContent>
-        <Tabs defaultValue={activeMode === "bonds" ? "markets" : "category"} className="w-full">
+        <Tabs defaultValue="category" className="w-full">
           <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent">
-            {activeMode === "bonds" && <TabsTrigger value="markets" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
-                Markets
-              </TabsTrigger>}
             <TabsTrigger value="category" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent">
               Category
             </TabsTrigger>
@@ -1042,7 +945,7 @@ const DeFi = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {pools.map((pool, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
+                {investmentPools.map((pool, index) => <TableRow key={index} className="hover:bg-muted/50 cursor-pointer" onClick={() => setSelectedPool({
                         ...pool,
                         type: 'pool'
                       })}>
@@ -1063,7 +966,7 @@ const DeFi = () => {
                       {pool.deposits}
                     </TableCell>
                     <TableCell className="text-right font-mono text-sm text-success">
-                      {pool.borrowAPY}
+                      {pool.supplyAPY}
                     </TableCell>
                     <TableCell className="text-right">
                       <Button size="sm" className="bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
@@ -1100,13 +1003,13 @@ const DeFi = () => {
                       })}>
                     <TableCell className="font-medium">{business.name}</TableCell>
                     <TableCell>
-                      <Badge variant={business.loanType === "Expansion Loan" ? "secondary" : "outline"} className="text-xs">
-                        {business.loanType}
+                      <Badge variant="secondary" className="text-xs">
+                        {business.investmentType}
                       </Badge>
                     </TableCell>
                     <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
                     <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
-                    <TableCell className="text-right font-mono text-sm">{business.loanAmount}</TableCell>
+                    <TableCell className="text-right font-mono text-sm">{business.investmentAmount}</TableCell>
                     <TableCell className="text-right font-mono text-sm">{business.ltv}</TableCell>
                     <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
                     <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
@@ -1486,7 +1389,7 @@ const DeFi = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {pools.filter(pool => userSectors.includes(pool.name)).map((pool, index) => <TableRow key={index} className="hover:bg-muted/50">
+                    {investmentPools.filter(pool => userSectors.includes(pool.name)).map((pool, index) => <TableRow key={index} className="hover:bg-muted/50">
                         <TableCell className="font-medium">{pool.name}</TableCell>
                         <TableCell className="text-right font-mono text-sm text-success">
                           {pool.deposits}
@@ -1502,7 +1405,7 @@ const DeFi = () => {
                           </div>
                         </TableCell>
                         <TableCell className="text-right font-mono text-sm">
-                          {pool.borrowAPY}
+                          {pool.supplyAPY}
                         </TableCell>
                         <TableCell>
                           <Badge variant="secondary" className="text-xs">
@@ -1540,13 +1443,13 @@ const DeFi = () => {
                           })}>
                         <TableCell className="font-medium">{business.name}</TableCell>
                         <TableCell>
-                          <Badge variant={business.loanType === "Expansion Loan" ? "secondary" : "outline"} className="text-xs">
-                            {business.loanType}
+                          <Badge variant="secondary" className="text-xs">
+                            {business.investmentType}
                           </Badge>
                         </TableCell>
                         <TableCell className="text-sm text-muted-foreground">{business.location}</TableCell>
                         <TableCell className="text-sm text-muted-foreground">{business.businessType}</TableCell>
-                        <TableCell className="text-right font-mono text-sm">{business.loanAmount}</TableCell>
+                        <TableCell className="text-right font-mono text-sm">{business.investmentAmount}</TableCell>
                         <TableCell className="text-right font-mono text-sm">{business.ltv}</TableCell>
                         <TableCell className="text-right font-mono text-sm text-success">{business.apy}</TableCell>
                         <TableCell className="text-right font-mono text-sm">{business.term}</TableCell>
