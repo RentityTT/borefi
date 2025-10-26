@@ -302,35 +302,100 @@ const DeFi = () => {
     investmentType: "Business Equity",
     location: "Los Angeles, CA",
     businessType: "Commercial Construction",
+    tags: ["B2B", "CONSTRUCTION", "INFRASTRUCTURE"],
     investmentAmount: "$2,500,000",
+    raised: "$1,850,000",
+    raisedPercent: 74,
+    investors: 247,
+    daysLeft: 42,
     ebitda: "$3.2M",
     apy: "12.5%",
     term: "Monthly distributions",
     businessValue: "$45,000,000",
-    status: "Active",
+    status: "Funding",
     revenue: "$8.2M annually",
     image: constructionBusinessImg,
-    description: "Invest in established construction company backed by project cashflows and monthly contract payments from government and corporate clients"
+    description: "Established commercial construction company specializing in government and corporate infrastructure projects across Southern California",
+    minInvestment: "$5,000",
+    maxInvestment: "$250,000",
+    deadline: "January 15, 2026",
+    securityType: "SAFE",
+    valuationCap: "$45M",
+    highlights: [
+      "Established relationships with 50+ government agencies and Fortune 500 companies",
+      "89% project success rate with on-time, on-budget delivery over 15 years",
+      "Secured $12M in new contracts for 2026, 45% increase from previous year",
+      "Licensed in 5 states with bonding capacity of $100M for large-scale projects",
+      "Led by CEO with 25+ years in commercial construction and infrastructure development"
+    ],
+    problem: {
+      title: "Infrastructure spending is accelerating but contractors lack capital",
+      stats: [
+        { label: "$1.2T Infrastructure Bill", description: "creating unprecedented demand for qualified contractors" },
+        { label: "$850M Project Backlog", description: "waiting for working capital to execute contracts" },
+        { label: "#1 Growth Constraint", description: "access to capital cited by 78% of construction firms" }
+      ]
+    },
+    documents: [
+      { name: "Business Overview", type: "PDF" },
+      { name: "Financial Statements", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
   }, {
     name: "Metro Restaurant Group",
     investmentType: "Business Equity",
     location: "Seattle, WA",
     businessType: "Restaurant Chain",
+    tags: ["B2C", "FOOD & BEVERAGE", "MULTI-LOCATION"],
     investmentAmount: "$1,750,000",
+    raised: "$1,225,000",
+    raisedPercent: 70,
+    investors: 318,
+    daysLeft: 28,
     ebitda: "$2.1M",
     apy: "11.8%",
     term: "Monthly distributions",
     businessValue: "$28,000,000",
-    status: "Active",
+    status: "Funding",
     revenue: "$6.5M annually",
     image: restaurantBusinessImg,
-    description: "Multi-location restaurant group with proven track record and steady revenue streams across all locations"
+    description: "Fast-casual restaurant chain with 8 locations serving farm-to-table cuisine with proven unit economics and expansion plans",
+    minInvestment: "$2,500",
+    maxInvestment: "$150,000",
+    deadline: "February 1, 2026",
+    securityType: "SAFE",
+    valuationCap: "$28M",
+    highlights: [
+      "8 profitable locations across Seattle metro area with average unit revenue of $812K",
+      "Proprietary supply chain relationships with 30+ local farms for fresh ingredients",
+      "Strong brand loyalty with 45,000+ members in rewards program and 4.7-star rating",
+      "Proven expansion model ready to scale to 15 locations by 2027",
+      "Industry-leading margins at 22% EBITDA driven by efficient operations"
+    ],
+    problem: {
+      title: "Fast-casual dining market is booming but expansion needs capital",
+      stats: [
+        { label: "68% of Consumers", description: "prefer fast-casual over traditional dining post-pandemic" },
+        { label: "$125B Market Size", description: "growing at 11% annually with strong tailwinds" },
+        { label: "Prime Locations", description: "identified for next 7 locations but require upfront capital" }
+      ]
+    },
+    documents: [
+      { name: "Pitch Deck", type: "PDF" },
+      { name: "Unit Economics", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
   }, {
     name: "Coastal Property Management",
     investmentType: "Business Equity",
     location: "Miami, FL",
     businessType: "Property Management",
+    tags: ["B2B", "REAL ESTATE", "RECURRING REVENUE"],
     investmentAmount: "$3,000,000",
+    raised: "$2,550,000",
+    raisedPercent: 85,
+    investors: 412,
+    daysLeft: 15,
     ebitda: "$4.5M",
     apy: "13.2%",
     term: "Monthly distributions",
@@ -338,49 +403,164 @@ const DeFi = () => {
     status: "Funding",
     revenue: "$12.8M annually",
     image: propertyManagementBusinessImg,
-    description: "Large-scale property management company with consistent management fee income from 2,000+ units"
+    description: "Full-service property management company managing 2,000+ residential and commercial units with technology-driven operations",
+    minInvestment: "$10,000",
+    maxInvestment: "$500,000",
+    deadline: "December 30, 2025",
+    securityType: "SAFE",
+    valuationCap: "$52M",
+    highlights: [
+      "Managing 2,000+ units across Miami-Dade and Broward counties with 98% retention rate",
+      "Technology platform automates 70% of operations reducing costs by $2M annually",
+      "Contracted to onboard 500 new units in Q1 2026, 25% growth in portfolio",
+      "Diversified revenue streams: management fees, leasing commissions, maintenance markups",
+      "Founded by team with 40+ combined years in South Florida real estate"
+    ],
+    problem: {
+      title: "Property management market is consolidating and tech is key",
+      stats: [
+        { label: "42% of Property Owners", description: "dissatisfied with current management seeking better service" },
+        { label: "$88B Industry", description: "transitioning to technology-driven operators with scale" },
+        { label: "Growth Capital Needed", description: "to acquire competitors and invest in technology platform" }
+      ]
+    },
+    documents: [
+      { name: "Investment Overview", type: "PDF" },
+      { name: "Technology Platform Demo", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
   }, {
     name: "SpinCycle Laundromats",
     investmentType: "Business Equity",
     location: "Austin, TX",
     businessType: "Laundromat Chain",
+    tags: ["B2C", "CONSUMER SERVICES", "SUBSCRIPTION MODEL"],
     investmentAmount: "$2,200,000",
+    raised: "$1,760,000",
+    raisedPercent: 80,
+    investors: 289,
+    daysLeft: 35,
     ebitda: "$3.8M",
     apy: "14.5%",
     term: "Monthly distributions",
     businessValue: "$68,000,000",
     status: "Funding",
-    revenue: "N/A",
+    revenue: "$9.2M annually",
     image: laundromatBusinessImg,
-    description: "Growing laundromat network with modern equipment and subscription model providing steady, predictable cashflows"
+    description: "Modern laundromat chain with app-based reservation system and subscription model serving urban markets in Texas",
+    minInvestment: "$1,000",
+    maxInvestment: "$100,000",
+    deadline: "February 20, 2026",
+    securityType: "SAFE",
+    valuationCap: "$68M",
+    highlights: [
+      "15 locations across Austin, Dallas, and Houston with modern equipment and amenities",
+      "Subscription model with 8,000+ monthly members generating predictable recurring revenue",
+      "Mobile app with 25,000+ downloads enabling reservations and cashless payments",
+      "Industry-leading unit economics with 55% gross margins and $612K average revenue per location",
+      "Expansion pipeline of 10 locations identified in high-density urban areas"
+    ],
+    problem: {
+      title: "Traditional laundromats are outdated, modern consumers want convenience",
+      stats: [
+        { label: "85% of Urban Dwellers", description: "don't have in-unit laundry, creating massive addressable market" },
+        { label: "$5B Laundromat Market", description: "dominated by aging operators not meeting modern expectations" },
+        { label: "3x Higher Retention", description: "subscription model vs. traditional pay-per-use laundromats" }
+      ]
+    },
+    documents: [
+      { name: "Business Model", type: "PDF" },
+      { name: "Expansion Plan", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
   }, {
     name: "Precision Mechanical Services",
     investmentType: "Business Equity",
     location: "Boston, MA",
     businessType: "Mechanical Contractor",
+    tags: ["B2B", "HVAC", "MAINTENANCE CONTRACTS"],
     investmentAmount: "$1,900,000",
+    raised: "$1,330,000",
+    raisedPercent: 70,
+    investors: 195,
+    daysLeft: 51,
     ebitda: "$2.8M",
     apy: "12.8%",
     term: "Monthly distributions",
     businessValue: "$38,000,000",
-    status: "Active",
+    status: "Funding",
     revenue: "$7.4M annually",
     image: mechanicalBusinessImg,
-    description: "HVAC and mechanical contractor with long-term commercial contracts serving industrial clients"
+    description: "Commercial HVAC and mechanical contractor serving industrial facilities with long-term maintenance contracts and predictable revenue",
+    minInvestment: "$5,000",
+    maxInvestment: "$200,000",
+    deadline: "March 15, 2026",
+    securityType: "SAFE",
+    valuationCap: "$38M",
+    highlights: [
+      "Long-term contracts with 150+ commercial and industrial clients averaging 7-year relationships",
+      "Recurring maintenance revenue represents 65% of total revenue, providing stability",
+      "Licensed and certified for all major HVAC systems with 35 skilled technicians",
+      "Strong safety record with zero lost-time accidents in past 3 years",
+      "Led by master technician with 30 years experience and relationships with major clients"
+    ],
+    problem: {
+      title: "HVAC maintenance is critical but contractors lack working capital",
+      stats: [
+        { label: "92% of Commercial Buildings", description: "require ongoing HVAC maintenance creating consistent demand" },
+        { label: "$29B Services Market", description: "growing as aging infrastructure requires more frequent repairs" },
+        { label: "Equipment Investment", description: "needed to handle larger commercial projects and expand service area" }
+      ]
+    },
+    documents: [
+      { name: "Service Overview", type: "PDF" },
+      { name: "Client Contracts", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
   }, {
     name: "PowerLine Electrical",
     investmentType: "Business Equity",
     location: "Denver, CO",
     businessType: "Electrical Contractor",
+    tags: ["B2B", "ELECTRICAL", "COMMERCIAL PROJECTS"],
     investmentAmount: "$1,500,000",
+    raised: "$1,050,000",
+    raisedPercent: 70,
+    investors: 167,
+    daysLeft: 38,
     ebitda: "$2.2M",
     apy: "11.5%",
     term: "Monthly distributions",
     businessValue: "$32,000,000",
-    status: "Active",
+    status: "Funding",
     revenue: "$5.8M annually",
     image: electricalBusinessImg,
-    description: "Licensed electrical contractor with consistent monthly returns from commercial and residential projects"
+    description: "Licensed electrical contractor specializing in commercial and residential projects with strong reputation across Colorado markets",
+    minInvestment: "$2,500",
+    maxInvestment: "$150,000",
+    deadline: "February 28, 2026",
+    securityType: "SAFE",
+    valuationCap: "$32M",
+    highlights: [
+      "Master electrician license with 45 certified electricians on staff",
+      "Established relationships with 25+ general contractors providing steady project pipeline",
+      "Specialization in solar panel installation, fastest growing segment of business",
+      "Commercial insurance and bonding supporting projects up to $5M",
+      "Family-owned business with 20-year track record and strong community reputation"
+    ],
+    problem: {
+      title: "Electrical services demand is surging but contractors need capital",
+      stats: [
+        { label: "Solar Installation Boom", description: "Colorado leading US in commercial solar adoption, 45% YoY growth" },
+        { label: "$78B Electrical Services", description: "market expanding with construction and renewable energy growth" },
+        { label: "Equipment & Inventory", description: "upfront capital needed to take on larger commercial projects" }
+      ]
+    },
+    documents: [
+      { name: "Company Profile", type: "PDF" },
+      { name: "Project Portfolio", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
   }];
   const formatCurrency = (value: number) => {
     if (value >= 1000000000) {
@@ -439,81 +619,197 @@ const DeFi = () => {
       </div>
 
       {/* Available Businesses for Investment */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Investment Opportunities</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {individualBusinesses.map((business, index) => <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group" onClick={() => setSelectedPool({
-                  ...business,
-                  type: 'individual-business'
-                })}>
-                <div className="relative h-48 overflow-hidden">
-                  <img src={business.image} alt={business.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                  <div className="absolute top-3 right-3">
-                    <Badge variant={business.status === "Active" ? "default" : "outline"} className={business.status === "Active" ? "bg-success/90 text-white" : "bg-muted/90 text-muted-foreground"}>
-                      {business.status}
-                    </Badge>
-                  </div>
-                </div>
-                <CardContent className="p-4 space-y-3">
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">{business.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">{business.description}</p>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span>{business.location}</span>
-                      <span>•</span>
-                      <span>{business.businessType}</span>
+      <div className="space-y-8">
+        {individualBusinesses.map((business, index) => (
+          <Card key={index} className="overflow-hidden">
+            <CardContent className="p-0">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+                {/* Left Column - Main Content */}
+                <div className="lg:col-span-2 space-y-6">
+                  {/* Header */}
+                  <div className="space-y-3">
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-2">
+                        <h2 className="text-2xl font-bold">{business.name}</h2>
+                        <p className="text-muted-foreground">{business.description}</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {business.tags.map((tag, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="text-xs">
-                      {business.investmentType}
-                    </Badge>
-                    {business.revenue !== "N/A" && <span className="text-xs text-muted-foreground">
-                        {business.revenue}
-                      </span>}
+
+                  {/* Featured Image */}
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <img 
+                      src={business.image} 
+                      alt={business.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Tabs for different sections */}
+                  <Tabs defaultValue="pitch" className="w-full">
+                    <TabsList className="grid w-full grid-cols-3">
+                      <TabsTrigger value="pitch">Pitch</TabsTrigger>
+                      <TabsTrigger value="highlights">Highlights</TabsTrigger>
+                      <TabsTrigger value="problem">Problem</TabsTrigger>
+                    </TabsList>
+                    
+                    <TabsContent value="pitch" className="space-y-4 mt-4">
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <p className="text-sm text-muted-foreground">Location</p>
+                            <p className="font-semibold">{business.location}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Business Type</p>
+                            <p className="font-semibold">{business.businessType}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Annual Revenue</p>
+                            <p className="font-semibold">{business.revenue}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">EBITDA</p>
+                            <p className="font-semibold">{business.ebitda}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </TabsContent>
+                    
+                    <TabsContent value="highlights" className="space-y-4 mt-4">
+                      <h3 className="font-semibold text-lg">Highlights</h3>
+                      <ul className="space-y-3">
+                        {business.highlights.map((highlight, i) => (
+                          <li key={i} className="flex gap-3">
+                            <span className="text-primary mt-1">•</span>
+                            <span className="text-sm text-muted-foreground">{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </TabsContent>
+                    
+                    <TabsContent value="problem" className="space-y-4 mt-4">
+                      <div className="space-y-4">
+                        <h3 className="font-semibold text-lg">Problem</h3>
+                        <h4 className="text-xl font-bold">{business.problem.title}</h4>
+                        <div className="space-y-4">
+                          {business.problem.stats.map((stat, i) => (
+                            <div key={i} className="bg-muted/30 rounded-lg p-4">
+                              <div className="flex gap-3">
+                                <div className="text-primary">
+                                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                  </svg>
+                                </div>
+                                <div className="flex-1">
+                                  <p className="font-semibold text-lg">{stat.label}</p>
+                                  <p className="text-sm text-muted-foreground">{stat.description}</p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                </div>
+
+                {/* Right Column - Metrics & Actions */}
+                <div className="space-y-6">
+                  {/* Funding Progress */}
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-3xl font-bold">{business.raised}</p>
+                      <p className="text-sm text-muted-foreground">{business.raisedPercent}% raised of {business.investmentAmount} max</p>
+                    </div>
+                    <div className="w-full bg-muted rounded-full h-2">
+                      <div 
+                        className="bg-success h-2 rounded-full transition-all" 
+                        style={{ width: `${business.raisedPercent}%` }}
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-2xl font-bold">{business.investors}</p>
+                        <p className="text-sm text-muted-foreground">Investors</p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold">{business.daysLeft} days</p>
+                        <p className="text-sm text-muted-foreground">Left to invest</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Investment Button */}
+                  <Button 
+                    className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90"
+                    onClick={() => navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
+                      state: { business }
+                    })}
+                  >
+                    Invest in {business.name.split(' ')[0]}
+                  </Button>
+                  <p className="text-xs text-center text-muted-foreground">{business.minInvestment} minimum investment</p>
+
+                  <Separator />
+
+                  {/* Deal Terms */}
+                  <div className="space-y-3">
+                    <h3 className="font-semibold">Deal terms</h3>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Security type</span>
+                        <span className="font-semibold">{business.securityType}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Valuation cap</span>
+                        <span className="font-semibold">{business.valuationCap}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Minimum investment</span>
+                        <span className="font-semibold">{business.minInvestment}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Maximum investment</span>
+                        <span className="font-semibold">{business.maxInvestment}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Deadline</span>
+                        <span className="font-semibold">{business.deadline}</span>
+                      </div>
+                    </div>
                   </div>
 
                   <Separator />
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1">Investment Amount</p>
-                      <p className="font-semibold text-sm">{business.investmentAmount}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1">APY</p>
-                      <p className="font-semibold text-sm text-success">{business.apy}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1">EBITDA</p>
-                      <p className="font-semibold text-sm">{business.ebitda}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1">Term</p>
-                      <p className="font-semibold text-sm">{business.term}</p>
+                  {/* Documents */}
+                  <div className="space-y-3">
+                    <h3 className="font-semibold">Documents</h3>
+                    <div className="space-y-2">
+                      {business.documents.map((doc, i) => (
+                        <div key={i} className="flex items-center gap-2 text-sm p-2 rounded hover:bg-muted/50 cursor-pointer">
+                          <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <span className="flex-1">{doc.name}</span>
+                          <Badge variant="outline" className="text-xs">{doc.type}</Badge>
+                        </div>
+                      ))}
                     </div>
                   </div>
-
-                  <Button 
-                    className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90" 
-                    onClick={e => {
-                      e.stopPropagation();
-                      navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
-                        state: { business }
-                      });
-                    }}
-                  >
-                    Invest Now
-                  </Button>
-                </CardContent>
-              </Card>)}
-          </div>
-        </CardContent>
-      </Card>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
 
       {/* Active Positions Section */}
       <Card>
