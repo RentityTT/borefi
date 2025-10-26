@@ -113,7 +113,7 @@ const DeFi = () => {
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "7.95%",
-    network: "Ethereum",
+    network: "Solana",
     utilization: "68%"
   }, {
     name: "Laundromat Chain",
@@ -137,7 +137,7 @@ const DeFi = () => {
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
     supplyAPY: "7.28%",
-    network: "Arbitrum",
+    network: "Solana",
     utilization: "48%"
   }, {
     name: "HVAC Services",
