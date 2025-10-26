@@ -319,7 +319,7 @@ const DeFi = () => {
     minInvestment: "$5,000",
     maxInvestment: "$250,000",
     deadline: "January 15, 2026",
-    securityType: "SAFE",
+    securityType: "Debt Token",
     valuationCap: "$45M",
     highlights: [
       "Established relationships with 50+ government agencies and Fortune 500 companies",
@@ -363,7 +363,7 @@ const DeFi = () => {
     minInvestment: "$2,500",
     maxInvestment: "$150,000",
     deadline: "February 1, 2026",
-    securityType: "SAFE",
+    securityType: "Preferred Equity Token",
     valuationCap: "$28M",
     highlights: [
       "8 profitable locations across Seattle metro area with average unit revenue of $812K",
@@ -407,7 +407,7 @@ const DeFi = () => {
     minInvestment: "$10,000",
     maxInvestment: "$500,000",
     deadline: "December 30, 2025",
-    securityType: "SAFE",
+    securityType: "Profit Share Token",
     valuationCap: "$52M",
     highlights: [
       "Managing 2,000+ units across Miami-Dade and Broward counties with 98% retention rate",
@@ -451,7 +451,7 @@ const DeFi = () => {
     minInvestment: "$1,000",
     maxInvestment: "$100,000",
     deadline: "February 20, 2026",
-    securityType: "SAFE",
+    securityType: "Debt Token",
     valuationCap: "$68M",
     highlights: [
       "15 locations across Austin, Dallas, and Houston with modern equipment and amenities",
@@ -495,7 +495,7 @@ const DeFi = () => {
     minInvestment: "$5,000",
     maxInvestment: "$200,000",
     deadline: "March 15, 2026",
-    securityType: "SAFE",
+    securityType: "Preferred Equity Token",
     valuationCap: "$38M",
     highlights: [
       "Long-term contracts with 150+ commercial and industrial clients averaging 7-year relationships",
@@ -539,7 +539,7 @@ const DeFi = () => {
     minInvestment: "$2,500",
     maxInvestment: "$150,000",
     deadline: "February 28, 2026",
-    securityType: "SAFE",
+    securityType: "Profit Share Token",
     valuationCap: "$32M",
     highlights: [
       "Master electrician license with 45 certified electricians on staff",
