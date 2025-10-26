@@ -1052,7 +1052,7 @@ const DeFi = () => {
                     <TableRow className="hover:bg-muted/50 cursor-pointer">
                       <TableCell className="font-medium">{position.pool}</TableCell>
                       <TableCell>
-                        <Badge variant="secondary" className="bg-primary/20 text-primary text-xs">
+                        <Badge variant="outline" className="text-xs">
                           {position.productType}
                         </Badge>
                       </TableCell>
