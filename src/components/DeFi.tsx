@@ -1381,6 +1381,7 @@ const DeFi = () => {
                 <TableHead className="text-right">Businesses</TableHead>
                 <TableHead className="text-right">APY</TableHead>
                 <TableHead className="text-right">Utilization</TableHead>
+                <TableHead className="text-right">Type</TableHead>
                 <TableHead className="text-right">Network</TableHead>
                 <TableHead className="text-right">Action</TableHead>
               </TableRow>
@@ -1410,6 +1411,11 @@ const DeFi = () => {
                       </div>
                       <span className="font-mono text-sm min-w-[3rem]">{pool.utilization}</span>
                     </div>
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Badge variant="secondary" className="text-xs">
+                      Preferred Equity
+                    </Badge>
                   </TableCell>
                   <TableCell className="text-right">
                     <Badge variant="outline" className="text-xs">
