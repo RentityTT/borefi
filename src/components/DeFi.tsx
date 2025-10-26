@@ -10,18 +10,12 @@ import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import centuryCityTowerImg from "@/assets/century-city-tower.jpg";
-import centuryCityBondImg from "@/assets/century-city-bond.jpg";
-import skylineApartmentsImg from "@/assets/skyline-apartments.jpg";
-import skylineBondImg from "@/assets/skyline-bond.jpg";
-import marinaBayComplexImg from "@/assets/marina-bay-complex.jpg";
-import marinaBayBondImg from "@/assets/marina-bay-bond.jpg";
-import techParkPlazaImg from "@/assets/tech-park-plaza.jpg";
-import techParkBondImg from "@/assets/tech-park-bond.jpg";
-import harborViewResidenceImg from "@/assets/harbor-view-residence.jpg";
-import harborViewBondImg from "@/assets/harbor-view-bond.jpg";
-import greenfieldShoppingImg from "@/assets/greenfield-shopping.jpg";
-import greenfieldBondImg from "@/assets/greenfield-bond.jpg";
+import constructionBusinessImg from "@/assets/construction-business.jpg";
+import restaurantBusinessImg from "@/assets/restaurant-business.jpg";
+import propertyManagementBusinessImg from "@/assets/property-management-business.jpg";
+import laundromatBusinessImg from "@/assets/laundromat-business.jpg";
+import mechanicalBusinessImg from "@/assets/mechanical-business.jpg";
+import electricalBusinessImg from "@/assets/electrical-business.jpg";
 const DeFi = () => {
   const navigate = useNavigate();
   const [selectedPool, setSelectedPool] = useState<any>(null);
@@ -315,7 +309,7 @@ const DeFi = () => {
     businessValue: "$45,000,000",
     status: "Active",
     revenue: "$8.2M annually",
-    image: centuryCityTowerImg,
+    image: constructionBusinessImg,
     description: "Invest in established construction company backed by project cashflows and monthly contract payments from government and corporate clients"
   }, {
     name: "Metro Restaurant Group",
@@ -329,7 +323,7 @@ const DeFi = () => {
     businessValue: "$28,000,000",
     status: "Active",
     revenue: "$6.5M annually",
-    image: skylineApartmentsImg,
+    image: restaurantBusinessImg,
     description: "Multi-location restaurant group with proven track record and steady revenue streams across all locations"
   }, {
     name: "Coastal Property Management",
@@ -343,7 +337,7 @@ const DeFi = () => {
     businessValue: "$52,000,000",
     status: "Funding",
     revenue: "$12.8M annually",
-    image: marinaBayComplexImg,
+    image: propertyManagementBusinessImg,
     description: "Large-scale property management company with consistent management fee income from 2,000+ units"
   }, {
     name: "SpinCycle Laundromats",
@@ -357,7 +351,7 @@ const DeFi = () => {
     businessValue: "$68,000,000",
     status: "Funding",
     revenue: "N/A",
-    image: techParkPlazaImg,
+    image: laundromatBusinessImg,
     description: "Growing laundromat network with modern equipment and subscription model providing steady, predictable cashflows"
   }, {
     name: "Precision Mechanical Services",
@@ -371,7 +365,7 @@ const DeFi = () => {
     businessValue: "$38,000,000",
     status: "Active",
     revenue: "$7.4M annually",
-    image: harborViewResidenceImg,
+    image: mechanicalBusinessImg,
     description: "HVAC and mechanical contractor with long-term commercial contracts serving industrial clients"
   }, {
     name: "PowerLine Electrical",
@@ -385,7 +379,7 @@ const DeFi = () => {
     businessValue: "$32,000,000",
     status: "Active",
     revenue: "$5.8M annually",
-    image: greenfieldShoppingImg,
+    image: electricalBusinessImg,
     description: "Licensed electrical contractor with consistent monthly returns from commercial and residential projects"
   }];
   const formatCurrency = (value: number) => {
