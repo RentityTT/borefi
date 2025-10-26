@@ -11,7 +11,7 @@ const BlockchainPaymentHistory = () => {
   const transactions = [{
     date: "2024-12-15 14:23:45",
     type: "Deposit",
-    pool: "Hong Kong Market-Based Pool",
+    pool: "Metro Restaurant Group",
     amount: "$150,000",
     network: "Solana",
     txHash: "0x7f3a...c8d2",
@@ -19,15 +19,15 @@ const BlockchainPaymentHistory = () => {
   }, {
     date: "2024-11-28 09:15:32",
     type: "Deposit",
-    pool: "Residential Prime Pool",
-    amount: "$275,500",
+    pool: "Construction Industry Pool",
+    amount: "$175,500",
     network: "Solana",
     txHash: "0x4b2e...9a1f",
     status: "Confirmed"
   }, {
     date: "2024-11-10 16:42:18",
     type: "Deposit",
-    pool: "Multi-Family Housing",
+    pool: "Property Management Pool",
     amount: "$85,000",
     network: "Solana",
     txHash: "0x9c1d...3e5b",
@@ -35,7 +35,7 @@ const BlockchainPaymentHistory = () => {
   }, {
     date: "2024-10-22 11:30:05",
     type: "Withdrawal",
-    pool: "Commercial Property Pool",
+    pool: "Metro Restaurant Group",
     amount: "$50,000",
     network: "Solana",
     txHash: "0x2a8f...7d4c",
@@ -43,7 +43,7 @@ const BlockchainPaymentHistory = () => {
   }, {
     date: "2024-10-05 13:55:22",
     type: "Reward Claim",
-    pool: "Residential Prime Pool",
+    pool: "Construction Industry Pool",
     amount: "$12,450",
     network: "Ethereum",
     txHash: "0x6e3b...4f9a",
@@ -83,7 +83,7 @@ const BlockchainPaymentHistory = () => {
             <TableRow>
               <TableHead>Date</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Pool/Property</TableHead>
+              <TableHead>Pool/Business</TableHead>
               <TableHead className="text-right">Amount</TableHead>
               <TableHead>Network</TableHead>
               <TableHead>Transaction Hash</TableHead>
