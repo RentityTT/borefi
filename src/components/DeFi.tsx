@@ -822,6 +822,10 @@ const DeFi = () => {
                         <h3 className="font-semibold">Deal terms</h3>
                         <div className="space-y-3 text-sm">
                           <div className="flex justify-between">
+                            <span className="text-muted-foreground">Expected Yield (APY)</span>
+                            <span className="font-semibold text-success">{business.apy}</span>
+                          </div>
+                          <div className="flex justify-between">
                             <span className="text-muted-foreground">Security type</span>
                             <span className="font-semibold">{business.securityType}</span>
                           </div>
