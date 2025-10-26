@@ -116,15 +116,15 @@ const Earn = () => {
         <CardContent className="pt-4">
           <div className="flex gap-4 mb-4 text-xs">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[hsl(180,65%,45%)]" />
+              <div className="w-3 h-3 rounded-full bg-[hsl(16,100%,58%)]" />
               <span className="text-muted-foreground">Balance</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[hsl(158,64%,52%)]" />
+              <div className="w-3 h-3 rounded-full bg-[hsl(8,85%,55%)]" />
               <span className="text-muted-foreground">Yield</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[hsl(270,70%,60%)]" />
+              <div className="w-3 h-3 rounded-full bg-[hsl(25,95%,50%)]" />
               <span className="text-muted-foreground">Positions</span>
             </div>
           </div>
@@ -132,16 +132,16 @@ const Earn = () => {
             <AreaChart data={balanceChartData}>
               <defs>
                 <linearGradient id="balanceGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(180, 65%, 45%)" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="hsl(180, 65%, 45%)" stopOpacity={0} />
+                  <stop offset="5%" stopColor="hsl(16, 100%, 58%)" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="hsl(16, 100%, 58%)" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="yieldGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(158, 64%, 52%)" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="hsl(158, 64%, 52%)" stopOpacity={0} />
+                  <stop offset="5%" stopColor="hsl(8, 85%, 55%)" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="hsl(8, 85%, 55%)" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="positionsGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(270, 70%, 60%)" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="hsl(270, 70%, 60%)" stopOpacity={0} />
+                  <stop offset="5%" stopColor="hsl(25, 95%, 50%)" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="hsl(25, 95%, 50%)" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -152,9 +152,9 @@ const Earn = () => {
                 border: '1px solid hsl(var(--border))',
                 borderRadius: '8px'
               }} />
-              <Area type="monotone" dataKey="balance" stroke="hsl(180, 65%, 45%)" strokeWidth={2} fill="url(#balanceGradient)" />
-              <Area type="monotone" dataKey="yield" stroke="hsl(158, 64%, 52%)" strokeWidth={2} fill="url(#yieldGradient)" />
-              <Area type="monotone" dataKey="positions" stroke="hsl(270, 70%, 60%)" strokeWidth={2} fill="url(#positionsGradient)" />
+              <Area type="monotone" dataKey="balance" stroke="hsl(16, 100%, 58%)" strokeWidth={2} fill="url(#balanceGradient)" />
+              <Area type="monotone" dataKey="yield" stroke="hsl(8, 85%, 55%)" strokeWidth={2} fill="url(#yieldGradient)" />
+              <Area type="monotone" dataKey="positions" stroke="hsl(25, 95%, 50%)" strokeWidth={2} fill="url(#positionsGradient)" />
             </AreaChart>
           </ResponsiveContainer>
         </CardContent>
