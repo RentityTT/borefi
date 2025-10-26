@@ -339,13 +339,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Business Overview",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Financial Statements",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -387,13 +390,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Pitch Deck",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Unit Economics",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -435,13 +441,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Investment Overview",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Technology Platform Demo",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -483,13 +492,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Business Model",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Expansion Plan",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -531,13 +543,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Service Overview",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Client Contracts",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -579,13 +594,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Company Profile",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Project Portfolio",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -627,13 +645,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Service Overview",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Client Contracts",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -675,13 +696,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Facility Overview",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Occupancy Reports",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
@@ -723,13 +747,16 @@ const DeFi = () => {
       }]
     },
     documents: [{
-      name: "Business Model",
+      name: "Private Placement Memorandum",
       type: "PDF"
     }, {
-      name: "Membership Analytics",
+      name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "SAFE Agreement",
+      name: "Audited Financial Statements",
+      type: "PDF"
+    }, {
+      name: "Risk Disclosures",
       type: "PDF"
     }]
   }];
