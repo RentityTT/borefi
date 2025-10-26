@@ -619,197 +619,256 @@ const DeFi = () => {
       </div>
 
       {/* Available Businesses for Investment */}
-      <div className="space-y-8">
-        {individualBusinesses.map((business, index) => (
-          <Card key={index} className="overflow-hidden">
-            <CardContent className="p-0">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
-                {/* Left Column - Main Content */}
-                <div className="lg:col-span-2 space-y-6">
-                  {/* Header */}
-                  <div className="space-y-3">
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2">
-                        <h2 className="text-2xl font-bold">{business.name}</h2>
-                        <p className="text-muted-foreground">{business.description}</p>
+      <Card>
+        <CardHeader>
+          <CardTitle>Investment Opportunities</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {individualBusinesses.map((business, index) => (
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="relative h-48 overflow-hidden">
+                      <img src={business.image} alt={business.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <div className="absolute top-3 right-3">
+                        <Badge variant={business.status === "Funding" ? "default" : "outline"} className={business.status === "Funding" ? "bg-primary/90 text-white" : "bg-muted/90 text-muted-foreground"}>
+                          {business.status}
+                        </Badge>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {business.tags.map((tag, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+                    <CardContent className="p-4 space-y-3">
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">{business.name}</h3>
+                        <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{business.description}</p>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span>{business.location}</span>
+                          <span>•</span>
+                          <span>{business.businessType}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap items-center gap-2">
+                        {business.tags.slice(0, 2).map((tag, i) => (
+                          <Badge key={i} variant="secondary" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
 
-                  {/* Featured Image */}
-                  <div className="relative h-64 rounded-lg overflow-hidden">
-                    <img 
-                      src={business.image} 
-                      alt={business.name} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                      <Separator />
 
-                  {/* Tabs for different sections */}
-                  <Tabs defaultValue="pitch" className="w-full">
-                    <TabsList className="grid w-full grid-cols-3">
-                      <TabsTrigger value="pitch">Pitch</TabsTrigger>
-                      <TabsTrigger value="highlights">Highlights</TabsTrigger>
-                      <TabsTrigger value="problem">Problem</TabsTrigger>
-                    </TabsList>
-                    
-                    <TabsContent value="pitch" className="space-y-4 mt-4">
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <p className="text-xs text-muted-foreground mb-1">Raised</p>
+                          <p className="font-semibold text-sm">{business.raised}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground mb-1">APY</p>
+                          <p className="font-semibold text-sm text-success">{business.apy}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground mb-1">Investors</p>
+                          <p className="font-semibold text-sm">{business.investors}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground mb-1">Days Left</p>
+                          <p className="font-semibold text-sm">{business.daysLeft}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                
+                <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl">{business.name}</DialogTitle>
+                  </DialogHeader>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Left Column - Main Content */}
+                    <div className="lg:col-span-2 space-y-6">
+                      {/* Header */}
                       <div className="space-y-3">
+                        <p className="text-muted-foreground">{business.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {business.tags.map((tag, i) => (
+                            <Badge key={i} variant="secondary" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Featured Image */}
+                      <div className="relative h-64 rounded-lg overflow-hidden">
+                        <img 
+                          src={business.image} 
+                          alt={business.name} 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* Tabs for different sections */}
+                      <Tabs defaultValue="pitch" className="w-full">
+                        <TabsList className="grid w-full grid-cols-3">
+                          <TabsTrigger value="pitch">Pitch</TabsTrigger>
+                          <TabsTrigger value="highlights">Highlights</TabsTrigger>
+                          <TabsTrigger value="problem">Problem</TabsTrigger>
+                        </TabsList>
+                        
+                        <TabsContent value="pitch" className="space-y-4 mt-4">
+                          <div className="space-y-3">
+                            <div className="grid grid-cols-2 gap-4">
+                              <div>
+                                <p className="text-sm text-muted-foreground">Location</p>
+                                <p className="font-semibold">{business.location}</p>
+                              </div>
+                              <div>
+                                <p className="text-sm text-muted-foreground">Business Type</p>
+                                <p className="font-semibold">{business.businessType}</p>
+                              </div>
+                              <div>
+                                <p className="text-sm text-muted-foreground">Annual Revenue</p>
+                                <p className="font-semibold">{business.revenue}</p>
+                              </div>
+                              <div>
+                                <p className="text-sm text-muted-foreground">EBITDA</p>
+                                <p className="font-semibold">{business.ebitda}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </TabsContent>
+                        
+                        <TabsContent value="highlights" className="space-y-4 mt-4">
+                          <h3 className="font-semibold text-lg">Highlights</h3>
+                          <ul className="space-y-3">
+                            {business.highlights.map((highlight, i) => (
+                              <li key={i} className="flex gap-3">
+                                <span className="text-primary mt-1">•</span>
+                                <span className="text-sm text-muted-foreground">{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </TabsContent>
+                        
+                        <TabsContent value="problem" className="space-y-4 mt-4">
+                          <div className="space-y-4">
+                            <h3 className="font-semibold text-lg">Problem</h3>
+                            <h4 className="text-xl font-bold">{business.problem.title}</h4>
+                            <div className="space-y-4">
+                              {business.problem.stats.map((stat, i) => (
+                                <div key={i} className="bg-muted/30 rounded-lg p-4">
+                                  <div className="flex gap-3">
+                                    <div className="text-primary">
+                                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                      </svg>
+                                    </div>
+                                    <div className="flex-1">
+                                      <p className="font-semibold text-lg">{stat.label}</p>
+                                      <p className="text-sm text-muted-foreground">{stat.description}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </TabsContent>
+                      </Tabs>
+                    </div>
+
+                    {/* Right Column - Metrics & Actions */}
+                    <div className="space-y-6">
+                      {/* Funding Progress */}
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-3xl font-bold">{business.raised}</p>
+                          <p className="text-sm text-muted-foreground">{business.raisedPercent}% raised of {business.investmentAmount} max</p>
+                        </div>
+                        <div className="w-full bg-muted rounded-full h-2">
+                          <div 
+                            className="bg-success h-2 rounded-full transition-all" 
+                            style={{ width: `${business.raisedPercent}%` }}
+                          />
+                        </div>
                         <div className="grid grid-cols-2 gap-4">
                           <div>
-                            <p className="text-sm text-muted-foreground">Location</p>
-                            <p className="font-semibold">{business.location}</p>
+                            <p className="text-2xl font-bold">{business.investors}</p>
+                            <p className="text-sm text-muted-foreground">Investors</p>
                           </div>
                           <div>
-                            <p className="text-sm text-muted-foreground">Business Type</p>
-                            <p className="font-semibold">{business.businessType}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Annual Revenue</p>
-                            <p className="font-semibold">{business.revenue}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">EBITDA</p>
-                            <p className="font-semibold">{business.ebitda}</p>
+                            <p className="text-2xl font-bold">{business.daysLeft} days</p>
+                            <p className="text-sm text-muted-foreground">Left to invest</p>
                           </div>
                         </div>
                       </div>
-                    </TabsContent>
-                    
-                    <TabsContent value="highlights" className="space-y-4 mt-4">
-                      <h3 className="font-semibold text-lg">Highlights</h3>
-                      <ul className="space-y-3">
-                        {business.highlights.map((highlight, i) => (
-                          <li key={i} className="flex gap-3">
-                            <span className="text-primary mt-1">•</span>
-                            <span className="text-sm text-muted-foreground">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </TabsContent>
-                    
-                    <TabsContent value="problem" className="space-y-4 mt-4">
-                      <div className="space-y-4">
-                        <h3 className="font-semibold text-lg">Problem</h3>
-                        <h4 className="text-xl font-bold">{business.problem.title}</h4>
-                        <div className="space-y-4">
-                          {business.problem.stats.map((stat, i) => (
-                            <div key={i} className="bg-muted/30 rounded-lg p-4">
-                              <div className="flex gap-3">
-                                <div className="text-primary">
-                                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                  </svg>
-                                </div>
-                                <div className="flex-1">
-                                  <p className="font-semibold text-lg">{stat.label}</p>
-                                  <p className="text-sm text-muted-foreground">{stat.description}</p>
-                                </div>
-                              </div>
+
+                      {/* Investment Button */}
+                      <Button 
+                        className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90"
+                        onClick={() => navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
+                          state: { business }
+                        })}
+                      >
+                        Invest in {business.name.split(' ')[0]}
+                      </Button>
+                      <p className="text-xs text-center text-muted-foreground">{business.minInvestment} minimum investment</p>
+
+                      <Separator />
+
+                      {/* Deal Terms */}
+                      <div className="space-y-3">
+                        <h3 className="font-semibold">Deal terms</h3>
+                        <div className="space-y-3 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Security type</span>
+                            <span className="font-semibold">{business.securityType}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Valuation cap</span>
+                            <span className="font-semibold">{business.valuationCap}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Minimum investment</span>
+                            <span className="font-semibold">{business.minInvestment}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Maximum investment</span>
+                            <span className="font-semibold">{business.maxInvestment}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Deadline</span>
+                            <span className="font-semibold">{business.deadline}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <Separator />
+
+                      {/* Documents */}
+                      <div className="space-y-3">
+                        <h3 className="font-semibold">Documents</h3>
+                        <div className="space-y-2">
+                          {business.documents.map((doc, i) => (
+                            <div key={i} className="flex items-center gap-2 text-sm p-2 rounded hover:bg-muted/50 cursor-pointer">
+                              <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                              </svg>
+                              <span className="flex-1">{doc.name}</span>
+                              <Badge variant="outline" className="text-xs">{doc.type}</Badge>
                             </div>
                           ))}
                         </div>
                       </div>
-                    </TabsContent>
-                  </Tabs>
-                </div>
-
-                {/* Right Column - Metrics & Actions */}
-                <div className="space-y-6">
-                  {/* Funding Progress */}
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-3xl font-bold">{business.raised}</p>
-                      <p className="text-sm text-muted-foreground">{business.raisedPercent}% raised of {business.investmentAmount} max</p>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-2">
-                      <div 
-                        className="bg-success h-2 rounded-full transition-all" 
-                        style={{ width: `${business.raisedPercent}%` }}
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-2xl font-bold">{business.investors}</p>
-                        <p className="text-sm text-muted-foreground">Investors</p>
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold">{business.daysLeft} days</p>
-                        <p className="text-sm text-muted-foreground">Left to invest</p>
-                      </div>
                     </div>
                   </div>
-
-                  {/* Investment Button */}
-                  <Button 
-                    className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90"
-                    onClick={() => navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
-                      state: { business }
-                    })}
-                  >
-                    Invest in {business.name.split(' ')[0]}
-                  </Button>
-                  <p className="text-xs text-center text-muted-foreground">{business.minInvestment} minimum investment</p>
-
-                  <Separator />
-
-                  {/* Deal Terms */}
-                  <div className="space-y-3">
-                    <h3 className="font-semibold">Deal terms</h3>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Security type</span>
-                        <span className="font-semibold">{business.securityType}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Valuation cap</span>
-                        <span className="font-semibold">{business.valuationCap}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Minimum investment</span>
-                        <span className="font-semibold">{business.minInvestment}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Maximum investment</span>
-                        <span className="font-semibold">{business.maxInvestment}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Deadline</span>
-                        <span className="font-semibold">{business.deadline}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Separator />
-
-                  {/* Documents */}
-                  <div className="space-y-3">
-                    <h3 className="font-semibold">Documents</h3>
-                    <div className="space-y-2">
-                      {business.documents.map((doc, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm p-2 rounded hover:bg-muted/50 cursor-pointer">
-                          <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          <span className="flex-1">{doc.name}</span>
-                          <Badge variant="outline" className="text-xs">{doc.type}</Badge>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Active Positions Section */}
       <Card>
