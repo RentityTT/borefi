@@ -263,7 +263,7 @@ const Earn = () => {
                     <span className="text-xl font-bold text-primary">{rentTokenBonus.toFixed(0)}</span>
                   </div>
                 </div>
-                <Button className="w-full mt-6 bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 rounded-full" size="lg">
+                <Button className="w-full mt-6 bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full" size="lg">
                   Deposit Funds
                 </Button>
               </CardContent>
@@ -339,7 +339,7 @@ const Earn = () => {
                 10,000 $BORE tokens = +0.1% APY bonus
               </p>
             </div>
-            <Button className="w-full bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 rounded-full">
+            <Button className="w-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full">
               Stake $BORE Tokens
             </Button>
           </CardContent>

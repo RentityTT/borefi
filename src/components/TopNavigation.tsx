@@ -28,7 +28,7 @@ const TopNavigation = ({
             className={cn(
               "px-8 py-3 rounded-full font-medium transition-all text-base",
               activeTab === tab.id
-                ? "bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white"
+                ? "bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white"
                 : "text-foreground hover:text-foreground/80"
             )}
             onClick={() => onTabClick(tab.id)}
@@ -43,7 +43,7 @@ const TopNavigation = ({
         className="absolute right-6 flex items-center gap-3 bg-card border-2 border-primary rounded-full px-6 py-3 hover:bg-accent transition-colors cursor-pointer"
       >
         <span className="text-foreground font-medium text-base">Wallet</span>
-        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] flex items-center justify-center">
           <Home className="h-4 w-4 text-white" />
         </div>
       </button>

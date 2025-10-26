@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 16 90% 60%;
+    --primary: 16 100% 58%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 330 82% 52%;
+    --accent: 8 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,16 +34,16 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 16 90% 60%;
+    --ring: 16 100% 58%;
 
     /* Custom design tokens */
-    --primary-gradient: linear-gradient(135deg, hsl(16 90% 60%), hsl(330 82% 52%));
+    --primary-gradient: linear-gradient(135deg, hsl(16 100% 58%), hsl(8 85% 55%));
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
     --warning: 45 95% 55%;
     --warning-foreground: 0 0% 10%;
     --sidebar-bg: 0 0% 8%;
-    --sidebar-active: 16 90% 60%;
+    --sidebar-active: 16 100% 58%;
     --text-light: 0 0% 65%;
     --pending: 45 95% 55%;
 
@@ -53,7 +53,7 @@ All colors MUST be HSL.
 
     --sidebar-foreground: 0 0% 95%;
 
-    --sidebar-primary: 16 90% 60%;
+    --sidebar-primary: 16 100% 58%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
@@ -63,7 +63,7 @@ All colors MUST be HSL.
 
     --sidebar-border: 0 0% 15%;
 
-    --sidebar-ring: 16 90% 60%;
+    --sidebar-ring: 16 100% 58%;
   }
 
   .dark {

@@ -100,7 +100,7 @@ const Wallet = () => {
                 </div>
 
                 {/* Confirm Button */}
-                <Button className="w-full h-12 text-base font-medium bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] hover:opacity-90 transition-opacity" size="lg">
+                <Button className="w-full h-12 text-base font-medium bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] hover:opacity-90 transition-opacity" size="lg">
                   Add Liquidity
                 </Button>
               </TabsContent>
