@@ -225,7 +225,7 @@ const InvestmentPage = () => {
 
                 {/* Action Buttons */}
                 <div className="space-y-3">
-                  <Button className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 h-12" disabled={!amount || parseFloat(amount) < 1000}>
+                  <Button className="w-full bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 h-12" disabled={!amount || parseFloat(amount) < 1000}>
                     Confirm Investment
                   </Button>
                   <Button variant="outline" className="w-full" onClick={() => navigate("/")}>

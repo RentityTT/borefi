@@ -851,7 +851,7 @@ const DeFi = () => {
 
                       {/* Investment Button */}
                       <Button 
-                        className="w-full bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90"
+                        className="w-full bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90"
                         onClick={() => navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
                           state: { business }
                         })}
@@ -1184,7 +1184,7 @@ const DeFi = () => {
 
                       {/* Action Buttons */}
                       <div className="flex gap-3">
-                        <Button className="flex-1 bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90">
+                        <Button className="flex-1 bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90">
                           Add Funds
                         </Button>
                         <Button variant="outline" className="flex-1">
@@ -1317,7 +1317,7 @@ const DeFi = () => {
                       {market.growth}
                     </TableCell>
                     <TableCell className="text-right">
-                      <Button size="sm" className="bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
+                      <Button size="sm" className="bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
                             e.stopPropagation();
                           }}>
                         Fund Pool
@@ -1367,7 +1367,7 @@ const DeFi = () => {
                       {pool.supplyAPY}
                     </TableCell>
                     <TableCell className="text-right">
-                      <Button size="sm" className="bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
+                      <Button size="sm" className="bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => {
                             e.stopPropagation();
                           }}>
                         Fund Pool
@@ -1417,7 +1417,7 @@ const DeFi = () => {
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right">
-                      <Button size="sm" className="bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => e.stopPropagation()}>
+                      <Button size="sm" className="bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => e.stopPropagation()}>
                         Fund Loan
                       </Button>
                     </TableCell>
@@ -1531,7 +1531,7 @@ const DeFi = () => {
                                 <p className="text-3xl font-bold">{position.amount}</p>
                               </CardContent>
                             </Card>
-                            <Card className="bg-gradient-to-br from-[hsl(180,65%,45%)]/10 to-[hsl(180,65%,45%)]/5 border-[hsl(180,65%,45%)]/20">
+                            <Card className="bg-gradient-to-br from-[hsl(16,90%,60%)]/10 to-[hsl(16,90%,60%)]/5 border-[hsl(16,90%,60%)]/20">
                               <CardContent className="pt-6">
                                 <p className="text-sm text-muted-foreground mb-1">Principal Remaining</p>
                                 <p className="text-3xl font-bold">{position.details.principalRemaining}</p>
@@ -1857,7 +1857,7 @@ const DeFi = () => {
                           </Badge>
                         </TableCell>
                         <TableCell className="text-right">
-                          <Button size="sm" className="bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => e.stopPropagation()}>
+                          <Button size="sm" className="bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90 rounded-full px-4 py-1 text-xs h-auto" onClick={e => e.stopPropagation()}>
                             Borrow
                           </Button>
                         </TableCell>
@@ -2175,7 +2175,7 @@ const DeFi = () => {
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button className="flex-1 bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90">
+              <Button className="flex-1 bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90">
                 Fund Pool
               </Button>
               <Button variant="outline" className="flex-1">

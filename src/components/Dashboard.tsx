@@ -380,7 +380,7 @@ const Dashboard = () => {
 
                                         {/* Action Buttons */}
                                         <div className="flex gap-3">
-                                          <Button className="flex-1 bg-gradient-to-r from-[hsl(180,65%,45%)] to-[hsl(90,70%,60%)] text-white hover:opacity-90">
+                                          <Button className="flex-1 bg-gradient-to-r from-[hsl(16,90%,60%)] to-[hsl(330,82%,52%)] text-white hover:opacity-90">
                                             Add Funds
                                           </Button>
                                           <Button variant="outline" className="flex-1">
