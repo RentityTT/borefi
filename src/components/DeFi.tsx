@@ -16,6 +16,7 @@ import propertyManagementBusinessImg from "@/assets/property-management-business
 import laundromatBusinessImg from "@/assets/laundromat-business.jpg";
 import mechanicalBusinessImg from "@/assets/mechanical-business.jpg";
 import electricalBusinessImg from "@/assets/electrical-business.jpg";
+import cleaningBusinessImg from "@/assets/cleaning-business.jpg";
 const DeFi = () => {
   const navigate = useNavigate();
   const [selectedPool, setSelectedPool] = useState<any>(null);
@@ -559,6 +560,50 @@ const DeFi = () => {
     documents: [
       { name: "Company Profile", type: "PDF" },
       { name: "Project Portfolio", type: "PDF" },
+      { name: "SAFE Agreement", type: "PDF" }
+    ]
+  }, {
+    name: "CleanPro Commercial Services",
+    investmentType: "Business Equity",
+    location: "Atlanta, GA",
+    businessType: "Commercial Cleaning",
+    tags: ["B2B", "FACILITIES", "RECURRING CONTRACTS"],
+    investmentAmount: "$1,800,000",
+    raised: "$1,260,000",
+    raisedPercent: 70,
+    investors: 203,
+    daysLeft: 45,
+    ebitda: "$2.6M",
+    apy: "13.5%",
+    term: "Monthly distributions",
+    businessValue: "$35,000,000",
+    status: "Funding",
+    revenue: "$7.1M annually",
+    image: cleaningBusinessImg,
+    description: "Premier commercial cleaning company serving corporate offices, medical facilities, and educational institutions with eco-friendly practices and certified staff",
+    minInvestment: "$2,500",
+    maxInvestment: "$175,000",
+    deadline: "March 1, 2026",
+    securityType: "Tokenized Preferred Equity",
+    valuationCap: "$35M",
+    highlights: [
+      "300+ commercial clients including 15 Fortune 500 companies with average contract length of 5 years",
+      "Green-certified cleaning processes with proprietary eco-friendly product line reducing costs 18%",
+      "24/7 operations with 180 trained staff and 98% client satisfaction rating over past 3 years",
+      "Recurring revenue model with 92% contract renewal rate providing stable cash flow",
+      "Technology platform for scheduling, quality control, and client communication reducing overhead"
+    ],
+    problem: {
+      title: "Commercial facilities need reliable cleaning but industry lacks professionalism",
+      stats: [
+        { label: "$74B Cleaning Industry", description: "growing as businesses return to offices and prioritize cleanliness post-pandemic" },
+        { label: "65% Client Turnover", description: "in industry due to inconsistent service quality and lack of technology" },
+        { label: "Green Premium", description: "businesses willing to pay 20% more for certified eco-friendly cleaning services" }
+      ]
+    },
+    documents: [
+      { name: "Service Overview", type: "PDF" },
+      { name: "Client Contracts", type: "PDF" },
       { name: "SAFE Agreement", type: "PDF" }
     ]
   }];
