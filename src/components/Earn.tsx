@@ -99,9 +99,7 @@ const Earn = () => {
             <div>
               <div className="text-sm text-muted-foreground mb-1">Total Positions</div>
               <div className="text-3xl font-bold">$410,500</div>
-              <div className="text-sm text-muted-foreground mt-1">
-                Across 3 active pools
-              </div>
+              <div className="text-sm text-muted-foreground mt-1">Across 3 active positions</div>
             </div>
             <div>
               <div className="text-sm text-muted-foreground mb-1">$BORE Tokens</div>
