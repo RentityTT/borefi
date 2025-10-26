@@ -1400,8 +1400,16 @@ const DeFi = () => {
                   <TableCell className="text-right font-mono text-sm text-success">
                     {pool.supplyAPY}
                   </TableCell>
-                  <TableCell className="text-right font-mono text-sm">
-                    {pool.utilization}
+                  <TableCell className="text-right">
+                    <div className="flex items-center justify-end gap-2">
+                      <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-primary to-primary/80 rounded-full transition-all"
+                          style={{ width: pool.utilization }}
+                        />
+                      </div>
+                      <span className="font-mono text-sm min-w-[3rem]">{pool.utilization}</span>
+                    </div>
                   </TableCell>
                   <TableCell className="text-right">
                     <Badge variant="outline" className="text-xs">
