@@ -164,7 +164,7 @@ const Earn = () => {
       <div className="space-y-4">
         <div className="pb-2">
           <h2 className="text-2xl font-bold">Deposit Funds</h2>
-          <p className="text-sm text-muted-foreground">Deposit funds into BORE.FI's general investment pool to earn from SME loans, business acquisitions, and equity investments.</p>
+          
         </div>
 
         <Card className="p-6">
