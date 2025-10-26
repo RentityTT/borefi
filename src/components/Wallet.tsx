@@ -88,7 +88,7 @@ const Wallet = () => {
                     <p className="text-sm text-muted-foreground">Earn</p>
                     <div className="space-y-1">
                       <span className="text-3xl font-bold block">{earnAmount}</span>
-                      <p className="text-xs text-muted-foreground">$RENT</p>
+                      <p className="text-xs text-muted-foreground">$BORE</p>
                     </div>
                   </div>
                 </div>
