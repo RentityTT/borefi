@@ -132,16 +132,16 @@ const Earn = () => {
             <AreaChart data={balanceChartData}>
               <defs>
                 <linearGradient id="balanceGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(16, 100%, 58%)" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="hsl(16, 100%, 58%)" stopOpacity={0} />
+                  <stop offset="5%" stopColor="hsl(16, 100%, 58%)" stopOpacity={0.6} />
+                  <stop offset="95%" stopColor="hsl(16, 100%, 58%)" stopOpacity={0.05} />
                 </linearGradient>
                 <linearGradient id="yieldGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(8, 85%, 55%)" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="hsl(8, 85%, 55%)" stopOpacity={0} />
+                  <stop offset="5%" stopColor="hsl(8, 85%, 55%)" stopOpacity={0.6} />
+                  <stop offset="95%" stopColor="hsl(8, 85%, 55%)" stopOpacity={0.05} />
                 </linearGradient>
                 <linearGradient id="positionsGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(25, 95%, 50%)" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="hsl(25, 95%, 50%)" stopOpacity={0} />
+                  <stop offset="5%" stopColor="hsl(25, 95%, 50%)" stopOpacity={0.6} />
+                  <stop offset="95%" stopColor="hsl(25, 95%, 50%)" stopOpacity={0.05} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -152,9 +152,9 @@ const Earn = () => {
                 border: '1px solid hsl(var(--border))',
                 borderRadius: '8px'
               }} />
-              <Area type="monotone" dataKey="balance" stroke="hsl(16, 100%, 58%)" strokeWidth={2} fill="url(#balanceGradient)" />
-              <Area type="monotone" dataKey="yield" stroke="hsl(8, 85%, 55%)" strokeWidth={2} fill="url(#yieldGradient)" />
-              <Area type="monotone" dataKey="positions" stroke="hsl(25, 95%, 50%)" strokeWidth={2} fill="url(#positionsGradient)" />
+              <Area type="monotone" dataKey="balance" stroke="hsl(16, 100%, 58%)" strokeWidth={3} fill="url(#balanceGradient)" />
+              <Area type="monotone" dataKey="yield" stroke="hsl(8, 85%, 55%)" strokeWidth={3} fill="url(#yieldGradient)" />
+              <Area type="monotone" dataKey="positions" stroke="hsl(25, 95%, 50%)" strokeWidth={3} fill="url(#positionsGradient)" />
             </AreaChart>
           </ResponsiveContainer>
         </CardContent>
