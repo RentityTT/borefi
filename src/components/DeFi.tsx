@@ -989,6 +989,24 @@ const DeFi = () => {
                         </div>
                       </div>
 
+                      {/* Investment Amount Input */}
+                      <div className="space-y-2">
+                        <label htmlFor="investment-amount" className="text-sm font-medium">
+                          Investment Amount
+                        </label>
+                        <div className="relative">
+                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+                          <input
+                            id="investment-amount"
+                            type="number"
+                            placeholder="10,000"
+                            className="w-full pl-7 pr-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            min="0"
+                            step="1000"
+                          />
+                        </div>
+                      </div>
+
                       {/* Investment Button */}
                       <Button className="w-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90" onClick={() => navigate(`/invest/${business.name.toLowerCase().replace(/\s+/g, '-')}`, {
                           state: {
