@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Info } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import usdcIcon from "@/assets/usdc-icon.png";
 import usdtLogo from "@/assets/usdt-logo.png";
@@ -153,6 +154,49 @@ const InvestmentPage = () => {
                     }) : '0.00'}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">Based on {property.apy} APY</p>
+                  </div>
+                </div>
+
+                <Separator />
+
+                {/* Fee Structure */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <Label className="text-base font-semibold">Fee Structure</Label>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="sm" className="gap-2 h-8">
+                          <Info className="w-4 h-4" />
+                          View Details
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" className="w-64 bg-popover">
+                        <DropdownMenuLabel>BORE.FI Fee Structure</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem className="flex justify-between py-3">
+                          <span className="text-muted-foreground">Origination Fee</span>
+                          <span className="font-semibold">0.5%</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="flex justify-between py-3">
+                          <span className="text-muted-foreground">Management Fee</span>
+                          <span className="font-semibold">1.0% annually</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="flex justify-between py-3">
+                          <span className="text-muted-foreground">Carried Interest</span>
+                          <span className="font-semibold">20%</span>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                  <div className="bg-muted/30 rounded-lg p-3 border border-border space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Origination Fee (0.5%)</span>
+                      <span className="font-medium">${amount && parseFloat(amount) > 0 ? (parseFloat(amount) * 0.005).toFixed(2) : '0.00'}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Annual Management Fee (1.0%)</span>
+                      <span className="font-medium">${amount && parseFloat(amount) > 0 ? (parseFloat(amount) * 0.01).toFixed(2) : '0.00'}</span>
+                    </div>
                   </div>
                 </div>
 
