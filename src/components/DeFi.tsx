@@ -1003,7 +1003,49 @@ const DeFi = () => {
 
                       {/* Deal Terms */}
                       <div className="space-y-3">
-                        <h3 className="font-semibold">Deal terms</h3>
+                        <div className="flex items-center justify-between">
+                          <h3 className="font-semibold">Deal terms</h3>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button variant="ghost" size="sm" className="gap-2 h-8">
+                                <Info className="w-4 h-4" />
+                                Fees
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-80 bg-popover">
+                              <DropdownMenuLabel>BORE.FI Fee Structure</DropdownMenuLabel>
+                              <DropdownMenuSeparator />
+                              <DropdownMenuItem className="flex-col items-start py-3">
+                                <div className="flex justify-between w-full">
+                                  <span className="text-muted-foreground">Tokenization + Origination Fee</span>
+                                  <span className="font-semibold">2.5%</span>
+                                </div>
+                                <span className="text-xs text-muted-foreground mt-1">One-time of total raise</span>
+                              </DropdownMenuItem>
+                              <DropdownMenuItem className="flex-col items-start py-3">
+                                <div className="flex justify-between w-full">
+                                  <span className="text-muted-foreground">Platform Management Fee</span>
+                                  <span className="font-semibold">1%</span>
+                                </div>
+                                <span className="text-xs text-muted-foreground mt-1">Annual AUM</span>
+                              </DropdownMenuItem>
+                              <DropdownMenuItem className="flex-col items-start py-3">
+                                <div className="flex justify-between w-full">
+                                  <span className="text-muted-foreground">Carry/Performance Fee</span>
+                                  <span className="font-semibold">12.5%</span>
+                                </div>
+                                <span className="text-xs text-muted-foreground mt-1">Share of profits to investors</span>
+                              </DropdownMenuItem>
+                              <DropdownMenuItem className="flex-col items-start py-3">
+                                <div className="flex justify-between w-full">
+                                  <span className="text-muted-foreground">Secondary Trade Fee</span>
+                                  <span className="font-semibold">0.25%</span>
+                                </div>
+                                <span className="text-xs text-muted-foreground mt-1">Per trade</span>
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </div>
                         <div className="space-y-3 text-sm">
                           <div className="flex justify-between">
                             <span className="text-muted-foreground">Net Expected Yield (APY)</span>
