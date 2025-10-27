@@ -68,53 +68,54 @@ const Wallet = () => {
 
                 {/* Deposit and Earn Amounts */}
                 <div className="space-y-4 pt-4">
-                  <div className="space-y-3">
-                    <p className="text-sm text-muted-foreground">Deposit</p>
-                    
-                    {/* Currency Selection */}
-                    <div className="flex gap-2">
-                      {[
-                        { name: "USDC", icon: usdcIcon },
-                        { name: "USDT", icon: usdtIcon },
-                        { name: "SOL", icon: solIcon }
-                      ].map((currency) => (
-                        <button
-                          key={currency.name}
-                          onClick={() => setSelectedCurrency(currency.name)}
-                          className={cn(
-                            "flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all",
-                            selectedCurrency === currency.name
-                              ? "border-primary bg-primary/10 text-primary"
-                              : "border-muted bg-background hover:border-primary/50"
-                          )}
-                        >
-                          <img src={currency.icon} alt={currency.name} className="w-5 h-5" />
-                          <span className="text-sm font-medium">{currency.name}</span>
-                        </button>
-                      ))}
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-3xl font-bold">$</span>
-                        <input type="text" placeholder="0" value={depositAmount} onChange={e => {
-                        const value = e.target.value.replace(/[^0-9]/g, '');
-                        if (value) {
-                          setDepositAmount(parseFloat(value).toLocaleString());
-                        } else {
-                          setDepositAmount('');
-                        }
-                      }} className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full" />
-                      </div>
-                      <p className="text-xs text-muted-foreground">{selectedCurrency}</p>
-                    </div>
+                  {/* Currency Selection */}
+                  <div className="flex gap-2">
+                    {[
+                      { name: "USDC", icon: usdcIcon },
+                      { name: "USDT", icon: usdtIcon },
+                      { name: "SOL", icon: solIcon }
+                    ].map((currency) => (
+                      <button
+                        key={currency.name}
+                        onClick={() => setSelectedCurrency(currency.name)}
+                        className={cn(
+                          "flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all",
+                          selectedCurrency === currency.name
+                            ? "border-primary bg-primary/10 text-primary"
+                            : "border-muted bg-background hover:border-primary/50"
+                        )}
+                      >
+                        <img src={currency.icon} alt={currency.name} className="w-5 h-5" />
+                        <span className="text-sm font-medium">{currency.name}</span>
+                      </button>
+                    ))}
                   </div>
+                  
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <p className="text-sm text-muted-foreground">Deposit</p>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-3xl font-bold">$</span>
+                          <input type="text" placeholder="0" value={depositAmount} onChange={e => {
+                          const value = e.target.value.replace(/[^0-9]/g, '');
+                          if (value) {
+                            setDepositAmount(parseFloat(value).toLocaleString());
+                          } else {
+                            setDepositAmount('');
+                          }
+                        }} className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full" />
+                        </div>
+                        <p className="text-xs text-muted-foreground">{selectedCurrency}</p>
+                      </div>
+                    </div>
 
-                  <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">Earn</p>
-                    <div className="space-y-1">
-                      <span className="text-3xl font-bold block">{earnAmount}</span>
-                      <p className="text-xs text-muted-foreground">$BORE</p>
+                    <div className="space-y-2">
+                      <p className="text-sm text-muted-foreground">Earn</p>
+                      <div className="space-y-1">
+                        <span className="text-3xl font-bold block">{earnAmount}</span>
+                        <p className="text-xs text-muted-foreground">$BORE</p>
+                      </div>
                     </div>
                   </div>
                 </div>
