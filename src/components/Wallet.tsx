@@ -4,10 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Wallet as WalletIcon, ArrowRight, Plus, Minus } from "lucide-react";
-import usdcLogo from "@/assets/usdc-logo.png";
+import { cn } from "@/lib/utils";
+import usdcIcon from "@/assets/usdc-icon.png";
+import usdtIcon from "@/assets/usdt-icon-updated.png";
+import solIcon from "@/assets/sol-icon.png";
+
 const Wallet = () => {
   const [depositAmount, setDepositAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
+  const [selectedCurrency, setSelectedCurrency] = useState("USDC");
 
   // Calculate earn amount based on deposit (1:1 ratio)
   const earnAmount = depositAmount ? parseFloat(depositAmount.replace(/,/g, '')).toLocaleString() : "0";
@@ -62,14 +67,35 @@ const Wallet = () => {
                 </div>
 
                 {/* Deposit and Earn Amounts */}
-                <div className="grid grid-cols-2 gap-6 pt-4">
-                  <div className="space-y-2">
+                <div className="space-y-4 pt-4">
+                  <div className="space-y-3">
                     <p className="text-sm text-muted-foreground">Deposit</p>
+                    
+                    {/* Currency Selection */}
+                    <div className="flex gap-2">
+                      {[
+                        { name: "USDC", icon: usdcIcon },
+                        { name: "USDT", icon: usdtIcon },
+                        { name: "SOL", icon: solIcon }
+                      ].map((currency) => (
+                        <button
+                          key={currency.name}
+                          onClick={() => setSelectedCurrency(currency.name)}
+                          className={cn(
+                            "flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all",
+                            selectedCurrency === currency.name
+                              ? "border-primary bg-primary/10 text-primary"
+                              : "border-muted bg-background hover:border-primary/50"
+                          )}
+                        >
+                          <img src={currency.icon} alt={currency.name} className="w-5 h-5" />
+                          <span className="text-sm font-medium">{currency.name}</span>
+                        </button>
+                      ))}
+                    </div>
+                    
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <img src={usdcLogo} alt="USDC" className="w-5 h-5" />
-                        </div>
                         <span className="text-3xl font-bold">$</span>
                         <input type="text" placeholder="0" value={depositAmount} onChange={e => {
                         const value = e.target.value.replace(/[^0-9]/g, '');
@@ -80,7 +106,7 @@ const Wallet = () => {
                         }
                       }} className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full" />
                       </div>
-                      <p className="text-xs text-muted-foreground pl-10">USDC</p>
+                      <p className="text-xs text-muted-foreground">{selectedCurrency}</p>
                     </div>
                   </div>
 
@@ -127,13 +153,34 @@ const Wallet = () => {
 
                 {/* Withdraw Amount */}
                 <div className="space-y-4 pt-4">
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <p className="text-sm text-muted-foreground">Withdraw Amount</p>
+                    
+                    {/* Currency Selection */}
+                    <div className="flex gap-2">
+                      {[
+                        { name: "USDC", icon: usdcIcon },
+                        { name: "USDT", icon: usdtIcon },
+                        { name: "SOL", icon: solIcon }
+                      ].map((currency) => (
+                        <button
+                          key={currency.name}
+                          onClick={() => setSelectedCurrency(currency.name)}
+                          className={cn(
+                            "flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all",
+                            selectedCurrency === currency.name
+                              ? "border-primary bg-primary/10 text-primary"
+                              : "border-muted bg-background hover:border-primary/50"
+                          )}
+                        >
+                          <img src={currency.icon} alt={currency.name} className="w-5 h-5" />
+                          <span className="text-sm font-medium">{currency.name}</span>
+                        </button>
+                      ))}
+                    </div>
+                    
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <img src={usdcLogo} alt="USDC" className="w-5 h-5" />
-                        </div>
                         <span className="text-3xl font-bold">$</span>
                         <input type="text" placeholder="0" value={withdrawAmount} onChange={e => {
                         const value = e.target.value.replace(/[^0-9]/g, '');
@@ -144,19 +191,19 @@ const Wallet = () => {
                         }
                       }} className="text-3xl font-bold bg-transparent border-none outline-none focus:outline-none w-full" />
                       </div>
-                      <p className="text-xs text-muted-foreground pl-10">USDC</p>
+                      <p className="text-xs text-muted-foreground">{selectedCurrency}</p>
                     </div>
                   </div>
 
                   <div className="bg-muted/50 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm text-muted-foreground">Staked Balance</span>
-                      <span className="text-sm font-medium">$100,000 USDC</span>
+                      <span className="text-sm font-medium">$100,000 {selectedCurrency}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-muted-foreground">After Withdrawal</span>
                       <span className="text-sm font-medium">
-                        ${withdrawAmount ? (100000 - parseFloat(withdrawAmount.replace(/,/g, ''))).toLocaleString() : '100,000'} USDC
+                        ${withdrawAmount ? (100000 - parseFloat(withdrawAmount.replace(/,/g, ''))).toLocaleString() : '100,000'} {selectedCurrency}
                       </span>
                     </div>
                   </div>
@@ -177,11 +224,11 @@ const Wallet = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Available Balance</p>
-                <p className="text-2xl font-bold">$247,500 USDC</p>
+                <p className="text-2xl font-bold">$247,500 {selectedCurrency}</p>
               </div>
               <div className="text-right">
                 <p className="text-sm text-muted-foreground mb-1">Staked</p>
-                <p className="text-2xl font-bold">$100,000 USDC</p>
+                <p className="text-2xl font-bold">$100,000 {selectedCurrency}</p>
               </div>
             </div>
           </CardContent>
