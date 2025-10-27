@@ -22,8 +22,8 @@ import storageBusinessImg from "@/assets/storage-business.jpg";
 import carwashBusinessImg from "@/assets/carwash-business.jpg";
 import harborViewHotelImg from "@/assets/harbor-view-residence.jpg";
 import usdcIcon from "@/assets/usdc-icon.png";
-import usdtIcon from "@/assets/usdt-icon-new.webp";
-import cadcIcon from "@/assets/cadc-icon-new.png";
+import usdtIcon from "@/assets/usdt-icon-updated.png";
+import solIcon from "@/assets/sol-icon.png";
 
 const DeFi = () => {
   const navigate = useNavigate();
@@ -1007,7 +1007,7 @@ const DeFi = () => {
                           {[
                             { name: "USDC", icon: usdcIcon },
                             { name: "USDT", icon: usdtIcon },
-                            { name: "CADC", icon: cadcIcon }
+                            { name: "SOL", icon: solIcon }
                           ].map((currency) => (
                             <button
                               key={currency.name}
