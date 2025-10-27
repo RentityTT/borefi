@@ -170,32 +170,48 @@ const InvestmentPage = () => {
                           View Details
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" className="w-64 bg-popover">
+                      <DropdownMenuContent align="end" className="w-80 bg-popover">
                         <DropdownMenuLabel>BORE.FI Fee Structure</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem className="flex justify-between py-3">
-                          <span className="text-muted-foreground">Origination Fee</span>
-                          <span className="font-semibold">0.5%</span>
+                        <DropdownMenuItem className="flex-col items-start py-3">
+                          <div className="flex justify-between w-full">
+                            <span className="text-muted-foreground">Tokenization + Origination Fee</span>
+                            <span className="font-semibold">1-3%</span>
+                          </div>
+                          <span className="text-xs text-muted-foreground mt-1">One-time of total raise</span>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex justify-between py-3">
-                          <span className="text-muted-foreground">Management Fee</span>
-                          <span className="font-semibold">1.0% annually</span>
+                        <DropdownMenuItem className="flex-col items-start py-3">
+                          <div className="flex justify-between w-full">
+                            <span className="text-muted-foreground">Platform Management Fee</span>
+                            <span className="font-semibold">1-2%</span>
+                          </div>
+                          <span className="text-xs text-muted-foreground mt-1">Annual AUM</span>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex justify-between py-3">
-                          <span className="text-muted-foreground">Carried Interest</span>
-                          <span className="font-semibold">20%</span>
+                        <DropdownMenuItem className="flex-col items-start py-3">
+                          <div className="flex justify-between w-full">
+                            <span className="text-muted-foreground">Carry/Performance Fee</span>
+                            <span className="font-semibold">5-15%</span>
+                          </div>
+                          <span className="text-xs text-muted-foreground mt-1">Share of profits to investors</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="flex-col items-start py-3">
+                          <div className="flex justify-between w-full">
+                            <span className="text-muted-foreground">Secondary Trade Fee</span>
+                            <span className="font-semibold">0.25%</span>
+                          </div>
+                          <span className="text-xs text-muted-foreground mt-1">Per trade</span>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </div>
                   <div className="bg-muted/30 rounded-lg p-3 border border-border space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Origination Fee (0.5%)</span>
-                      <span className="font-medium">${amount && parseFloat(amount) > 0 ? (parseFloat(amount) * 0.005).toFixed(2) : '0.00'}</span>
+                      <span className="text-muted-foreground">Tokenization + Origination (2%)</span>
+                      <span className="font-medium">${amount && parseFloat(amount) > 0 ? (parseFloat(amount) * 0.02).toFixed(2) : '0.00'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Annual Management Fee (1.0%)</span>
-                      <span className="font-medium">${amount && parseFloat(amount) > 0 ? (parseFloat(amount) * 0.01).toFixed(2) : '0.00'}</span>
+                      <span className="text-muted-foreground">Annual Management Fee (1.5%)</span>
+                      <span className="font-medium">${amount && parseFloat(amount) > 0 ? (parseFloat(amount) * 0.015).toFixed(2) : '0.00'}</span>
                     </div>
                   </div>
                 </div>
