@@ -20,9 +20,14 @@ import electricalBusinessImg from "@/assets/electrical-business.jpg";
 import cleaningBusinessImg from "@/assets/cleaning-business.jpg";
 import storageBusinessImg from "@/assets/storage-business.jpg";
 import carwashBusinessImg from "@/assets/carwash-business.jpg";
+import usdcIcon from "@/assets/usdc-icon.png";
+import usdtIcon from "@/assets/usdt-icon.png";
+import cadcIcon from "@/assets/cadc-icon.webp";
+
 const DeFi = () => {
   const navigate = useNavigate();
   const [selectedPool, setSelectedPool] = useState<any>(null);
+  const [selectedCurrency, setSelectedCurrency] = useState("USDC");
   // User's businesses with location and sector information
   const userBusinesses = [{
     name: "Juniper Logistics",
@@ -990,10 +995,34 @@ const DeFi = () => {
                       </div>
 
                       {/* Investment Amount Input */}
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <label htmlFor="investment-amount" className="text-sm font-medium">
                           Investment Amount
                         </label>
+                        
+                        {/* Currency Selection */}
+                        <div className="flex gap-2">
+                          {[
+                            { name: "USDC", icon: usdcIcon },
+                            { name: "USDT", icon: usdtIcon },
+                            { name: "CADC", icon: cadcIcon }
+                          ].map((currency) => (
+                            <button
+                              key={currency.name}
+                              onClick={() => setSelectedCurrency(currency.name)}
+                              className={cn(
+                                "flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all",
+                                selectedCurrency === currency.name
+                                  ? "border-primary bg-primary/10 text-primary"
+                                  : "border-muted bg-background hover:border-primary/50"
+                              )}
+                            >
+                              <img src={currency.icon} alt={currency.name} className="w-5 h-5" />
+                              <span className="text-sm font-medium">{currency.name}</span>
+                            </button>
+                          ))}
+                        </div>
+                        
                         <div className="relative">
                           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
                           <input
