@@ -28,6 +28,7 @@ const DeFi = () => {
   const navigate = useNavigate();
   const [selectedPool, setSelectedPool] = useState<any>(null);
   const [selectedCurrency, setSelectedCurrency] = useState("USDC");
+  const [investmentAmount, setInvestmentAmount] = useState<string>("");
   // User's businesses with location and sector information
   const userBusinesses = [{
     name: "Juniper Logistics",
@@ -1029,11 +1030,26 @@ const DeFi = () => {
                             id="investment-amount"
                             type="number"
                             placeholder="10,000"
+                            value={investmentAmount}
+                            onChange={(e) => setInvestmentAmount(e.target.value)}
                             className="w-full pl-7 pr-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                             min="0"
                             step="1000"
                           />
                         </div>
+                        
+                        {/* Expected Yield Display */}
+                        {investmentAmount && parseFloat(investmentAmount) > 0 && (
+                          <div className="bg-success/10 border border-success/20 rounded-lg p-3 space-y-1">
+                            <p className="text-xs text-muted-foreground">Expected Annual Yield</p>
+                            <p className="text-xl font-bold text-success">
+                              ${(parseFloat(investmentAmount) * parseFloat(business.apy) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              Based on {business.apy} Net Expected APY
+                            </p>
+                          </div>
+                        )}
                       </div>
 
                       {/* Investment Button */}
