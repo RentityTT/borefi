@@ -1048,7 +1048,7 @@ const DeFi = () => {
                         </div>
                         <div className="space-y-3 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-muted-foreground">Expected Yield (APY)</span>
+                            <span className="text-muted-foreground">Net Expected Yield (APY)</span>
                             <span className="font-semibold text-success">{business.apy}</span>
                           </div>
                           <div className="flex justify-between">
