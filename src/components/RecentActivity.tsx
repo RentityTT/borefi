@@ -16,7 +16,7 @@ const RecentActivity = () => {
     {
       id: 2,
       title: "Deposit",
-      description: "$100,000 USDC deposited to Atmosphere Pool",
+      description: "$100,000 USDC deposited to BORE.FI",
       amount: "+$100,000",
       type: "deposit",
       icon: ArrowDownLeft,
@@ -24,7 +24,7 @@ const RecentActivity = () => {
     {
       id: 3,
       title: "Earnings",
-      description: "Monthly staking rewards from Century City",
+      description: "Monthly staking rewards from BORE.FI pools",
       amount: "+$3,250",
       type: "earnings",
       icon: DollarSign,
@@ -32,7 +32,7 @@ const RecentActivity = () => {
     {
       id: 4,
       title: "Transfer",
-      description: "Transferred between pools (Juniper → Atmosphere)",
+      description: "Transferred between BORE.FI pools",
       amount: "$25,000",
       type: "transfer",
       icon: ArrowLeftRight,
@@ -40,8 +40,8 @@ const RecentActivity = () => {
     {
       id: 5,
       title: "Earnings",
-      description: "Bonus $RENT tokens distributed",
-      amount: "+450 RENT",
+      description: "Bonus $BORE tokens distributed",
+      amount: "+450 BORE",
       type: "earnings",
       icon: DollarSign,
     },
