@@ -20,6 +20,7 @@ import electricalBusinessImg from "@/assets/electrical-business.jpg";
 import cleaningBusinessImg from "@/assets/cleaning-business.jpg";
 import storageBusinessImg from "@/assets/storage-business.jpg";
 import carwashBusinessImg from "@/assets/carwash-business.jpg";
+import harborViewHotelImg from "@/assets/harbor-view-residence.jpg";
 import usdcIcon from "@/assets/usdc-icon.png";
 import usdtIcon from "@/assets/usdt-icon.png";
 import cadcIcon from "@/assets/cadc-icon.webp";
@@ -579,7 +580,7 @@ const DeFi = () => {
     businessValue: "$7,200,000",
     status: "Funding",
     revenue: "$6.2M annually",
-    image: electricalBusinessImg,
+    image: harborViewHotelImg,
     description: "Historic boutique hotel in Charleston's French Quarter featuring 52 luxury rooms, rooftop bar, and renowned restaurant with consistent year-round occupancy",
     minInvestment: "$2,500",
     maxInvestment: "$150,000",
