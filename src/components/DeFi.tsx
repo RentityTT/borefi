@@ -1018,21 +1018,21 @@ const DeFi = () => {
                               <DropdownMenuItem className="flex-col items-start py-3">
                                 <div className="flex justify-between w-full">
                                   <span className="text-muted-foreground">Tokenization + Origination Fee</span>
-                                  <span className="font-semibold">1-3%</span>
+                                  <span className="font-semibold">2.5%</span>
                                 </div>
                                 <span className="text-xs text-muted-foreground mt-1">One-time of total raise</span>
                               </DropdownMenuItem>
                               <DropdownMenuItem className="flex-col items-start py-3">
                                 <div className="flex justify-between w-full">
                                   <span className="text-muted-foreground">Platform Management Fee</span>
-                                  <span className="font-semibold">1-2%</span>
+                                  <span className="font-semibold">1%</span>
                                 </div>
                                 <span className="text-xs text-muted-foreground mt-1">Annual AUM</span>
                               </DropdownMenuItem>
                               <DropdownMenuItem className="flex-col items-start py-3">
                                 <div className="flex justify-between w-full">
                                   <span className="text-muted-foreground">Carry/Performance Fee</span>
-                                  <span className="font-semibold">5-15%</span>
+                                  <span className="font-semibold">12.5%</span>
                                 </div>
                                 <span className="text-xs text-muted-foreground mt-1">Share of profits to investors</span>
                               </DropdownMenuItem>
