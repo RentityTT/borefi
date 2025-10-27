@@ -901,7 +901,7 @@ const DeFi = () => {
                       {/* Tabs for different sections */}
                       <Tabs defaultValue="pitch" className="w-full">
                         <TabsList className="grid w-full grid-cols-3">
-                          <TabsTrigger value="pitch">Pitch</TabsTrigger>
+                          <TabsTrigger value="pitch">Details</TabsTrigger>
                           <TabsTrigger value="highlights">Highlights</TabsTrigger>
                           <TabsTrigger value="problem">Problem</TabsTrigger>
                         </TabsList>
