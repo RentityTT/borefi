@@ -563,41 +563,41 @@ const DeFi = () => {
       type: "PDF"
     }]
   }, {
-    name: "PowerLine Electrical",
+    name: "Harbor View Boutique Hotel",
     investmentType: "Business Equity",
-    location: "Denver, CO",
-    businessType: "Electrical Contractor",
-    tags: ["B2B", "ELECTRICAL", "COMMERCIAL PROJECTS"],
+    location: "Charleston, SC",
+    businessType: "Boutique Hotel",
+    tags: ["B2C", "HOSPITALITY", "TOURISM"],
     investmentAmount: "$1,500,000",
     raised: "$1,050,000",
     raisedPercent: 70,
     investors: 167,
     daysLeft: 38,
-    ebitda: "$2.2M",
+    ebitda: "$2.4M",
     apy: "11.5%",
     term: "Monthly distributions",
-    businessValue: "$6,600,000",
+    businessValue: "$7,200,000",
     status: "Funding",
-    revenue: "$5.8M annually",
+    revenue: "$6.2M annually",
     image: electricalBusinessImg,
-    description: "Licensed electrical contractor specializing in commercial and residential projects with strong reputation across Colorado markets",
+    description: "Historic boutique hotel in Charleston's French Quarter featuring 52 luxury rooms, rooftop bar, and renowned restaurant with consistent year-round occupancy",
     minInvestment: "$2,500",
     maxInvestment: "$150,000",
     deadline: "February 28, 2026",
     securityType: "Convertible Equity Token",
-    valuationCap: "$6.6M",
-    highlights: ["Master electrician license with 45 certified electricians on staff", "Established relationships with 25+ general contractors providing steady project pipeline", "Specialization in solar panel installation, fastest growing segment of business", "Commercial insurance and bonding supporting projects up to $5M", "Family-owned business with 20-year track record and strong community reputation"],
+    valuationCap: "$7.2M",
+    highlights: ["85% average occupancy rate with strong repeat guest base and loyalty program", "Prime location in historic district walking distance to major attractions", "Award-winning restaurant generating 30% of total revenue with local following", "Recent $1.2M renovation of all guest rooms and common areas completed", "Strong online reputation with 4.8/5 rating across booking platforms"],
     problem: {
-      title: "Electrical services demand is surging but contractors need capital",
+      title: "Boutique hotels need capital to compete in post-pandemic travel boom",
       stats: [{
-        label: "Solar Installation Boom",
-        description: "Colorado leading US in commercial solar adoption, 45% YoY growth"
+        label: "Travel Recovery Surge",
+        description: "Charleston tourism up 38% YoY, exceeding pre-pandemic levels"
       }, {
-        label: "$78B Electrical Services",
-        description: "market expanding with construction and renewable energy growth"
+        label: "$218B Hotel Market",
+        description: "boutique segment growing faster than chain hotels with higher margins"
       }, {
-        label: "Equipment & Inventory",
-        description: "upfront capital needed to take on larger commercial projects"
+        label: "Technology & Amenities",
+        description: "capital needed for modern booking systems and guest experience upgrades"
       }]
     },
     documents: [{
