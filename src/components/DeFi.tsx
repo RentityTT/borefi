@@ -22,8 +22,8 @@ import storageBusinessImg from "@/assets/storage-business.jpg";
 import carwashBusinessImg from "@/assets/carwash-business.jpg";
 import harborViewHotelImg from "@/assets/harbor-view-residence.jpg";
 import usdcIcon from "@/assets/usdc-icon.png";
-import usdtIcon from "@/assets/usdt-icon.png";
-import cadcIcon from "@/assets/cadc-icon.webp";
+import usdtIcon from "@/assets/usdt-icon-new.webp";
+import cadcIcon from "@/assets/cadc-icon-new.png";
 
 const DeFi = () => {
   const navigate = useNavigate();
