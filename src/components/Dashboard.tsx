@@ -12,6 +12,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { Badge } from "./ui/badge";
 import { TrendingUp, Info } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import BlockchainPaymentHistory from "./BlockchainPaymentHistory";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Separator } from "./ui/separator";
@@ -142,7 +143,34 @@ const Dashboard = () => {
           <div className={activeTab === "earn" ? "w-full" : "max-w-7xl mx-auto"}>
             {showWallet ? <Wallet /> : <>
                 {activeTab === "portfolio" && <>
-                    <h1 className="text-2xl font-bold mb-8">Hello Johnny 👋</h1>
+                    <div className="flex items-center justify-between mb-8">
+                      <h1 className="text-2xl font-bold">Hello Johnny 👋</h1>
+                      
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="outline" size="sm" className="gap-2">
+                            <Info className="w-4 h-4" />
+                            BORE.FI Fees
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-64 bg-popover">
+                          <DropdownMenuLabel>Fee Structure</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem className="flex justify-between py-3">
+                            <span className="text-muted-foreground">Origination Fee</span>
+                            <span className="font-semibold">0.5%</span>
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="flex justify-between py-3">
+                            <span className="text-muted-foreground">Management Fee</span>
+                            <span className="font-semibold">1.0% annually</span>
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="flex justify-between py-3">
+                            <span className="text-muted-foreground">Carried Interest</span>
+                            <span className="font-semibold">20%</span>
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
                     
                     <div className="flex gap-8 mb-8">
                       <div className="flex-1 space-y-8">
