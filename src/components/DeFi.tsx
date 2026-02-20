@@ -11,16 +11,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Separator } from "@/components/ui/separator";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import constructionBusinessImg from "@/assets/construction-business.jpg";
-import restaurantBusinessImg from "@/assets/restaurant-business.jpg";
-import propertyManagementBusinessImg from "@/assets/property-management-business.jpg";
-import laundromatBusinessImg from "@/assets/laundromat-business.jpg";
-import mechanicalBusinessImg from "@/assets/mechanical-business.jpg";
-import electricalBusinessImg from "@/assets/electrical-business.jpg";
-import cleaningBusinessImg from "@/assets/cleaning-business.jpg";
-import storageBusinessImg from "@/assets/storage-business.jpg";
-import carwashBusinessImg from "@/assets/carwash-business.jpg";
-import harborViewHotelImg from "@/assets/harbor-view-residence.jpg";
+import centuryCityImg from "@/assets/century-city.jpg";
+import juniperTowerImg from "@/assets/juniper-tower.jpg";
+import atmosphereImg from "@/assets/atmosphere.jpg";
+import skylineApartmentsImg from "@/assets/skyline-apartments.jpg";
+import techParkPlazaImg from "@/assets/tech-park-plaza.jpg";
+import marinaBayImg from "@/assets/marina-bay-complex.jpg";
+import harborViewImg from "@/assets/harbor-view-residence.jpg";
+import greenfieldImg from "@/assets/greenfield-shopping.jpg";
+import centuryCityTowerImg from "@/assets/century-city-tower.jpg";
 import usdcIcon from "@/assets/usdc-icon.png";
 import usdtIcon from "@/assets/usdt-icon-updated.png";
 import solIcon from "@/assets/sol-icon.png";
@@ -30,16 +29,16 @@ const DeFi = () => {
   const [selectedPool, setSelectedPool] = useState<any>(null);
   const [selectedCurrency, setSelectedCurrency] = useState("USDC");
   const [investmentAmount, setInvestmentAmount] = useState<string>("");
-  // User's businesses with location and sector information
-  const userBusinesses = [{
-    name: "Juniper Logistics",
+  // User's properties with location and sector information
+  const userProperties = [{
+    name: "Juniper Tower",
     location: "Vancouver",
-    sector: "Logistics & Transportation"
+    sector: "Multi-Family Residential"
   }];
 
-  // Extract unique locations and sectors from user businesses
-  const userLocations = [...new Set(userBusinesses.map(b => b.location))];
-  const userSectors = [...new Set(userBusinesses.map(b => b.sector))];
+  // Extract unique locations and sectors from user properties
+  const userLocations = [...new Set(userProperties.map(b => b.location))];
+  const userSectors = [...new Set(userProperties.map(b => b.sector))];
 
   // Historical data for the chart (showing growth over time)
   const chartData = [{
@@ -92,7 +91,7 @@ const DeFi = () => {
     loans: 3192045789
   }];
   const investmentPools = [{
-    name: "Construction Industry",
+    name: "Multi-Family Residential",
     deposits: "$845,678,901",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
@@ -100,7 +99,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "65%"
   }, {
-    name: "Restaurant Group",
+    name: "Commercial Office",
     deposits: "$592,345,123",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
@@ -108,7 +107,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "58%"
   }, {
-    name: "Property Management",
+    name: "Retail & Shopping Centers",
     deposits: "$478,234,567",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT", "DAI"],
@@ -116,7 +115,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "52%"
   }, {
-    name: "Mechanical Contractors",
+    name: "Industrial & Warehouse",
     deposits: "$367,890,234",
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
@@ -124,7 +123,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "68%"
   }, {
-    name: "Laundromat Chain",
+    name: "Student Housing",
     deposits: "$345,123,678",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
@@ -132,7 +131,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "62%"
   }, {
-    name: "Electrical Services",
+    name: "Mixed-Use Development",
     deposits: "$289,456,890",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
@@ -140,7 +139,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "55%"
   }, {
-    name: "Logistics Fleet",
+    name: "Hospitality & Hotels",
     deposits: "$212,567,234",
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
@@ -148,7 +147,7 @@ const DeFi = () => {
     network: "Solana",
     utilization: "48%"
   }, {
-    name: "HVAC Services",
+    name: "Senior Living",
     deposits: "$167,890,123",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
@@ -157,7 +156,7 @@ const DeFi = () => {
     utilization: "45%"
   }];
   const earnPositions = [{
-    pool: "Construction Industry Pool",
+    pool: "Multi-Family Residential Pool",
     type: "Supply",
     productType: "Pool Investment",
     amount: "$175,500",
@@ -169,7 +168,7 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "CIB-2024-04-001",
+      positionId: "MFR-2024-04-001",
       depositDate: "Apr 1, 2024",
       daysActive: 275,
       principalAmount: "$175,500",
@@ -181,7 +180,7 @@ const DeFi = () => {
       distributionAmount: "$1,164"
     }
   }, {
-    pool: "Metro Restaurant Group",
+    pool: "Commercial Office Pool",
     type: "Supply",
     productType: "Preferred Equity",
     amount: "$150,000",
@@ -193,7 +192,7 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "MRG-2024-06-001",
+      positionId: "COP-2024-06-001",
       depositDate: "Jun 15, 2024",
       daysActive: 200,
       principalAmount: "$150,000",
@@ -205,7 +204,7 @@ const DeFi = () => {
       distributionAmount: "$1,475"
     }
   }, {
-    pool: "Property Management Pool",
+    pool: "Retail & Shopping Pool",
     type: "Supply",
     productType: "Pool Investment",
     amount: "$85,000",
@@ -217,7 +216,7 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "PMP-2024-08-001",
+      positionId: "RSP-2024-08-001",
       depositDate: "Aug 1, 2024",
       daysActive: 153,
       principalAmount: "$85,000",
@@ -230,7 +229,7 @@ const DeFi = () => {
     }
   }];
   const borrowPositions = [{
-    property: "Juniper Logistics",
+    property: "Juniper Tower",
     type: "Borrow",
     amount: "$100,000",
     apr: "7.8%",
@@ -239,10 +238,10 @@ const DeFi = () => {
     status: "Active",
     network: "Solana",
     details: {
-      loanId: "JL-2024-08-001",
-      securityType: "Business Assets + Corporate Guarantee",
+      loanId: "JT-2024-08-001",
+      securityType: "Property Lien + Corporate Guarantee",
       businessAddress: "4567 Juniper Street, Vancouver, BC",
-      corporateGuarantor: "Juniper Logistics Holdings Limited",
+      corporateGuarantor: "Juniper Tower Holdings Limited",
       principalRemaining: "$89,250",
       interestPaid: "$6,850",
       nextPaymentDate: "Jan 1, 2025",
@@ -309,11 +308,11 @@ const DeFi = () => {
     growth: "+7.9%"
   }];
   const individualBusinesses = [{
-    name: "Century Construction Co.",
-    investmentType: "Business Equity",
+    name: "Century City Tower",
+    investmentType: "Rental Property",
     location: "Los Angeles, CA",
-    businessType: "Commercial Construction",
-    tags: ["B2B", "CONSTRUCTION", "INFRASTRUCTURE"],
+    businessType: "Multi-Family Residential",
+    tags: ["RESIDENTIAL", "MULTI-FAMILY", "CLASS A"],
     investmentAmount: "$2,500,000",
     raised: "$1,850,000",
     raisedPercent: 74,
@@ -325,25 +324,25 @@ const DeFi = () => {
     businessValue: "$8,000,000",
     status: "Funding",
     revenue: "$8.2M annually",
-    image: constructionBusinessImg,
-    description: "Established commercial construction company specializing in government and corporate infrastructure projects across Southern California",
+    image: centuryCityTowerImg,
+    description: "120-unit luxury apartment complex in Century City with premium amenities, rooftop pool, and 96% occupancy generating strong monthly rental cashflow",
     minInvestment: "$5,000",
     maxInvestment: "$250,000",
     deadline: "January 15, 2026",
-    securityType: "Convertible Equity Token",
+    securityType: "Rent-Backed Token",
     valuationCap: "$8M",
-    highlights: ["Established relationships with 50+ government agencies and Fortune 500 companies", "89% project success rate with on-time, on-budget delivery over 15 years", "Secured $12M in new contracts for 2026, 45% increase from previous year", "Licensed in 5 states with bonding capacity of $100M for large-scale projects", "Led by CEO with 25+ years in commercial construction and infrastructure development"],
+    highlights: ["120 luxury units with average monthly rent of $3,200 and 96% occupancy rate", "Premium amenities including rooftop pool, fitness center, and concierge services", "Located in prime Century City corridor with strong rental demand and low vacancy", "Professional property management with automated rent collection and maintenance", "Annual rental income of $4.6M with 3.5% annual rent escalation clauses"],
     problem: {
-      title: "Infrastructure spending is accelerating but contractors lack capital",
+      title: "Housing demand in LA far exceeds supply, driving rental premiums",
       stats: [{
-        label: "$1.2T Infrastructure Bill",
-        description: "creating unprecedented demand for qualified contractors"
+        label: "1.2% Vacancy Rate",
+        description: "in Century City submarket, well below national average"
       }, {
-        label: "$850M Project Backlog",
-        description: "waiting for working capital to execute contracts"
+        label: "$3,500 Avg Rent",
+        description: "for Class A apartments in the area, growing 5% annually"
       }, {
-        label: "#1 Growth Constraint",
-        description: "access to capital cited by 78% of construction firms"
+        label: "98% Rent Collection",
+        description: "rate over the past 24 months demonstrating tenant quality"
       }]
     },
     documents: [{
@@ -353,18 +352,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "Metro Restaurant Group",
-    investmentType: "Business Equity",
+    name: "Skyline Apartments",
+    investmentType: "Rental Property",
     location: "Seattle, WA",
-    businessType: "Restaurant Chain",
-    tags: ["B2C", "FOOD & BEVERAGE", "MULTI-LOCATION"],
+    businessType: "Mid-Rise Residential",
+    tags: ["RESIDENTIAL", "MID-RISE", "URBAN"],
     investmentAmount: "$1,750,000",
     raised: "$1,225,000",
     raisedPercent: 70,
@@ -376,25 +375,25 @@ const DeFi = () => {
     businessValue: "$6,300,000",
     status: "Funding",
     revenue: "$6.5M annually",
-    image: restaurantBusinessImg,
-    description: "Fast-casual restaurant chain with 8 locations serving farm-to-table cuisine with proven unit economics and expansion plans",
+    image: skylineApartmentsImg,
+    description: "84-unit mid-rise apartment building in downtown Seattle with modern finishes, underground parking, and proximity to tech campuses driving tenant demand",
     minInvestment: "$2,500",
     maxInvestment: "$150,000",
     deadline: "February 1, 2026",
-    securityType: "Tokenized Preferred Equity",
+    securityType: "Rent-Backed Token",
     valuationCap: "$6.3M",
-    highlights: ["8 profitable locations across Seattle metro area with average unit revenue of $812K", "Proprietary supply chain relationships with 30+ local farms for fresh ingredients", "Strong brand loyalty with 45,000+ members in rewards program and 4.7-star rating", "Proven expansion model ready to scale to 15 locations by 2027", "Industry-leading margins at 22% EBITDA driven by efficient operations"],
+    highlights: ["84 units averaging $2,850/month with waitlist of 200+ prospective tenants", "Walking distance to Amazon HQ and major tech campuses ensuring tenant pipeline", "Recently renovated common areas and units with modern smart-home features", "Strong lease renewal rate of 82% reducing turnover and vacancy costs", "Pet-friendly policy with premium pet rent generating additional $45K annually"],
     problem: {
-      title: "Fast-casual dining market is booming but expansion needs capital",
+      title: "Seattle tech boom drives relentless demand for quality housing",
       stats: [{
-        label: "68% of Consumers",
-        description: "prefer fast-casual over traditional dining post-pandemic"
+        label: "45,000 New Tech Jobs",
+        description: "added annually in Seattle metro, fueling housing demand"
       }, {
-        label: "$125B Market Size",
-        description: "growing at 11% annually with strong tailwinds"
+        label: "$2,900 Avg Rent",
+        description: "for downtown Seattle apartments, rising 6% year-over-year"
       }, {
-        label: "Prime Locations",
-        description: "identified for next 7 locations but require upfront capital"
+        label: "200+ Waitlist",
+        description: "prospective tenants waiting for units, ensuring zero vacancy risk"
       }]
     },
     documents: [{
@@ -404,18 +403,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "Coastal Property Management",
-    investmentType: "Business Equity",
+    name: "Marina Bay Complex",
+    investmentType: "Rental Property",
     location: "Miami, FL",
-    businessType: "Property Management",
-    tags: ["B2B", "REAL ESTATE", "RECURRING REVENUE"],
+    businessType: "Luxury Waterfront",
+    tags: ["LUXURY", "WATERFRONT", "MIXED-USE"],
     investmentAmount: "$3,000,000",
     raised: "$2,550,000",
     raisedPercent: 85,
@@ -427,25 +426,25 @@ const DeFi = () => {
     businessValue: "$10,000,000",
     status: "Funding",
     revenue: "$12.8M annually",
-    image: propertyManagementBusinessImg,
-    description: "Full-service property management company managing 2,000+ residential and commercial units with technology-driven operations",
+    image: marinaBayImg,
+    description: "156-unit luxury waterfront complex with ground-floor retail, marina access, and panoramic bay views generating premium rental income year-round",
     minInvestment: "$10,000",
     maxInvestment: "$500,000",
     deadline: "December 30, 2025",
-    securityType: "Tokenized Preferred Equity",
+    securityType: "Rent-Backed Token",
     valuationCap: "$10M",
-    highlights: ["Managing 2,000+ units across Miami-Dade and Broward counties with 98% retention rate", "Technology platform automates 70% of operations reducing costs by $2M annually", "Contracted to onboard 500 new units in Q1 2026, 25% growth in portfolio", "Diversified revenue streams: management fees, leasing commissions, maintenance markups", "Founded by team with 40+ combined years in South Florida real estate"],
+    highlights: ["156 luxury units with average rent of $4,200/month and 97% occupancy", "Ground-floor retail generating $1.8M additional annual rental income", "Private marina with 40 boat slips rented at $850/month each", "Miami's strongest rental submarket with 8% annual rent growth", "HOA and amenity fees provide additional $600K annual revenue stream"],
     problem: {
-      title: "Property management market is consolidating and tech is key",
+      title: "Miami luxury rental market booming with domestic migration",
       stats: [{
-        label: "42% of Property Owners",
-        description: "dissatisfied with current management seeking better service"
+        label: "1,000 People/Day",
+        description: "moving to Florida, with Miami as the top destination"
       }, {
-        label: "$88B Industry",
-        description: "transitioning to technology-driven operators with scale"
+        label: "$4,500 Avg Rent",
+        description: "for waterfront luxury units, 12% higher than last year"
       }, {
-        label: "Growth Capital Needed",
-        description: "to acquire competitors and invest in technology platform"
+        label: "Zero State Income Tax",
+        description: "attracting high-net-worth renters from NY, CA, and IL"
       }]
     },
     documents: [{
@@ -455,18 +454,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "SpinCycle Laundromats",
-    investmentType: "Business Equity",
+    name: "Tech Park Plaza",
+    investmentType: "Rental Property",
     location: "Austin, TX",
-    businessType: "Laundromat Chain",
-    tags: ["B2C", "CONSUMER SERVICES", "SUBSCRIPTION MODEL"],
+    businessType: "Commercial Office",
+    tags: ["COMMERCIAL", "OFFICE", "TECH CORRIDOR"],
     investmentAmount: "$2,200,000",
     raised: "$1,760,000",
     raisedPercent: 80,
@@ -478,25 +477,25 @@ const DeFi = () => {
     businessValue: "$7,200,000",
     status: "Funding",
     revenue: "$9.2M annually",
-    image: laundromatBusinessImg,
-    description: "Modern laundromat chain with app-based reservation system and subscription model serving urban markets in Texas",
+    image: techParkPlazaImg,
+    description: "Class A office complex in Austin's tech corridor with 180,000 sq ft leased to major tech companies on long-term NNN leases generating predictable cashflow",
     minInvestment: "$1,000",
     maxInvestment: "$100,000",
     deadline: "February 20, 2026",
-    securityType: "Convertible Equity Token",
+    securityType: "Rent-Backed Token",
     valuationCap: "$7.2M",
-    highlights: ["15 locations across Austin, Dallas, and Houston with modern equipment and amenities", "Subscription model with 8,000+ monthly members generating predictable recurring revenue", "Mobile app with 25,000+ downloads enabling reservations and cashless payments", "Industry-leading unit economics with 55% gross margins and $612K average revenue per location", "Expansion pipeline of 10 locations identified in high-density urban areas"],
+    highlights: ["180,000 sq ft fully leased to 12 tenants with weighted avg lease term of 7.2 years", "Triple-net (NNN) leases with tenants covering taxes, insurance, and maintenance", "Anchor tenants include two Fortune 500 tech companies on 10-year leases", "Built-in 3% annual rent escalators across all leases providing organic growth", "LEED Platinum certified building commanding premium rental rates"],
     problem: {
-      title: "Traditional laundromats are outdated, modern consumers want convenience",
+      title: "Austin tech expansion creates insatiable demand for Class A office",
       stats: [{
-        label: "85% of Urban Dwellers",
-        description: "don't have in-unit laundry, creating massive addressable market"
+        label: "250+ Tech Companies",
+        description: "relocated or expanded to Austin in the past 3 years"
       }, {
-        label: "$5B Laundromat Market",
-        description: "dominated by aging operators not meeting modern expectations"
+        label: "$52/sq ft NNN",
+        description: "average asking rent for Class A office, up 15% YoY"
       }, {
-        label: "3x Higher Retention",
-        description: "subscription model vs. traditional pay-per-use laundromats"
+        label: "2.8% Vacancy",
+        description: "in Austin tech corridor, lowest among major US markets"
       }]
     },
     documents: [{
@@ -506,18 +505,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "Precision Mechanical Services",
-    investmentType: "Business Equity",
-    location: "Boston, MA",
-    businessType: "Mechanical Contractor",
-    tags: ["B2B", "HVAC", "MAINTENANCE CONTRACTS"],
+    name: "Juniper Tower",
+    investmentType: "Rental Property",
+    location: "Vancouver, BC",
+    businessType: "High-Rise Residential",
+    tags: ["RESIDENTIAL", "HIGH-RISE", "PREMIUM"],
     investmentAmount: "$1,900,000",
     raised: "$1,330,000",
     raisedPercent: 70,
@@ -529,25 +528,25 @@ const DeFi = () => {
     businessValue: "$6,000,000",
     status: "Funding",
     revenue: "$7.4M annually",
-    image: mechanicalBusinessImg,
-    description: "Commercial HVAC and mechanical contractor serving industrial facilities with long-term maintenance contracts and predictable revenue",
+    image: juniperTowerImg,
+    description: "42-story luxury residential tower in downtown Vancouver with 200 units, concierge service, and stunning mountain views commanding premium rents",
     minInvestment: "$5,000",
     maxInvestment: "$200,000",
     deadline: "March 15, 2026",
-    securityType: "Tokenized Preferred Equity",
+    securityType: "Rent-Backed Token",
     valuationCap: "$6M",
-    highlights: ["Long-term contracts with 150+ commercial and industrial clients averaging 7-year relationships", "Recurring maintenance revenue represents 65% of total revenue, providing stability", "Licensed and certified for all major HVAC systems with 35 skilled technicians", "Strong safety record with zero lost-time accidents in past 3 years", "Led by master technician with 30 years experience and relationships with major clients"],
+    highlights: ["200 premium units with average monthly rent of CAD $3,800 and 98% occupancy", "Concierge, fitness center, sky lounge, and EV charging attracting high-income tenants", "Vancouver's sub-1% vacancy rate ensures continuous tenant demand", "Strong immigration-driven population growth supporting rental market", "Professional management with automated systems and 24/7 maintenance response"],
     problem: {
-      title: "HVAC maintenance is critical but contractors lack working capital",
+      title: "Vancouver housing crisis creates extreme rental demand",
       stats: [{
-        label: "92% of Commercial Buildings",
-        description: "require ongoing HVAC maintenance creating consistent demand"
+        label: "0.7% Vacancy Rate",
+        description: "in Metro Vancouver, among the lowest in North America"
       }, {
-        label: "$29B Services Market",
-        description: "growing as aging infrastructure requires more frequent repairs"
+        label: "CAD $3,200 Avg Rent",
+        description: "for downtown units, growing 8% annually"
       }, {
-        label: "Equipment Investment",
-        description: "needed to handle larger commercial projects and expand service area"
+        label: "150K+ Immigrants",
+        description: "arriving in BC annually, driving sustained rental demand"
       }]
     },
     documents: [{
@@ -557,18 +556,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "Harbor View Boutique Hotel",
-    investmentType: "Business Equity",
+    name: "Harbor View Residence",
+    investmentType: "Rental Property",
     location: "Charleston, SC",
-    businessType: "Boutique Hotel",
-    tags: ["B2C", "HOSPITALITY", "TOURISM"],
+    businessType: "Boutique Apartments",
+    tags: ["RESIDENTIAL", "BOUTIQUE", "HISTORIC DISTRICT"],
     investmentAmount: "$1,500,000",
     raised: "$1,050,000",
     raisedPercent: 70,
@@ -580,25 +579,25 @@ const DeFi = () => {
     businessValue: "$7,200,000",
     status: "Funding",
     revenue: "$6.2M annually",
-    image: harborViewHotelImg,
-    description: "Historic boutique hotel in Charleston's French Quarter featuring 52 luxury rooms, rooftop bar, and renowned restaurant with consistent year-round occupancy",
+    image: harborViewImg,
+    description: "52-unit boutique apartment building in Charleston's historic district with harbor views, premium finishes, and strong demand from young professionals",
     minInvestment: "$2,500",
     maxInvestment: "$150,000",
     deadline: "February 28, 2026",
-    securityType: "Convertible Equity Token",
+    securityType: "Rent-Backed Token",
     valuationCap: "$7.2M",
-    highlights: ["85% average occupancy rate with strong repeat guest base and loyalty program", "Prime location in historic district walking distance to major attractions", "Award-winning restaurant generating 30% of total revenue with local following", "Recent $1.2M renovation of all guest rooms and common areas completed", "Strong online reputation with 4.8/5 rating across booking platforms"],
+    highlights: ["52 boutique units with average rent of $2,400/month and zero vacancy for 18 months", "Historic district location with walkability score of 95 and proximity to waterfront", "Premium finishes including exposed brick, hardwood floors, and designer kitchens", "Strong corporate rental demand from Boeing, Volvo, and tech companies in the area", "Short-term rental option for 10 units generating 40% premium over long-term leases"],
     problem: {
-      title: "Boutique hotels need capital to compete in post-pandemic travel boom",
+      title: "Charleston's rapid growth outpaces housing supply",
       stats: [{
-        label: "Travel Recovery Surge",
-        description: "Charleston tourism up 38% YoY, exceeding pre-pandemic levels"
+        label: "#1 US City",
+        description: "ranked by Travel + Leisure for 10 consecutive years driving demand"
       }, {
-        label: "$218B Hotel Market",
-        description: "boutique segment growing faster than chain hotels with higher margins"
+        label: "35% Rent Growth",
+        description: "in Charleston metro over past 3 years, outpacing national average"
       }, {
-        label: "Technology & Amenities",
-        description: "capital needed for modern booking systems and guest experience upgrades"
+        label: "Corporate Relocations",
+        description: "Boeing, Volvo, and tech startups bringing thousands of new renters"
       }]
     },
     documents: [{
@@ -608,18 +607,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "CleanPro Commercial Services",
-    investmentType: "Business Equity",
+    name: "Greenfield Shopping Center",
+    investmentType: "Rental Property",
     location: "Atlanta, GA",
-    businessType: "Commercial Cleaning",
-    tags: ["B2B", "FACILITIES", "RECURRING CONTRACTS"],
+    businessType: "Retail Center",
+    tags: ["RETAIL", "SHOPPING CENTER", "NNN LEASES"],
     investmentAmount: "$1,800,000",
     raised: "$1,260,000",
     raisedPercent: 70,
@@ -631,25 +630,25 @@ const DeFi = () => {
     businessValue: "$5,400,000",
     status: "Funding",
     revenue: "$7.1M annually",
-    image: cleaningBusinessImg,
-    description: "Premier commercial cleaning company serving corporate offices, medical facilities, and educational institutions with eco-friendly practices and certified staff",
+    image: greenfieldImg,
+    description: "125,000 sq ft neighborhood shopping center anchored by national grocery and pharmacy chains with 95% occupancy and long-term NNN leases",
     minInvestment: "$2,500",
     maxInvestment: "$175,000",
     deadline: "March 1, 2026",
-    securityType: "Tokenized Preferred Equity",
+    securityType: "Rent-Backed Token",
     valuationCap: "$5.4M",
-    highlights: ["300+ commercial clients including 15 Fortune 500 companies with average contract length of 5 years", "Green-certified cleaning processes with proprietary eco-friendly product line reducing costs 18%", "24/7 operations with 180 trained staff and 98% client satisfaction rating over past 3 years", "Recurring revenue model with 92% contract renewal rate providing stable cash flow", "Technology platform for scheduling, quality control, and client communication reducing overhead"],
+    highlights: ["125,000 sq ft with 22 tenants and weighted average lease term of 8.5 years", "Grocery-anchored with national chains providing recession-resistant cashflow", "Triple-net leases eliminate landlord operating expense risk", "Located in high-growth Atlanta suburb with 25,000 daily traffic count", "2.5% annual rent escalators built into all major tenant leases"],
     problem: {
-      title: "Commercial facilities need reliable cleaning but industry lacks professionalism",
+      title: "Grocery-anchored retail proves recession-resistant with stable cashflow",
       stats: [{
-        label: "$74B Cleaning Industry",
-        description: "growing as businesses return to offices and prioritize cleanliness post-pandemic"
+        label: "95% Occupancy",
+        description: "maintained through COVID and economic cycles"
       }, {
-        label: "65% Client Turnover",
-        description: "in industry due to inconsistent service quality and lack of technology"
+        label: "$28/sq ft NNN",
+        description: "average rent with tenants covering all operating expenses"
       }, {
-        label: "Green Premium",
-        description: "businesses willing to pay 20% more for certified eco-friendly cleaning services"
+        label: "Essential Retail",
+        description: "grocery and pharmacy anchors drive consistent foot traffic"
       }]
     },
     documents: [{
@@ -659,18 +658,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "SecureSpace Storage",
-    investmentType: "Business Equity",
+    name: "Century City Condos",
+    investmentType: "Rental Property",
     location: "Phoenix, AZ",
-    businessType: "Self-Storage Facility",
-    tags: ["B2C", "REAL ESTATE", "PASSIVE INCOME"],
+    businessType: "Garden-Style Apartments",
+    tags: ["RESIDENTIAL", "GARDEN-STYLE", "SUNBELT"],
     investmentAmount: "$2,800,000",
     raised: "$2,240,000",
     raisedPercent: 80,
@@ -682,25 +681,25 @@ const DeFi = () => {
     businessValue: "$9,200,000",
     status: "Funding",
     revenue: "$5.8M annually",
-    image: storageBusinessImg,
-    description: "Climate-controlled self-storage facilities with 850+ units across Phoenix metro area featuring 24/7 security and automated management systems",
+    image: centuryCityImg,
+    description: "240-unit garden-style apartment community in Scottsdale with resort-style amenities, pool, and clubhouse attracting young professionals and retirees",
     minInvestment: "$5,000",
     maxInvestment: "$250,000",
     deadline: "January 20, 2026",
-    securityType: "Tokenized Preferred Equity",
+    securityType: "Rent-Backed Token",
     valuationCap: "$9.2M",
-    highlights: ["3 facilities totaling 850 units with 94% occupancy rate sustained over past 2 years", "Climate-controlled premium units command 35% higher rates than standard storage", "Automated gate access and payment system reducing staffing costs by $180K annually", "Located in high-growth Phoenix suburbs with low competition and strong demographics", "Expansion plan approved for 2 additional facilities in adjacent markets with pre-approved financing"],
+    highlights: ["240 units with average rent of $1,850/month and 97% occupancy rate", "Resort-style pool, spa, fitness center, and co-working spaces", "Located in Scottsdale's fastest-growing submarket with 12% population growth", "Value-add opportunity: 60 units renovated with $200/month rent premium achieved", "Pet-friendly community with dog park generating $72K annually in pet fees"],
     problem: {
-      title: "Storage demand is surging but supply can't keep pace with growth",
+      title: "Phoenix Sunbelt migration driving record rental demand",
       stats: [{
-        label: "$48B Storage Industry",
-        description: "growing at 7% annually as urbanization increases storage needs"
+        label: "#1 Migration Destination",
+        description: "Phoenix metro leads US in net domestic migration"
       }, {
-        label: "92% National Occupancy",
-        description: "indicating severe undersupply in key markets like Phoenix"
+        label: "$1,900 Avg Rent",
+        description: "for Class B apartments, growing 9% annually in Scottsdale"
       }, {
-        label: "Land Scarcity",
-        description: "limited availability of zoned land for new facilities driving premium valuations"
+        label: "3.2% Vacancy",
+        description: "in Scottsdale submarket, well below historical average"
       }]
     },
     documents: [{
@@ -710,18 +709,18 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
       type: "PDF"
     }]
   }, {
-    name: "Sparkle Express Car Wash",
-    investmentType: "Business Equity",
+    name: "Atmosphere Lofts",
+    investmentType: "Rental Property",
     location: "Dallas, TX",
-    businessType: "Automated Car Wash",
-    tags: ["B2C", "AUTOMOTIVE", "SUBSCRIPTION MODEL"],
+    businessType: "Industrial Conversion Lofts",
+    tags: ["RESIDENTIAL", "LOFTS", "ADAPTIVE REUSE"],
     investmentAmount: "$2,100,000",
     raised: "$1,470,000",
     raisedPercent: 70,
@@ -733,25 +732,25 @@ const DeFi = () => {
     businessValue: "$6,400,000",
     status: "Funding",
     revenue: "$4.9M annually",
-    image: carwashBusinessImg,
-    description: "Express tunnel car wash chain with 4 locations offering unlimited monthly memberships and eco-friendly washing technology",
+    image: atmosphereImg,
+    description: "68-unit converted warehouse loft apartments in Dallas Deep Ellum district with exposed brick, high ceilings, and creative spaces popular with young professionals",
     minInvestment: "$2,500",
     maxInvestment: "$175,000",
     deadline: "March 10, 2026",
-    securityType: "Convertible Equity Token",
+    securityType: "Rent-Backed Token",
     valuationCap: "$6.4M",
-    highlights: ["4 high-traffic locations processing 180,000+ washes annually with 3-minute tunnel time", "Unlimited membership model with 6,500+ subscribers providing 78% recurring revenue", "Water reclamation system reducing water costs 65% while meeting environmental standards", "Strategic locations near major highways with average 45,000 daily vehicle traffic count", "Mobile app with 12,000+ users enabling subscription management and contactless payment"],
+    highlights: ["68 unique loft units with average rent of $2,600/month and 94% occupancy", "Historic industrial conversion with exposed brick, 14-ft ceilings, and original timber", "Deep Ellum arts district location with walkability to restaurants, bars, and venues", "Strong millennial and Gen-Z tenant base with average lease term of 22 months", "Ground-floor creative retail spaces generating $420K additional annual income"],
     problem: {
-      title: "Car wash industry consolidating around subscription model leaders",
+      title: "Urban loft demand surges as young professionals seek authentic living",
       stats: [{
-        label: "$15B Car Wash Market",
-        description: "growing as consumers prefer subscription convenience over traditional pay-per-wash"
+        label: "Deep Ellum Renaissance",
+        description: "area property values up 45% in 3 years with continued momentum"
       }, {
-        label: "3.2x Higher LTV",
-        description: "subscription members generate compared to pay-per-wash customers"
+        label: "$2,800 Avg Loft Rent",
+        description: "for converted industrial spaces, 30% premium over standard apartments"
       }, {
-        label: "Prime Locations",
-        description: "identified for 3 additional sites with combined traffic of 120K vehicles daily"
+        label: "85% Millennial Tenants",
+        description: "seeking unique, character-rich living spaces over cookie-cutter units"
       }]
     },
     documents: [{
@@ -761,7 +760,7 @@ const DeFi = () => {
       name: "Subscription Agreement",
       type: "PDF"
     }, {
-      name: "Audited Financial Statements",
+      name: "Property Appraisal Report",
       type: "PDF"
     }, {
       name: "Risk Disclosures",
@@ -778,8 +777,8 @@ const DeFi = () => {
     <div className="space-y-6">
       {/* Header and Description */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Business Investment DeFi</h1>
-        <p className="text-muted-foreground">Invest in tokenized boring cashflowing businesses. Choose to fund and earn from specific pools based on industry sector or individual business. All businesses have been curated and completed due dilligence by BORE.FI.</p>
+        <h1 className="text-3xl font-bold">Real Estate Investment DeFi</h1>
+        <p className="text-muted-foreground">Invest in tokenized rental properties generating monthly cashflow. Choose to fund and earn from specific pools based on property type or individual properties. All properties have been curated and completed due diligence by BORE.FI.</p>
         <div className="mt-4 space-y-3 text-muted-foreground">
           
           
@@ -911,7 +910,7 @@ const DeFi = () => {
                         <TabsList className="grid w-full grid-cols-3">
                           <TabsTrigger value="pitch">Details</TabsTrigger>
                           <TabsTrigger value="highlights">Highlights</TabsTrigger>
-                          <TabsTrigger value="problem">Problem</TabsTrigger>
+                          <TabsTrigger value="problem">Market</TabsTrigger>
                         </TabsList>
                         
                         <TabsContent value="pitch" className="space-y-4 mt-4">
@@ -922,15 +921,15 @@ const DeFi = () => {
                                 <p className="font-semibold">{business.location}</p>
                               </div>
                               <div>
-                                <p className="text-sm text-muted-foreground">Business Type</p>
+                                <p className="text-sm text-muted-foreground">Property Type</p>
                                 <p className="font-semibold">{business.businessType}</p>
                               </div>
                               <div>
-                                <p className="text-sm text-muted-foreground">Annual Revenue</p>
+                                <p className="text-sm text-muted-foreground">Annual Rental Income</p>
                                 <p className="font-semibold">{business.revenue}</p>
                               </div>
                               <div>
-                                <p className="text-sm text-muted-foreground">EBITDA</p>
+                                <p className="text-sm text-muted-foreground">Net Operating Income</p>
                                 <p className="font-semibold">{business.ebitda}</p>
                               </div>
                             </div>
@@ -949,7 +948,7 @@ const DeFi = () => {
                         
                         <TabsContent value="problem" className="space-y-4 mt-4">
                           <div className="space-y-4">
-                            <h3 className="font-semibold text-lg">Problem</h3>
+                            <h3 className="font-semibold text-lg">Market Opportunity</h3>
                             <h4 className="text-xl font-bold">{business.problem.title}</h4>
                             <div className="space-y-4">
                               {business.problem.stats.map((stat, i) => <div key={i} className="bg-muted/30 rounded-lg p-4">
