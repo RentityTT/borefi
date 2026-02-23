@@ -95,7 +95,7 @@ const DeFi = () => {
     deposits: "$845,678,901",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
-    supplyAPY: "7.82%",
+    supplyAPY: "11.8%",
     network: "Solana",
     utilization: "65%"
   }, {
@@ -103,7 +103,7 @@ const DeFi = () => {
     deposits: "$592,345,123",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
-    supplyAPY: "8.12%",
+    supplyAPY: "12.3%",
     network: "Solana",
     utilization: "58%"
   }, {
@@ -111,7 +111,7 @@ const DeFi = () => {
     deposits: "$478,234,567",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT", "DAI"],
-    supplyAPY: "7.45%",
+    supplyAPY: "11.5%",
     network: "Solana",
     utilization: "52%"
   }, {
@@ -119,7 +119,7 @@ const DeFi = () => {
     deposits: "$367,890,234",
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
-    supplyAPY: "7.95%",
+    supplyAPY: "12.0%",
     network: "Solana",
     utilization: "68%"
   }, {
@@ -127,7 +127,7 @@ const DeFi = () => {
     deposits: "$345,123,678",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
-    supplyAPY: "8.35%",
+    supplyAPY: "12.8%",
     network: "Solana",
     utilization: "62%"
   }, {
@@ -135,7 +135,7 @@ const DeFi = () => {
     deposits: "$289,456,890",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "DAI"],
-    supplyAPY: "7.65%",
+    supplyAPY: "11.7%",
     network: "Solana",
     utilization: "55%"
   }, {
@@ -143,7 +143,7 @@ const DeFi = () => {
     deposits: "$212,567,234",
     curator: "BORE.FI Protocol",
     collateral: ["USDC"],
-    supplyAPY: "7.28%",
+    supplyAPY: "12.2%",
     network: "Solana",
     utilization: "48%"
   }, {
@@ -151,7 +151,7 @@ const DeFi = () => {
     deposits: "$167,890,123",
     curator: "BORE.FI Protocol",
     collateral: ["USDC", "USDT"],
-    supplyAPY: "7.15%",
+    supplyAPY: "11.9%",
     network: "Solana",
     utilization: "45%"
   }];
@@ -161,8 +161,8 @@ const DeFi = () => {
     productType: "Rent-Backed Token",
     amount: "$175,500",
     amountNumeric: 175500,
-    apy: "7.82%",
-    apyNumeric: 7.82,
+    apy: "11.8%",
+    apyNumeric: 11.8,
     duration: "Fixed - 3 months remaining",
     startDate: "Apr 1, 2024",
     status: "Active",
@@ -185,8 +185,8 @@ const DeFi = () => {
     productType: "Rent-Backed Token",
     amount: "$150,000",
     amountNumeric: 150000,
-    apy: "11.8%",
-    apyNumeric: 11.8,
+    apy: "12.5%",
+    apyNumeric: 12.5,
     duration: "Flexible",
     startDate: "Jun 15, 2024",
     status: "Active",
@@ -209,8 +209,8 @@ const DeFi = () => {
     productType: "Rent-Backed Token",
     amount: "$85,000",
     amountNumeric: 85000,
-    apy: "7.45%",
-    apyNumeric: 7.45,
+    apy: "11.5%",
+    apyNumeric: 11.5,
     duration: "Flexible",
     startDate: "Aug 1, 2024",
     status: "Active",
@@ -232,7 +232,7 @@ const DeFi = () => {
     property: "Juniper Tower",
     type: "Borrow",
     amount: "$100,000",
-    apr: "7.8%",
+    apr: "12.0%",
     duration: "2 years",
     startDate: "Aug 1, 2024",
     status: "Active",
@@ -257,7 +257,7 @@ const DeFi = () => {
     country: "Canada",
     totalValue: "$1,892,456,789",
     properties: 234,
-    avgReturn: "8.5%",
+    avgReturn: "12.5%",
     occupancyRate: "94%",
     marketCap: "$2.1B",
     growth: "+12.3%"
@@ -266,7 +266,7 @@ const DeFi = () => {
     country: "France",
     totalValue: "$1,456,789,234",
     properties: 189,
-    avgReturn: "7.8%",
+    avgReturn: "11.8%",
     occupancyRate: "92%",
     marketCap: "$1.8B",
     growth: "+9.7%"
@@ -275,7 +275,7 @@ const DeFi = () => {
     country: "China",
     totalValue: "$1,234,567,890",
     properties: 156,
-    avgReturn: "9.2%",
+    avgReturn: "13.2%",
     occupancyRate: "96%",
     marketCap: "$1.5B",
     growth: "+15.8%"
@@ -284,7 +284,7 @@ const DeFi = () => {
     country: "USA",
     totalValue: "$1,123,456,789",
     properties: 298,
-    avgReturn: "8.1%",
+    avgReturn: "12.1%",
     occupancyRate: "91%",
     marketCap: "$1.4B",
     growth: "+10.5%"
@@ -293,7 +293,7 @@ const DeFi = () => {
     country: "UK",
     totalValue: "$987,654,321",
     properties: 167,
-    avgReturn: "7.5%",
+    avgReturn: "11.5%",
     occupancyRate: "89%",
     marketCap: "$1.2B",
     growth: "+8.2%"
@@ -302,7 +302,7 @@ const DeFi = () => {
     country: "Japan",
     totalValue: "$876,543,210",
     properties: 145,
-    avgReturn: "7.2%",
+    avgReturn: "11.2%",
     occupancyRate: "93%",
     marketCap: "$1.0B",
     growth: "+7.9%"
@@ -421,7 +421,7 @@ const DeFi = () => {
     investors: 412,
     daysLeft: 15,
     ebitda: "$2.5M",
-    apy: "13.2%",
+    apy: "12.2%",
     term: "Monthly distributions",
     businessValue: "$10,000,000",
     status: "Funding",
@@ -472,7 +472,7 @@ const DeFi = () => {
     investors: 289,
     daysLeft: 35,
     ebitda: "$1.8M",
-    apy: "14.5%",
+    apy: "12.0%",
     term: "Monthly distributions",
     businessValue: "$7,200,000",
     status: "Funding",

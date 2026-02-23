@@ -11,7 +11,7 @@ const PropertiesTable = () => {
     image: centuryCityImg,
     upfrontCapital: "$750,550",
     termRemaining: "12 Months",
-    cost: "7.1%",
+    cost: "12.1%",
     status: "Available"
   }, {
     id: "juniper-tower",
@@ -19,7 +19,7 @@ const PropertiesTable = () => {
     image: juniperTowerImg,
     upfrontCapital: "$275,500",
     termRemaining: "6 Months",
-    cost: "6.5%",
+    cost: "11.5%",
     status: "Available"
   }, {
     id: "atmosphere-complex",
@@ -27,7 +27,7 @@ const PropertiesTable = () => {
     image: atmosphereImg,
     upfrontCapital: "$249,750",
     termRemaining: "12 Months",
-    cost: "8.0%",
+    cost: "12.0%",
     status: "Pending"
   }];
   const getStatusVariant = (status: string) => {
