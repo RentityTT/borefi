@@ -3,23 +3,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Info, TrendingUp, Coins, Wallet } from "lucide-react";
+import { Info } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import usdcLogo from "@/assets/usdc-logo.png";
+
 const Earn = () => {
   const [depositAmount, setDepositAmount] = useState("");
   const [lockupMonths, setLockupMonths] = useState(3);
-  const [stakeAmount, setStakeAmount] = useState("");
-  const [purchaseAmount, setPurchaseAmount] = useState("");
   const walletBalance = 50000;
-  const rentTokenBalance = 125000;
-  const baseAPY = 12.0; // General pool average APY
+  const baseAPY = 12.0;
   const estimatedYield = Number(depositAmount) * (baseAPY / 100);
-  const rentTokenBonus = Number(depositAmount) / 10000 * lockupMonths * 100;
-  const apyBoost = Number(stakeAmount) / 10000 * 0.1;
-  const rentTokenPrice = 0.15;
 
   // User's wallet data
   const totalBalance = 1026050;
@@ -72,13 +66,16 @@ const Earn = () => {
     yield: 24161,
     positions: 410500
   }];
+
   const formatCurrency = (value: number) => {
     return `$${value.toLocaleString()}`;
   };
+
   const handlePercentage = (percent: number) => {
     const amount = (walletBalance * percent).toFixed(2);
     setDepositAmount(amount);
   };
+
   return <div className="space-y-8">
       {/* My Wallet Section */}
       <div className="space-y-4">
@@ -88,7 +85,7 @@ const Earn = () => {
         </div>
         <Card>
           <CardHeader className="pb-2">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 gap-6">
             <div>
               <div className="text-sm text-muted-foreground mb-1">Total Balance</div>
               <div className="text-3xl font-bold">${totalBalance.toLocaleString()}</div>
@@ -100,13 +97,6 @@ const Earn = () => {
               <div className="text-sm text-muted-foreground mb-1">Total Positions</div>
               <div className="text-3xl font-bold">$410,500</div>
               <div className="text-sm text-muted-foreground mt-1">Across 3 active positions</div>
-            </div>
-            <div>
-              <div className="text-sm text-muted-foreground mb-1">$BORE Tokens</div>
-              <div className="text-3xl font-bold">{rentTokenBalance.toLocaleString()}</div>
-              <div className="text-sm text-muted-foreground mt-1">
-                ≈ ${(rentTokenBalance * rentTokenPrice).toLocaleString()} USDC
-              </div>
             </div>
           </div>
         </CardHeader>
@@ -162,7 +152,6 @@ const Earn = () => {
       <div className="space-y-4">
         <div className="pb-2">
           <h2 className="text-2xl font-bold">Deposit Funds</h2>
-          
         </div>
 
         <Card className="p-6">
@@ -252,7 +241,7 @@ const Earn = () => {
                 <div className="bg-muted/50 rounded-lg p-4">
                   <div className="flex items-center gap-2">
                     <Info className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-sm">Earn {rentTokenBonus.toFixed(0)} bonus $BORE tokens</span>
+                    <span className="text-sm">Longer lockup periods may qualify for higher yield tiers</span>
                   </div>
                 </div>
               </CardContent>
@@ -270,10 +259,6 @@ const Earn = () => {
                     <span className="text-muted-foreground">Estimated Annual Yield</span>
                     <span className="text-xl font-bold">${estimatedYield.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Bonus $BORE Tokens</span>
-                    <span className="text-xl font-bold text-primary">{rentTokenBonus.toFixed(0)}</span>
-                  </div>
                 </div>
                 <Button className="w-full mt-6 bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full" size="lg">
                   Deposit Funds
@@ -282,81 +267,6 @@ const Earn = () => {
             </Card>
           </div>
         </Card>
-      </div>
-
-      {/* Staking Section */}
-      <div className="space-y-4">
-        <div className="pb-2">
-          <h2 className="text-2xl font-bold">Staking</h2>
-          <p className="text-sm text-muted-foreground">Purchase and stake $BORE tokens to boost your APY</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-        {/* Purchase $BORE */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Coins className="w-5 h-5" />
-              Purchase $BORE
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <Label>Amount (USDC)</Label>
-              <Input type="number" value={purchaseAmount} onChange={e => setPurchaseAmount(e.target.value)} placeholder="0.00" className="text-xl h-12 font-mono mt-2" />
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-sm text-muted-foreground">
-                  Current Price: ${rentTokenPrice} per $BORE
-                </span>
-                <span className="text-sm font-medium">
-                  ≈ {(Number(purchaseAmount) / rentTokenPrice).toFixed(0)} $BORE
-                </span>
-              </div>
-            </div>
-            <Button className="w-full" variant="outline">
-              Purchase $BORE Tokens
-            </Button>
-          </CardContent>
-        </Card>
-
-        {/* Stake $BORE */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5" />
-              Stake $BORE
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <Label>Stake Amount</Label>
-              <Input type="number" value={stakeAmount} onChange={e => setStakeAmount(e.target.value)} placeholder="0" className="text-xl h-12 font-mono mt-2" />
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-sm text-muted-foreground">
-                  Available: {rentTokenBalance.toLocaleString()} $BORE
-                </span>
-                <Button variant="outline" size="sm" onClick={() => setStakeAmount(rentTokenBalance.toString())}>
-                  Max
-                </Button>
-              </div>
-            </div>
-            <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
-              <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="w-4 h-4 text-primary" />
-                <span className="font-semibold text-primary">
-                  +{apyBoost.toFixed(2)}% APY Boost
-                </span>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                10,000 $BORE tokens = +0.1% APY bonus
-              </p>
-            </div>
-            <Button className="w-full bg-gradient-to-r from-[hsl(16,100%,58%)] to-[hsl(8,85%,55%)] text-white hover:opacity-90 rounded-full">
-              Stake $BORE Tokens
-            </Button>
-          </CardContent>
-          </Card>
-        </div>
       </div>
     </div>;
 };

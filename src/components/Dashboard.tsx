@@ -149,7 +149,7 @@ const Dashboard = () => {
                     
                     <div className="flex gap-8 mb-8">
                       <div className="flex-1 space-y-8">
-                        <CapitalCard onStakeClick={() => setActiveTab("earn")} />
+                        <CapitalCard />
                         
                         <Card>
                           <CardHeader>

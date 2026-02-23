@@ -40,8 +40,8 @@ const RecentActivity = () => {
     {
       id: 5,
       title: "Earnings",
-      description: "Bonus $BORE tokens distributed",
-      amount: "+450 BORE",
+      description: "Monthly rental income distribution",
+      amount: "+$1,850",
       type: "earnings",
       icon: DollarSign,
     },
