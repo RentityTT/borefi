@@ -21,7 +21,7 @@ const Wallet = () => {
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold">Wallet</h1>
           <p className="text-muted-foreground">
-            Add or withdraw liquidity and earn $BORE rewards
+            Add or withdraw liquidity from real estate pools
           </p>
         </div>
 
@@ -111,10 +111,10 @@ const Wallet = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <p className="text-sm text-muted-foreground">Earn</p>
+                      <p className="text-sm text-muted-foreground">Estimated Yield</p>
                       <div className="space-y-1">
                         <span className="text-3xl font-bold block">{earnAmount}</span>
-                        <p className="text-xs text-muted-foreground">$BORE</p>
+                        <p className="text-xs text-muted-foreground">USDC / year</p>
                       </div>
                     </div>
                   </div>
