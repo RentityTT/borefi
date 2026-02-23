@@ -15,7 +15,7 @@ const Earn = () => {
   const [purchaseAmount, setPurchaseAmount] = useState("");
   const walletBalance = 50000;
   const rentTokenBalance = 125000;
-  const baseAPY = 9.5; // General pool average APY
+  const baseAPY = 12.0; // General pool average APY
   const estimatedYield = Number(depositAmount) * (baseAPY / 100);
   const rentTokenBonus = Number(depositAmount) / 10000 * lockupMonths * 100;
   const apyBoost = Number(stakeAmount) / 10000 * 0.1;
@@ -178,7 +178,7 @@ const Earn = () => {
               <CardContent>
                 <div className="grid grid-cols-3 gap-4 bg-muted/30 rounded-lg p-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-success">9.5%</div>
+                    <div className="text-2xl font-bold text-success">12.0%</div>
                     <div className="text-xs text-muted-foreground mt-1">Average APY</div>
                   </div>
                   <div className="text-center">
