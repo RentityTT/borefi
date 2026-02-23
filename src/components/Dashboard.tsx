@@ -58,9 +58,9 @@ const Dashboard = () => {
     }
   };
   const earnPositions = [{
-    pool: "Construction Industry Pool",
+    pool: "Multi-Family Residential Pool",
     type: "Supply",
-    productType: "Pool Investment",
+    productType: "Rent-Backed Token",
     amount: "$175,500",
     amountNumeric: 175500,
     apy: "7.82%",
@@ -70,7 +70,7 @@ const Dashboard = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "CIB-2024-04-001",
+      positionId: "MFR-2024-04-001",
       depositDate: "Apr 1, 2024",
       daysActive: 275,
       principalAmount: "$175,500",
@@ -82,7 +82,7 @@ const Dashboard = () => {
       distributionAmount: "$1,164"
     }
   }, {
-    pool: "Metro Restaurant Group",
+    pool: "Century City Tower",
     type: "Supply",
     productType: "Preferred Equity",
     amount: "$150,000",
@@ -94,7 +94,7 @@ const Dashboard = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "MRG-2024-06-001",
+      positionId: "CCT-2024-06-001",
       depositDate: "Jun 15, 2024",
       daysActive: 200,
       principalAmount: "$150,000",
@@ -106,9 +106,9 @@ const Dashboard = () => {
       distributionAmount: "$1,475"
     }
   }, {
-    pool: "Property Management Pool",
+    pool: "Retail & Shopping Centers Pool",
     type: "Supply",
-    productType: "Pool Investment",
+    productType: "Rent-Backed Token",
     amount: "$85,000",
     amountNumeric: 85000,
     apy: "7.45%",
@@ -118,7 +118,7 @@ const Dashboard = () => {
     status: "Active",
     network: "Solana",
     details: {
-      positionId: "PMP-2024-08-001",
+      positionId: "RSC-2024-08-001",
       depositDate: "Aug 1, 2024",
       daysActive: 153,
       principalAmount: "$85,000",

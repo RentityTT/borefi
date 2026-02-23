@@ -21,7 +21,7 @@ const Wallet = () => {
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold">Wallet</h1>
           <p className="text-muted-foreground">
-            Add or withdraw liquidity and earn $RENT rewards
+            Add or withdraw liquidity and earn $BORE rewards
           </p>
         </div>
 
