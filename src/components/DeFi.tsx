@@ -158,7 +158,7 @@ const DeFi = () => {
   const earnPositions = [{
     pool: "Multi-Family Residential Pool",
     type: "Supply",
-    productType: "Pool Investment",
+    productType: "Rent-Backed Token",
     amount: "$175,500",
     amountNumeric: 175500,
     apy: "7.82%",
@@ -182,7 +182,7 @@ const DeFi = () => {
   }, {
     pool: "Commercial Office Pool",
     type: "Supply",
-    productType: "Preferred Equity",
+    productType: "Rent-Backed Token",
     amount: "$150,000",
     amountNumeric: 150000,
     apy: "11.8%",
@@ -206,7 +206,7 @@ const DeFi = () => {
   }, {
     pool: "Retail & Shopping Pool",
     type: "Supply",
-    productType: "Pool Investment",
+    productType: "Rent-Backed Token",
     amount: "$85,000",
     amountNumeric: 85000,
     apy: "7.45%",
@@ -1547,7 +1547,7 @@ const DeFi = () => {
                   </TableCell>
                   <TableCell className="text-right">
                     <Badge variant="secondary" className="text-[10px] whitespace-nowrap">
-                      Preferred Equity
+                      Rent-Backed Token
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right">
@@ -2308,7 +2308,7 @@ const DeFi = () => {
                 Pool Information
               </h4>
               <p className="text-sm text-muted-foreground">
-                {selectedPool.type === 'market' ? `This market-based pool aggregates real estate financing opportunities across ${selectedPool.location}, ${selectedPool.country}. Loans could be for land acquisition, construction development, mezzanine financing, bridge loans, or other real estate purposes.` : selectedPool.type === 'building' ? `This building-specific pool provides financing for ${selectedPool.name} with ${selectedPool.units} units. Loans may include construction development, bridge financing, mezzanine loans, or land acquisition for this property.` : `This loan pool specializes in ${selectedPool.name} financing. Funds are deployed for land loans, construction development, mezzanine financing, bridge loans, and other real estate lending opportunities matching this category.`}
+                {selectedPool.type === 'market' ? `This market-based pool aggregates rent-backed real estate investment opportunities across ${selectedPool.location}, ${selectedPool.country}. Investments are backed by rental income from residential and commercial properties.` : selectedPool.type === 'building' ? `This building-specific pool provides rent-backed investment for ${selectedPool.name} with ${selectedPool.units} units. Returns are generated from monthly rental income collections.` : `This pool specializes in ${selectedPool.name} rent-backed investments. Funds are deployed into rental income-generating properties matching this category.`}
               </p>
             </div>
 
