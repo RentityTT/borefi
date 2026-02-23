@@ -84,7 +84,7 @@ const Dashboard = () => {
   }, {
     pool: "Century City Tower",
     type: "Supply",
-    productType: "Preferred Equity",
+    productType: "Rent-Backed Token",
     amount: "$150,000",
     amountNumeric: 150000,
     apy: "11.8%",
