@@ -6,24 +6,24 @@ import juniperTowerImg from "@/assets/juniper-tower.jpg";
 import atmosphereImg from "@/assets/atmosphere.jpg";
 const PropertiesTable = () => {
   const businesses = [{
-    id: "century-construction",
-    name: "Century Construction Co.",
+    id: "century-city-tower",
+    name: "Century City Tower",
     image: centuryCityImg,
     upfrontCapital: "$750,550",
     termRemaining: "12 Months",
     cost: "7.1%",
     status: "Available"
   }, {
-    id: "juniper-logistics",
-    name: "Juniper Logistics",
+    id: "juniper-tower",
+    name: "Juniper Tower Residences",
     image: juniperTowerImg,
     upfrontCapital: "$275,500",
     termRemaining: "6 Months",
     cost: "6.5%",
     status: "Available"
   }, {
-    id: "atmosphere-restaurant",
-    name: "Atmosphere Restaurant",
+    id: "atmosphere-complex",
+    name: "Atmosphere Complex",
     image: atmosphereImg,
     upfrontCapital: "$249,750",
     termRemaining: "12 Months",
@@ -52,13 +52,13 @@ const PropertiesTable = () => {
   };
   const totalCapital = "$1,275,800";
   return <Card className="p-6">
-      <h2 className="text-xl font-semibold mb-6">Tokenized Businesses</h2>
+      <h2 className="text-xl font-semibold mb-6">Tokenized Properties</h2>
       
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left py-4 px-2 font-medium text-muted-foreground">Business</th>
+              <th className="text-left py-4 px-2 font-medium text-muted-foreground">Property</th>
               <th className="text-left py-4 px-2 font-medium text-muted-foreground">Upfront Capital</th>
               <th className="text-left py-4 px-2 font-medium text-muted-foreground">Term Remaining</th>
               <th className="text-left py-4 px-2 font-medium text-muted-foreground">Yield</th>

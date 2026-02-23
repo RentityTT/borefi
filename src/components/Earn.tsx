@@ -170,9 +170,9 @@ const Earn = () => {
             {/* General Pool Information */}
             <Card>
               <CardHeader>
-                <CardTitle>BORE.FI General Investment Pool</CardTitle>
+                <CardTitle>BORE.FI Real Estate Investment Pool</CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Your funds will be deployed across our diversified portfolio of boring cashflowing businesses including SME loans, business acquisitions, and direct equity investments. All opportunities are vetted by BORE.FI's investment committee.
+                  Your funds will be deployed across our diversified portfolio of rental income-generating properties including multi-family residential, commercial office, and mixed-use developments. All properties are vetted by BORE.FI's investment committee.
                 </p>
               </CardHeader>
               <CardContent>
@@ -193,11 +193,11 @@ const Earn = () => {
                 <div className="mt-4 space-y-2">
                   <div className="flex items-start gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
-                    <span className="text-muted-foreground">Funds used for SME loans, business acquisitions, and equity investments</span>
+                    <span className="text-muted-foreground">Funds deployed into rental properties generating consistent monthly cashflow</span>
                   </div>
                   <div className="flex items-start gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
-                    <span className="text-muted-foreground">All investments undergo thorough due diligence by BORE.FI Protocol</span>
+                    <span className="text-muted-foreground">All properties undergo thorough due diligence by BORE.FI Protocol</span>
                   </div>
                   <div className="flex items-start gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
